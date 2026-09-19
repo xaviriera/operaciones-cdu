@@ -1,0 +1,41 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "0:3.6:1 (need 4.5:1) — text #ffffff on #e9554f",
+        "createdAt": "2026-09-19T18:06:47.087Z",
+        "reason": "logotipo del Programa IN: WCAG 1.4.3 exime el texto de un logo o nombre de marca. Ya triado en el repo operaciones-gestor; se replica aqui al mover el dossier a su repo correcto"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "elche-altabix/index.html"
+        ],
+        "createdAt": "2026-09-19T18:06:47.206Z",
+        "reason": "diseno del dossier FIJADO y revisado por Xavi (README: no se redisena, solo se rellena) - user confirmed"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "elche-altabix/index.html"
+        ],
+        "createdAt": "2026-09-19T18:06:47.315Z",
+        "reason": "bordes de acento preexistentes de la plantilla aprobada - user confirmed"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "elche-altabix/index.html"
+        ],
+        "createdAt": "2026-09-19T18:06:47.424Z",
+        "reason": "cabeceras de la tabla del Programa IN (1-4 palabras), formato literal que Xavi pidio conservar - user confirmed"
+      }
+    ]
+  }
+}
