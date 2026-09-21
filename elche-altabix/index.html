@@ -469,6 +469,74 @@ body.final .todo{display:none}
 </head>
 <body>
 
+<!-- RELOJ DE PRESENTACIÓN · solo visible con ?p en la URL. 30 min + 5 de margen y campana.
+     No forma parte del dossier: el inversor que lo abra por su cuenta no lo ve. -->
+<style>
+#pres{position:fixed;right:18px;bottom:18px;z-index:9999;display:none;align-items:center;gap:14px;
+  background:var(--navy);color:#fff;border-radius:14px;padding:14px 20px;cursor:pointer;
+  box-shadow:0 6px 22px rgba(0,0,0,.28);font-variant-numeric:tabular-nums;user-select:none}
+#pres.on{display:flex}
+#pres .t{font-size:40px;font-weight:800;line-height:1;letter-spacing:.5px}
+#pres .l{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;opacity:.82}
+#pres .h{font-size:11px;opacity:.6;max-width:104px;line-height:1.35}
+#pres.warn{background:#8a5a14}
+#pres.margen{background:var(--warn)}
+#pres.fin{background:var(--warn);animation:presblink 1s steps(2,end) infinite}
+@keyframes presblink{50%{opacity:.35}}
+@media(max-width:700px){#pres{right:10px;bottom:10px;padding:10px 14px;gap:10px}#pres .t{font-size:30px}#pres .h{display:none}}
+</style>
+<div id="pres" role="status" aria-live="polite">
+  <div><div class="l" id="presL">Presentación</div><div class="t" id="presT">30:00</div></div>
+  <div class="h" id="presH">Clic para empezar</div>
+</div>
+<script>
+(function(){
+  var P=new URLSearchParams(location.search);
+  if(!P.has('p'))return;
+  var BLOQUE=30*60, MARGEN=5*60;
+  var box=document.getElementById('pres'),T=document.getElementById('presT'),
+      L=document.getElementById('presL'),H=document.getElementById('presH');
+  box.classList.add('on');
+  var t=null,queda=BLOQUE,fase=0,sono=false; // fase 0 parado · 1 bloque · 2 margen · 3 fin
+  function pinta(){
+    var s=Math.max(0,queda),m=Math.floor(s/60),g=s%60;
+    T.textContent=m+':'+(g<10?'0':'')+g;
+    box.className='on'+(fase===2?' margen':fase===3?' fin':(fase===1&&queda<=600)?' warn':'');
+    L.textContent=fase===2?'Margen':fase===3?'Tiempo':'Presentación';
+  }
+  function campana(){
+    try{
+      var C=new (window.AudioContext||window.webkitAudioContext)();
+      [0,.55,1.1].forEach(function(d){
+        var o=C.createOscillator(),g=C.createGain();
+        o.connect(g);g.connect(C.destination);o.type='sine';o.frequency.value=880;
+        g.gain.setValueAtTime(.001,C.currentTime+d);
+        g.gain.exponentialRampToValueAtTime(.32,C.currentTime+d+.02);
+        g.gain.exponentialRampToValueAtTime(.001,C.currentTime+d+.5);
+        o.start(C.currentTime+d);o.stop(C.currentTime+d+.55);
+      });
+    }catch(e){}
+  }
+  function tic(){
+    queda--;
+    if(queda<=0){
+      if(fase===1){fase=2;queda=MARGEN;H.textContent='5 min de margen';}
+      else if(fase===2){fase=3;queda=0;clearInterval(t);t=null;H.textContent='Pasamos a preguntas';
+        if(!sono){sono=true;campana();}}
+    }
+    pinta();
+  }
+  box.addEventListener('click',function(){
+    if(fase===0){fase=1;queda=BLOQUE;H.textContent='Clic para pausar';t=setInterval(tic,1000);campana();}
+    else if(fase===3){fase=0;queda=BLOQUE;sono=false;H.textContent='Clic para empezar';}
+    else if(t){clearInterval(t);t=null;H.textContent='En pausa · clic para seguir';}
+    else{t=setInterval(tic,1000);H.textContent='Clic para pausar';}
+    pinta();
+  });
+  pinta();
+})();
+</script>
+
 <nav class="nav">
   <div class="brand"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" style="height:54px;width:auto"></div>
   <div class="grp">Apertura</div>
