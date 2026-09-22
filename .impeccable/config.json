@@ -35,6 +35,12 @@
         ],
         "createdAt": "2026-09-19T18:06:47.424Z",
         "reason": "cabeceras de la tabla del Programa IN (1-4 palabras), formato literal que Xavi pidio conservar - user confirmed"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "1px",
+        "createdAt": "2026-09-22T08:40:24.213Z",
+        "reason": "Rotulo corto en mayusculas (HERRAMIENTA OFICIAL CdU DE 0 A EXITO) junto al titulo del visor: es el caso que la propia regla exime. Salto al subir su tamano de 11 a 13px por legibilidad en proyeccion."
       }
     ]
   }
