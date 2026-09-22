@@ -367,6 +367,19 @@ body.final .todo{display:none}
 .visor-cta .vc-arrow{transition:transform .18s}
 .visor-cta:hover .vc-arrow{transform:translateX(4px)}
 .visor-note{margin-top:14px;font-size:12px;color:rgba(253,251,247,.6);letter-spacing:.3px}
+/* visor — layout en dos columnas: copy+features a la izquierda, captura real a la derecha */
+.visor-body{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:start;margin-top:16px;position:relative}
+.visor-feats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 4px}
+.visor-feats .vf{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:10px 13px}
+.visor-feats .vf b{display:block;color:var(--ochre);font-size:12.5px}
+.visor-feats .vf span{font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.35}
+.visor-access{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px dashed rgba(226,159,52,.55);border-radius:30px;padding:7px 15px;font-size:12px;color:rgba(255,255,255,.82);margin:14px 0 2px;flex-wrap:wrap}
+.visor-access b{color:var(--ochre)}
+.visor-shot{border-radius:14px;overflow:hidden;border:1px solid rgba(226,159,52,.4);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.visor-shot img{display:block;width:100%;height:auto}
+.visor-shot-cap{font-size:11px;color:rgba(253,251,247,.6);margin-top:9px;text-align:center;line-height:1.4}
+@media(max-width:840px){.visor-body{grid-template-columns:1fr}.visor-shot{max-width:420px;margin:0 auto}}
+@media(max-width:420px){.visor-feats{grid-template-columns:1fr}}
 /* indicador de scroll horizontal en tablas (móvil/tablet) — sombras laterales tipo Lea Verou */
 @media(max-width:840px){
   table{
@@ -1179,23 +1192,31 @@ body.final .todo{display:none}
 <section class="sec" id="visor">
   <span class="phase-badge invers"><span class="dot"></span>Bloque inversión</span>
   <div class="kicker">Solvencia y transparencia · Tu cuadro de mandos</div>
-  <h2>Tu cuadro de mandos — desde el día uno</h2>
+  <h2>Tu operación, en vivo — no en un PDF que envejece</h2>
   <div class="quote">"Vamos todos en el mismo vehículo. El equipo CdU de 0 a ÉXITO es quien conduce la inversión — y tú, como invitado, solo disfrutas del viaje: viendo en tiempo real cómo trabaja tu dinero, en qué fase está la operación, qué hito viene, las fotos de la obra y qué ha pasado con cada euro."</div>
   <div class="dash visor-dash">
     <div class="visor-flag">⭐ Exclusivo · solo para inversores</div>
     <h3>📊 Visor del Inversor <span style="font-size:11px;color:var(--ochre);letter-spacing:1px">· HERRAMIENTA OFICIAL CdU DE 0 A ÉXITO</span></h3>
-    <p>El cuadro de mandos de tu inversión. Todas nuestras operaciones se siguen así: no es un PDF que envejece, es la operación en vivo, casi en tiempo real.</p>
-    <div class="row">
-      <div class="pill"><b>Estado y avance</b> · GO ✅ · MAP ✅ · ÉXITO 🟡 + % de la operación</div>
-      <div class="pill"><b>Hitos de la operación</b> · conseguidos y próximos</div>
-      <div class="pill"><b>Obra</b> · cronograma real, semana a semana</div>
-      <div class="pill"><b>Cuenta dedicada</b> · tramos y cada movimiento</div>
-      <div class="pill"><b>Obra en directo</b> · cámaras en la obra desde el primer día</div>
-      <div class="pill"><b>Documentación</b> · todos los papeles a mano</div>
+    <div class="visor-body">
+      <div>
+        <p>No es un PDF que envejece: es la operación en vivo, casi en tiempo real.</p>
+        <div class="visor-feats">
+          <div class="vf">📊 <b>Estado y avance</b><span>GO ✅ · MAP ✅ · ÉXITO 🟡, con tu % real</span></div>
+          <div class="vf">🎯 <b>Hitos</b><span>conseguidos y próximos</span></div>
+          <div class="vf">🏗️ <b>Obra</b><span>cronograma real, semana a semana</span></div>
+          <div class="vf">💳 <b>Cuenta dedicada</b><span>tramos y cada movimiento</span></div>
+          <div class="vf">🎥 <b>Obra en directo</b><span>cámaras desde el primer día</span></div>
+          <div class="vf">📁 <b>Documentación</b><span>todos los papeles a mano</span></div>
+        </div>
+        <a class="visor-cta" href="https://visor.tucambiodeuso.com/demo/" target="_blank" rel="noopener"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" class="vc-logo"> Ver el Visor en funcionamiento <span class="vc-arrow">→</span></a>
+        <div class="visor-access">🔑 Acceso de demostración · contraseña <b>demo</b></div>
+        <p style="font-size:12px;color:rgba(255,255,255,.65);margin-top:10px">Es la demo de otra operación nuestra en obra. El tuyo se activa al arrancar la obra del entresuelo, con las cifras y las cámaras de Altabix.</p>
+      </div>
+      <div>
+        <div class="visor-shot"><img src="assets/visor-preview.jpg" alt="Captura real del Visor del Inversor: estado de la operación, hitos por fase y porcentaje de avance" loading="lazy"></div>
+        <p class="visor-shot-cap">Cómo se ve por dentro — captura real de una operación nuestra en curso.</p>
+      </div>
     </div>
-    <p style="margin-top:16px"><b>Míralo por dentro antes de decidir.</b> Aquí tienes el visor de <b>una operación nuestra actualmente en obra</b>: el mismo cuadro de mandos que tendrás para el entresuelo de Altabix, funcionando sobre una obra real. Entra con la contraseña <b>demo</b>.</p>
-    <a class="visor-cta" href="https://visor.tucambiodeuso.com/demo/" target="_blank" rel="noopener"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" class="vc-logo"> Ver el Visor en funcionamiento <span class="vc-arrow">→</span></a>
-    <p style="font-size:12.5px;color:rgba(255,255,255,.75);margin-top:12px">Es una demostración con los datos de otra operación. El tuyo se activa al arrancar la obra del entresuelo, con las cifras y las cámaras de Altabix.</p>
   </div>
 </section>
 
