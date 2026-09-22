@@ -370,28 +370,76 @@ body.final .todo{display:none}
 .visor-cta:hover{background:#15406a;transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.4)}
 .visor-cta .vc-arrow{transition:transform .18s}
 .visor-cta:hover .vc-arrow{transform:translateX(4px)}
-/* visor — la captura real como centro de la composición: marco de "ventana", tira de datos, cierre con CTA */
+/* visor — teléfono simbólico (CSS puro) + listado de contenidos + acceso demo */
 .visor-eyebrow{font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--ochre)}
 .visor-lead{max-width:640px;margin:6px 0 22px;font-size:15px;color:rgba(253,251,247,.8)}
-.visor-frame{max-width:980px;border-radius:12px;overflow:hidden;box-shadow:0 30px 70px -18px rgba(0,0,0,.55),0 2px 10px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.14)}
-.visor-bar{display:flex;align-items:center;gap:10px;background:var(--navy2);padding:9px 14px}
-.visor-dots{display:flex;gap:5px;flex-shrink:0}
-.visor-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.28)}
-.visor-url{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,255,255,.08);border-radius:6px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,.62);letter-spacing:.2px}
-.visor-url svg{width:11px;height:11px;flex-shrink:0}
-.visor-frame img{display:block;width:100%;height:auto}
-.visor-cap{max-width:980px;font-size:12.5px;color:rgba(253,251,247,.58);margin-top:11px;line-height:1.5}
-.visor-stats{max-width:980px;margin:26px 0 0;display:grid;grid-template-columns:repeat(4,1fr)}
-.visor-stat{padding:0 18px;border-left:1px solid rgba(255,255,255,.14)}
-.visor-stat:first-child{border-left:none;padding-left:0}
-.visor-stat svg{width:18px;height:18px;color:var(--ochre);margin-bottom:9px;display:block}
-.visor-stat b{display:block;color:#fff;font-size:13.5px;font-weight:700;margin-bottom:3px}
-.visor-stat span{display:block;font-size:12px;color:rgba(253,251,247,.6);line-height:1.42}
-.visor-foot{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
-.visor-pass{font-size:12px;color:rgba(253,251,247,.6)}
+
+.visor-showcase{max-width:1000px;margin-top:6px;display:grid;grid-template-columns:250px 1fr;gap:52px;align-items:start;position:relative;z-index:1}
+
+.visor-phone-wrap{display:flex;justify-content:center}
+.visor-phone{width:100%;max-width:250px;aspect-ratio:9/19.4;border-radius:46px;background:linear-gradient(160deg,#1a3a5c,var(--navy2));padding:12px;position:relative;box-shadow:0 30px 60px -18px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08) inset}
+.visor-phone::before,.visor-phone::after{content:"";position:absolute;left:-2px;width:3px;background:rgba(9,18,30,.9);border-radius:3px}
+.visor-phone::before{top:96px;height:28px}
+.visor-phone::after{top:136px;height:52px}
+.visor-phone-power{position:absolute;right:-2px;top:118px;width:3px;height:64px;background:rgba(9,18,30,.9);border-radius:3px}
+.visor-screen{position:relative;width:100%;height:100%;background:linear-gradient(175deg,var(--navy),var(--navy2) 65%);border-radius:34px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.visor-island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:84px;height:24px;background:rgba(6,12,20,.92);border-radius:16px;z-index:5}
+.visor-statusrow{position:absolute;top:14px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center;z-index:4;font-size:11px;font-weight:700;color:rgba(255,255,255,.85)}
+.visor-battery{width:19px;height:10px;border:1.2px solid rgba(255,255,255,.75);border-radius:2.5px;position:relative;display:block}
+.visor-battery::after{content:"";position:absolute;right:-3px;top:2.5px;width:1.5px;height:5px;background:rgba(255,255,255,.75);border-radius:0 1px 1px 0}
+.visor-battery i{position:absolute;top:1.2px;left:1.2px;bottom:1.2px;width:70%;background:rgba(255,255,255,.85);border-radius:1px;display:block}
+.visor-apphead{position:absolute;top:42px;left:0;right:0;padding:12px 16px 10px;z-index:4;background:linear-gradient(var(--navy2),rgba(15,44,71,.85) 70%,rgba(15,44,71,0));display:flex;align-items:center;gap:8px}
+.visor-apphead img{height:18px;width:auto;flex-shrink:0;display:block}
+.visor-appt{line-height:1.25}
+.visor-appt b{display:block;font-size:11.5px;color:#fff;font-weight:800}
+.visor-appt span{display:block;font-size:8px;letter-spacing:.6px;text-transform:uppercase;color:var(--ochre);font-weight:700}
+.visor-scrollpane{position:absolute;top:78px;left:0;right:14px;bottom:18px;overflow:hidden}
+.visor-scrollpane .inner{padding:16px 2px 30px;animation:visorscroll 16s ease-in-out infinite alternate}
+@keyframes visorscroll{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(-158px)}}
+@media(prefers-reduced-motion:reduce){.visor-scrollpane .inner{animation:none}}
+.visor-home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:80px;height:4px;border-radius:3px;background:rgba(255,255,255,.35);z-index:5}
+.visor-phaselbl{display:flex;justify-content:space-between;gap:8px;font-size:7.5px;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700;margin-bottom:6px}
+.visor-phaselbl b{color:var(--ochre);font-weight:800}
+.visor-phasetrack{display:flex;align-items:center;gap:4px;margin-bottom:14px}
+.visor-phasetrack i{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,.14);display:block}
+.visor-phasetrack i.on{background:var(--ochre)}
+.visor-statbig{margin:16px 0 14px}
+.visor-statbig .n{font-size:30px;font-weight:800;color:#fff;line-height:1}
+.visor-statbig .l{font-size:9.5px;color:rgba(255,255,255,.55);margin-top:2px}
+.visor-pbar{height:6px;border-radius:4px;background:rgba(255,255,255,.12);margin-top:9px;overflow:hidden}
+.visor-pbar i{display:block;height:100%;background:var(--ochre);border-radius:4px}
+.visor-srow{display:flex;align-items:center;gap:9px;padding:9px 0;border-top:1px solid rgba(255,255,255,.1)}
+.visor-srow .dot{width:6px;height:6px;border-radius:50%;background:var(--ochre);flex-shrink:0}
+.visor-srow .dot.live{background:var(--in-coral);animation:visorpulse 1.8s ease-in-out infinite}
+@keyframes visorpulse{0%,100%{opacity:1}50%{opacity:.35}}
+.visor-srow p{font-size:10.5px;color:rgba(255,255,255,.82);font-weight:600}
+.visor-srow small{display:block;font-size:8.5px;color:rgba(255,255,255,.45);font-weight:500;margin-top:1px}
+.visor-thumbs{display:flex;gap:6px;margin:12px 0 4px}
+.visor-thumbs i{flex:1;aspect-ratio:1;border-radius:7px;background:linear-gradient(150deg,rgba(255,255,255,.16),rgba(255,255,255,.04));display:block}
+
+.visor-list-title{font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.9);margin-bottom:12px}
+.visor-list-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+.visor-list-item{display:flex;gap:11px;padding:13px 0;border-top:1px solid rgba(255,255,255,.14)}
+.visor-list-grid .visor-list-item:nth-child(1),.visor-list-grid .visor-list-item:nth-child(2){border-top:none}
+.visor-list-item svg{width:17px;height:17px;color:var(--ochre);flex-shrink:0;margin-top:1px}
+.visor-list-item b{display:block;font-size:13px;font-weight:700;color:#fff}
+.visor-list-item span{display:block;font-size:11.5px;color:rgba(253,251,247,.58);margin-top:2px;line-height:1.4}
+
+.visor-foot{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+.visor-note{font-size:12px;color:rgba(253,251,247,.55);max-width:640px;margin-bottom:18px;line-height:1.55}
+.visor-foot-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.visor-foot-row .visor-cta{margin-top:0}
+.visor-pass{font-size:16.5px;color:#fff;font-weight:600;display:flex;align-items:center;gap:9px}
+.visor-pass svg{width:18px;height:18px;color:var(--ochre);flex-shrink:0}
 .visor-pass b{color:var(--ochre);font-weight:800}
-@media(max-width:840px){.visor-stats{grid-template-columns:1fr 1fr;row-gap:20px}.visor-stat{border-left:none;padding-left:0}}
-@media(max-width:480px){.visor-stats{grid-template-columns:1fr}}
+
+@media(max-width:840px){.visor-showcase{grid-template-columns:1fr;gap:30px}}
+@media(max-width:480px){
+  .visor-list-grid{grid-template-columns:1fr}
+  .visor-list-grid .visor-list-item:nth-child(2){border-top:1px solid rgba(255,255,255,.14)}
+  .visor-phone{max-width:210px}
+  .visor-foot-row{flex-direction:column;align-items:flex-start;gap:14px}
+}
 /* indicador de scroll horizontal en tablas (móvil/tablet) — sombras laterales tipo Lea Verou */
 @media(max-width:840px){
   table{
@@ -1203,39 +1251,65 @@ body.final .todo{display:none}
   <div class="dash visor-dash">
     <div class="visor-eyebrow">Herramienta oficial · exclusiva para inversores</div>
     <h3>Visor del Inversor</h3>
-    <p class="visor-lead">No es una maqueta: es la operación real, tal como la ves nada más entrar.</p>
+    <p class="visor-lead">Así se ve tu operación dentro del Visor: estado, cifras, fotos y documentación, actualizados cada semana.</p>
 
-    <div class="visor-frame">
-      <div class="visor-bar">
-        <div class="visor-dots"><i></i><i></i><i></i></div>
-        <div class="visor-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>visor.tucambiodeuso.com/demo</div>
-      </div>
-      <img src="assets/visor-shot.jpg" alt="Captura real del Visor del Inversor: estado de la operación, hitos por fase y porcentaje de avance" loading="lazy">
-    </div>
-    <p class="visor-cap">Es la demo de otra operación nuestra en obra. El tuyo se activa al arrancar la obra del entresuelo, con las cifras y las cámaras de Altabix.</p>
+    <div class="visor-showcase">
+      <div class="visor-phone-wrap">
+        <div class="visor-phone" role="img" aria-label="Simulación del Visor del Inversor funcionando en un teléfono: fase actual, porcentaje de avance, obra, cámara en directo y cuenta dedicada">
+          <div class="visor-phone-power"></div>
+          <div class="visor-screen">
+            <div class="visor-island"></div>
+            <div class="visor-statusrow"><span>9:41</span><span class="visor-battery"><i></i></span></div>
+            <div class="visor-apphead">
+              <img src="assets/logo-cdu-blanco.png" alt="">
+              <div class="visor-appt"><b>Visor del Inversor</b><span>Herramienta oficial</span></div>
+            </div>
+            <div class="visor-scrollpane">
+              <div class="inner">
+                <div class="visor-phaselbl"><span>Fase actual</span><b>MAP · Plan ejecutable</b></div>
+                <div class="visor-phasetrack"><i class="on"></i><i class="on"></i><i></i></div>
 
-    <div class="visor-stats">
-      <div class="visor-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-6"/></svg>
-        <b>Estado y fases</b><span>GO, MAP y ÉXITO, con tu porcentaje de avance real</span>
+                <div class="visor-statbig">
+                  <div class="n">62%</div>
+                  <div class="l">Avance de la operación</div>
+                  <div class="visor-pbar"><i style="width:62%"></i></div>
+                </div>
+
+                <div class="visor-srow"><span class="dot"></span><p>Obra en semana 6 de 16<small>Planning actualizado hoy</small></p></div>
+                <div class="visor-srow"><span class="dot live"></span><p>Cámara en directo<small>Grabando ahora mismo</small></p></div>
+                <div class="visor-thumbs"><i></i><i></i><i></i></div>
+                <div class="visor-srow"><span class="dot"></span><p>Cuenta dedicada al día<small>3 movimientos nuevos</small></p></div>
+                <div class="visor-srow"><span class="dot"></span><p>2 documentos nuevos<small>Añadidos esta semana</small></p></div>
+              </div>
+            </div>
+            <div class="visor-home"></div>
+          </div>
+        </div>
       </div>
-      <div class="visor-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v3M16 4v3"/></svg>
-        <b>Obra y cuenta dedicada</b><span>cronograma semana a semana y cada movimiento de la cuenta</span>
-      </div>
-      <div class="visor-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10.5 21 8v8l-5-2.5"/></svg>
-        <b>Cámaras en directo</b><span>la obra grabada desde el primer día</span>
-      </div>
-      <div class="visor-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>
-        <b>Documentación</b><span>toda la papelería de la operación, a un clic</span>
+
+      <div class="visor-list">
+        <div class="visor-list-title">Todo lo que ves dentro, en tiempo real</div>
+        <div class="visor-list-grid">
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-6"/></svg><div><b>Estado y fases</b><span>GO, MAP y ÉXITO con tu % real</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg><div><b>Cifras económicas</b><span>inversión, venta y rentabilidad</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg><div><b>Plano</b><span>la distribución de la reforma</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg><div><b>Hitos</b><span>qué falta y qué está cumplido</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v3M16 4v3"/></svg><div><b>Planning</b><span>la obra, semana a semana</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 15h4"/></svg><div><b>Extracto de la cuenta</b><span>cada movimiento, con justificante</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10.5 21 8v8l-5-2.5"/></svg><div><b>Cámaras en directo</b><span>la obra grabada desde el primer día</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.4"/><path d="M8 6l1.6-2.4h4.8L16 6"/></svg><div><b>Fotos de obra</b><span>avance visual, actualizado</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><div><b>Documentación</b><span>toda la papelería, a un clic</span></div></div>
+          <div class="visor-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg><div><b>Noticias</b><span>novedades de la operación</span></div></div>
+        </div>
       </div>
     </div>
 
     <div class="visor-foot">
-      <a class="visor-cta" href="https://visor.tucambiodeuso.com/demo/" target="_blank" rel="noopener"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" class="vc-logo"> Ver el Visor en funcionamiento <span class="vc-arrow">→</span></a>
-      <div class="visor-pass">Acceso de demostración · contraseña <b>demo</b></div>
+      <p class="visor-note">Es la demo de otra operación nuestra en obra. El tuyo se activa al arrancar la obra del entresuelo, con las cifras y las cámaras de Altabix.</p>
+      <div class="visor-foot-row">
+        <a class="visor-cta" href="https://visor.tucambiodeuso.com/demo/" target="_blank" rel="noopener"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" class="vc-logo"> Ver el Visor en funcionamiento <span class="vc-arrow">→</span></a>
+        <div class="visor-pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Acceso de demostración · contraseña <b>demo</b></div>
+      </div>
     </div>
   </div>
 </section>
