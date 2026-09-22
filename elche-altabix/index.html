@@ -345,9 +345,9 @@ body.final .todo{display:none}
   .in-tabla tbody th,.in-tabla tbody td{padding:12px 10px;font-size:12.5px;white-space:normal}
 }
 @media(max-width:480px){
-  .in-tabla{border-spacing:3px 3px;font-size:12px}
-  .in-tabla thead th{padding:8px 6px;font-size:11px}
-  .in-tabla tbody th,.in-tabla tbody td{padding:9px 7px;font-size:11.5px}
+  .in-tabla{border-spacing:3px 3px;font-size:12px;min-width:360px}
+  .in-tabla thead th{padding:8px 6px;font-size:12px}
+  .in-tabla tbody th,.in-tabla tbody td{padding:9px 7px;font-size:12px}
 }
 
 /* bonus destacado (#propuesta) */
@@ -366,25 +366,32 @@ body.final .todo{display:none}
 /* visor del inversor — toque premium + CTA integrado dentro de la caja navy */
 .visor-dash{border:2px solid rgba(226,159,52,.62);position:relative;overflow:hidden}
 .visor-dash::before{content:"";position:absolute;top:-40%;right:-10%;width:320px;height:320px;background:radial-gradient(circle,rgba(226,159,52,.16),rgba(226,159,52,0) 70%);pointer-events:none}
-.visor-flag{display:inline-flex;align-items:center;gap:7px;background:rgba(226,159,52,.16);border:1px solid rgba(226,159,52,.5);color:var(--ochre);font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;padding:5px 13px;border-radius:30px;margin-bottom:14px}
 .visor-cta{display:inline-flex;align-items:center;gap:12px;margin-top:20px;background:var(--navy2);color:#fff;font-weight:800;font-size:14.5px;padding:13px 24px;border-radius:30px;text-decoration:none;border:1.5px solid var(--ochre);box-shadow:0 6px 20px rgba(0,0,0,.3);transition:.18s}
 .visor-cta:hover{background:#15406a;transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.4)}
 .visor-cta .vc-arrow{transition:transform .18s}
 .visor-cta:hover .vc-arrow{transform:translateX(4px)}
-.visor-note{margin-top:14px;font-size:12px;color:rgba(253,251,247,.6);letter-spacing:.3px}
-/* visor — layout en dos columnas: copy+features a la izquierda, captura real a la derecha */
-.visor-body{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:start;margin-top:16px;position:relative}
-.visor-feats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 4px}
-.visor-feats .vf{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:12px 14px}
-.visor-feats .vf b{display:block;color:var(--ochre);font-size:12.5px}
-.visor-feats .vf span{font-size:13px;color:rgba(255,255,255,.72);line-height:1.35}
-.visor-access{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px dashed rgba(226,159,52,.55);border-radius:30px;padding:7px 15px;font-size:12px;color:rgba(255,255,255,.82);margin:14px 0 2px;flex-wrap:wrap}
-.visor-access b{color:var(--ochre)}
-.visor-shot{border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.35)}
-.visor-shot img{display:block;width:100%;height:auto}
-.visor-shot-cap{font-size:13px;color:rgba(253,251,247,.6);margin-top:9px;text-align:center;line-height:1.4}
-@media(max-width:840px){.visor-body{grid-template-columns:1fr}.visor-shot{max-width:420px;margin:0 auto}}
-@media(max-width:420px){.visor-feats{grid-template-columns:1fr}}
+/* visor — la captura real como centro de la composición: marco de "ventana", tira de datos, cierre con CTA */
+.visor-eyebrow{font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--ochre)}
+.visor-lead{max-width:640px;margin:6px 0 22px;font-size:15px;color:rgba(253,251,247,.8)}
+.visor-frame{max-width:980px;border-radius:12px;overflow:hidden;box-shadow:0 30px 70px -18px rgba(0,0,0,.55),0 2px 10px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.14)}
+.visor-bar{display:flex;align-items:center;gap:10px;background:var(--navy2);padding:9px 14px}
+.visor-dots{display:flex;gap:5px;flex-shrink:0}
+.visor-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.28)}
+.visor-url{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,255,255,.08);border-radius:6px;padding:4px 10px;font-size:11.5px;color:rgba(255,255,255,.62);letter-spacing:.2px}
+.visor-url svg{width:11px;height:11px;flex-shrink:0}
+.visor-frame img{display:block;width:100%;height:auto}
+.visor-cap{max-width:980px;font-size:12.5px;color:rgba(253,251,247,.58);margin-top:11px;line-height:1.5}
+.visor-stats{max-width:980px;margin:26px 0 0;display:grid;grid-template-columns:repeat(4,1fr)}
+.visor-stat{padding:0 18px;border-left:1px solid rgba(255,255,255,.14)}
+.visor-stat:first-child{border-left:none;padding-left:0}
+.visor-stat svg{width:18px;height:18px;color:var(--ochre);margin-bottom:9px;display:block}
+.visor-stat b{display:block;color:#fff;font-size:13.5px;font-weight:700;margin-bottom:3px}
+.visor-stat span{display:block;font-size:12px;color:rgba(253,251,247,.6);line-height:1.42}
+.visor-foot{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
+.visor-pass{font-size:12px;color:rgba(253,251,247,.6)}
+.visor-pass b{color:var(--ochre);font-weight:800}
+@media(max-width:840px){.visor-stats{grid-template-columns:1fr 1fr;row-gap:20px}.visor-stat{border-left:none;padding-left:0}}
+@media(max-width:480px){.visor-stats{grid-template-columns:1fr}}
 /* indicador de scroll horizontal en tablas (móvil/tablet) — sombras laterales tipo Lea Verou */
 @media(max-width:840px){
   table{
@@ -1193,27 +1200,41 @@ body.final .todo{display:none}
   <h2>Tu operación, en vivo — no en un PDF que envejece</h2>
   <div class="quote">"Vamos todos en el mismo vehículo. El equipo CdU de 0 a ÉXITO es quien conduce la inversión — y tú, como invitado, solo disfrutas del viaje: viendo en tiempo real cómo trabaja tu dinero, en qué fase está la operación, qué hito viene, las fotos de la obra y qué ha pasado con cada euro."</div>
   <div class="dash visor-dash">
-    <div class="visor-flag">⭐ Exclusivo · solo para inversores</div>
-    <h3>📊 Visor del Inversor <span style="font-size:13px;color:var(--ochre);letter-spacing:1px">· HERRAMIENTA OFICIAL CdU DE 0 A ÉXITO</span></h3>
-    <div class="visor-body">
-      <div>
-        <p>No es un PDF que envejece: es la operación en vivo, casi en tiempo real.</p>
-        <div class="visor-feats">
-          <div class="vf">📊 <b>Estado y avance</b><span>GO ✅ · MAP ✅ · ÉXITO 🟡, con tu % real</span></div>
-          <div class="vf">🎯 <b>Hitos</b><span>conseguidos y próximos</span></div>
-          <div class="vf">🏗️ <b>Obra</b><span>cronograma real, semana a semana</span></div>
-          <div class="vf">💳 <b>Cuenta dedicada</b><span>tramos y cada movimiento</span></div>
-          <div class="vf">🎥 <b>Obra en directo</b><span>cámaras desde el primer día</span></div>
-          <div class="vf">📁 <b>Documentación</b><span>todos los papeles a mano</span></div>
-        </div>
-        <a class="visor-cta" href="https://visor.tucambiodeuso.com/demo/" target="_blank" rel="noopener"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" class="vc-logo"> Ver el Visor en funcionamiento <span class="vc-arrow">→</span></a>
-        <div class="visor-access">🔑 Acceso de demostración · contraseña <b>demo</b></div>
-        <p style="font-size:12px;color:rgba(255,255,255,.65);margin-top:10px">Es la demo de otra operación nuestra en obra. El tuyo se activa al arrancar la obra del entresuelo, con las cifras y las cámaras de Altabix.</p>
+    <div class="visor-eyebrow">Herramienta oficial · exclusiva para inversores</div>
+    <h3>Visor del Inversor</h3>
+    <p class="visor-lead">No es una maqueta: es la operación real, tal como la ves nada más entrar.</p>
+
+    <div class="visor-frame">
+      <div class="visor-bar">
+        <div class="visor-dots"><i></i><i></i><i></i></div>
+        <div class="visor-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>visor.tucambiodeuso.com/demo</div>
       </div>
-      <div>
-        <div class="visor-shot"><img src="assets/visor-preview.jpg" alt="Captura real del Visor del Inversor: estado de la operación, hitos por fase y porcentaje de avance" loading="lazy"></div>
-        <p class="visor-shot-cap">Cómo se ve por dentro — captura real de una operación nuestra en curso.</p>
+      <img src="assets/visor-shot.jpg" alt="Captura real del Visor del Inversor: estado de la operación, hitos por fase y porcentaje de avance" loading="lazy">
+    </div>
+    <p class="visor-cap">Es la demo de otra operación nuestra en obra. El tuyo se activa al arrancar la obra del entresuelo, con las cifras y las cámaras de Altabix.</p>
+
+    <div class="visor-stats">
+      <div class="visor-stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-6"/></svg>
+        <b>Estado y fases</b><span>GO, MAP y ÉXITO, con tu porcentaje de avance real</span>
       </div>
+      <div class="visor-stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v3M16 4v3"/></svg>
+        <b>Obra y cuenta dedicada</b><span>cronograma semana a semana y cada movimiento de la cuenta</span>
+      </div>
+      <div class="visor-stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10.5 21 8v8l-5-2.5"/></svg>
+        <b>Cámaras en directo</b><span>la obra grabada desde el primer día</span>
+      </div>
+      <div class="visor-stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>
+        <b>Documentación</b><span>toda la papelería de la operación, a un clic</span>
+      </div>
+    </div>
+
+    <div class="visor-foot">
+      <a class="visor-cta" href="https://visor.tucambiodeuso.com/demo/" target="_blank" rel="noopener"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" class="vc-logo"> Ver el Visor en funcionamiento <span class="vc-arrow">→</span></a>
+      <div class="visor-pass">Acceso de demostración · contraseña <b>demo</b></div>
     </div>
   </div>
 </section>
