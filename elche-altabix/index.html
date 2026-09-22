@@ -275,7 +275,6 @@ body.final .todo{display:none}
   .hero .partners{font-size:12px!important}
   .lead{font-size:16.5px}
   h2{font-size:21px}
-  .visor-dash .visor-title{font-size:21px}
   .kicker{font-size:12px;letter-spacing:1.8px}
   /* tablas: ya scrollean (display:block en 840) — afinamos legibilidad */
   th,td{padding:8px 10px;font-size:12px}
@@ -373,8 +372,7 @@ body.final .todo{display:none}
 .visor-cta:hover .vc-arrow{transform:translateX(4px)}
 /* visor — teléfono simbólico (CSS puro) + listado de contenidos + acceso demo */
 .visor-eyebrow{font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--ochre)}
-.visor-dash .visor-title{font-size:28px;font-weight:800;letter-spacing:-.5px;line-height:1.18;color:#fff;margin:8px 0 4px;max-width:620px}
-.visor-name{font-size:13px;font-weight:700;letter-spacing:.3px;color:var(--ochre);margin-top:2px}
+.visor-name{font-size:19px;font-weight:800;color:#fff;margin-top:6px;letter-spacing:-.3px}
 .visor-lead{max-width:640px;margin:6px 0 22px;font-size:15px;color:rgba(253,251,247,.8)}
 
 .visor-showcase{max-width:1000px;margin-top:6px;display:grid;grid-template-columns:250px 1fr;gap:52px;align-items:start;position:relative;z-index:1}
@@ -396,33 +394,43 @@ body.final .todo{display:none}
 .visor-appt{line-height:1.25}
 .visor-appt b{display:block;font-size:11.5px;color:#fff;font-weight:800}
 .visor-appt span{display:block;font-size:8px;letter-spacing:.6px;text-transform:uppercase;color:var(--ochre);font-weight:700}
-.visor-scrollpane{position:absolute;top:78px;left:0;right:14px;bottom:18px;overflow:hidden;background:linear-gradient(180deg,rgba(253,251,247,0),var(--cream) 26px,var(--cream) 100%)}
-.visor-scrollpane .inner{padding:16px 2px 30px;animation:visorscroll 16s ease-in-out infinite alternate}
-@keyframes visorscroll{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(-158px)}}
-@media(prefers-reduced-motion:reduce){.visor-scrollpane .inner,.visor-thumbs i{animation:none}}
+.visor-scrollpane{position:absolute;top:78px;left:0;right:14px;bottom:18px;overflow:hidden}
+.visor-scrollpane .inner{padding:16px 2px 34px;animation:visorscroll 26s ease-in-out infinite alternate}
+@keyframes visorscroll{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(-300px)}}
+@media(prefers-reduced-motion:reduce){.visor-scrollpane .inner,.visor-camframe{animation:none}}
 .visor-home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:80px;height:4px;border-radius:3px;background:rgba(255,255,255,.35);z-index:5}
-.visor-phaselbl{display:flex;justify-content:space-between;gap:8px;font-size:7.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--grey);font-weight:700;margin-bottom:6px}
-.visor-phaselbl b{color:var(--ochre-dark);font-weight:800}
+.visor-phaselbl{display:flex;justify-content:space-between;gap:8px;font-size:7.5px;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:6px}
+.visor-phaselbl b{color:var(--ochre);font-weight:800}
 .visor-phasetrack{display:flex;align-items:center;gap:4px;margin-bottom:14px}
-.visor-phasetrack i{flex:1;height:4px;border-radius:3px;background:rgba(22,61,96,.12);display:block}
+.visor-phasetrack i{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,.12);display:block}
 .visor-phasetrack i.on{background:var(--ochre)}
-.visor-statbig{margin:16px 0 14px}
-.visor-statbig .n{font-size:30px;font-weight:800;color:var(--navy);line-height:1}
-.visor-statbig .l{font-size:9.5px;color:var(--grey);margin-top:2px}
-.visor-pbar{height:6px;border-radius:4px;background:rgba(22,61,96,.1);margin-top:9px;overflow:hidden}
+.visor-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:12px 13px;margin-bottom:8px}
+.visor-statbig{padding:13px 14px 14px}
+.visor-statbig .n{font-size:28px;font-weight:800;color:#fff;line-height:1}
+.visor-statbig .l{font-size:9.5px;color:rgba(255,255,255,.5);margin-top:2px}
+.visor-pbar{height:6px;border-radius:4px;background:rgba(255,255,255,.1);margin-top:9px;overflow:hidden}
 .visor-pbar i{display:block;height:100%;background:var(--ochre);border-radius:4px}
-.visor-srow{display:flex;align-items:center;gap:9px;padding:9px 0;border-top:1px solid var(--line)}
+.visor-srow{display:flex;align-items:center;gap:9px;padding:8px 0}
+.visor-srow+.visor-srow{border-top:1px solid rgba(255,255,255,.08)}
 .visor-srow .dot{width:6px;height:6px;border-radius:50%;background:var(--ochre);flex-shrink:0}
-.visor-srow .dot.live{background:var(--warn);animation:visorpulse 1.8s ease-in-out infinite}
 @keyframes visorpulse{0%,100%{opacity:1}50%{opacity:.35}}
-.visor-srow p{font-size:10.5px;color:var(--ink);font-weight:600}
-.visor-srow small{display:block;font-size:8.5px;color:var(--grey);font-weight:500;margin-top:1px}
-.visor-thumbs{display:flex;gap:6px;margin:12px 0 4px}
-.visor-thumbs i{flex:1;aspect-ratio:1;border-radius:7px;display:block;background-size:220% 220%;animation:visorlapse 10s ease-in-out infinite}
-.visor-thumbs i:nth-child(1){background-image:linear-gradient(135deg,rgba(22,61,96,.20),rgba(226,159,52,.24) 55%,rgba(22,61,96,.10));animation-delay:0s}
-.visor-thumbs i:nth-child(2){background-image:linear-gradient(135deg,rgba(226,159,52,.22),rgba(29,122,79,.18) 55%,rgba(226,159,52,.08));animation-delay:-3.3s}
-.visor-thumbs i:nth-child(3){background-image:linear-gradient(135deg,rgba(233,85,79,.18),rgba(22,61,96,.20) 55%,rgba(233,85,79,.08));animation-delay:-6.6s}
-@keyframes visorlapse{0%{background-position:0% 15%}50%{background-position:100% 85%}100%{background-position:0% 15%}}
+.visor-srow p{font-size:10.5px;color:rgba(255,255,255,.88);font-weight:600}
+.visor-srow small{display:block;font-size:8.5px;color:rgba(255,255,255,.48);font-weight:500;margin-top:1px}
+.visor-camlabel{font-size:8.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.55);margin:2px 0 8px;display:flex;align-items:center;gap:6px}
+.visor-camlabel .live{width:5px;height:5px;border-radius:50%;background:var(--ok);animation:visorpulse 1.8s ease-in-out infinite}
+.visor-camstack{display:flex;flex-direction:column;gap:7px}
+.visor-camframe{position:relative;aspect-ratio:16/10;border-radius:9px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background-color:#0f2338;background-size:220% 220%,220% 220%,6px 6px;animation:visorcam 16s ease-in-out infinite}
+.visor-camframe::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 22px rgba(0,0,0,.55);pointer-events:none}
+.visor-camframe:nth-child(1){--camline:var(--ochre);background-image:radial-gradient(ellipse at 30% 20%,rgba(226,159,52,.22),transparent 60%),linear-gradient(150deg,#213f5c,#0f2338 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 3px);animation-delay:0s}
+.visor-camframe:nth-child(2){--camline:var(--ok);background-image:radial-gradient(ellipse at 65% 30%,rgba(29,122,79,.22),transparent 60%),linear-gradient(150deg,#1c3a4f,#0f2338 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 3px);animation-delay:-5.3s}
+.visor-camframe:nth-child(3){--camline:var(--warn);background-image:radial-gradient(ellipse at 40% 65%,rgba(179,64,31,.18),transparent 60%),linear-gradient(150deg,#2a3a52,#0f2338 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 3px);animation-delay:-10.6s}
+@keyframes visorcam{0%{background-position:0% 20%,0% 20%,0 0}50%{background-position:100% 80%,100% 80%,0 0}100%{background-position:0% 20%,0% 20%,0 0}}
+.visor-campill{position:absolute;left:7px;top:7px;display:flex;align-items:center;gap:5px;background:rgba(6,12,20,.78);color:#fff;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:4px 9px 4px 7px;border-radius:999px;border:1px solid rgba(255,255,255,.14);z-index:1}
+.visor-campill i{width:5px;height:5px;border-radius:50%;background:var(--camline);flex-shrink:0}
+.visor-camrec{position:absolute;right:7px;top:7px;z-index:1;display:flex;align-items:center;gap:4px;background:rgba(6,12,20,.78);padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.14)}
+.visor-camrec i{width:5px;height:5px;border-radius:50%;background:var(--in-coral);animation:visorpulse 1.4s ease-in-out infinite}
+.visor-camrec span{font-size:7px;font-weight:800;color:#fff;letter-spacing:.4px}
+.visor-camts{position:absolute;left:7px;bottom:6px;z-index:1;font-size:7px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.2px}
 
 .visor-list-title{font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.9);margin-bottom:12px}
 .visor-list-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
@@ -1257,13 +1265,12 @@ body.final .todo{display:none}
   <div class="quote">"Vamos todos en el mismo vehículo. El equipo CdU de 0 a ÉXITO es quien conduce la inversión — y tú, como invitado, solo disfrutas del viaje: viendo en tiempo real cómo trabaja tu dinero, en qué fase está la operación, qué hito viene, las fotos de la obra y qué ha pasado con cada euro."</div>
   <div class="dash visor-dash">
     <div class="visor-eyebrow">Herramienta oficial · exclusiva para inversores</div>
-    <h3 class="visor-title">Abres el móvil y ahí está: tu operación, entera</h3>
     <p class="visor-name">Visor del Inversor</p>
-    <p class="visor-lead">Así se ve tu operación dentro del Visor: estado, cifras, fotos y documentación, actualizados cada semana.</p>
+    <p class="visor-lead">Así se ve tu operación dentro del Visor: estado, cifras, cámaras de obra y documentación, actualizados cada semana.</p>
 
     <div class="visor-showcase">
       <div class="visor-phone-wrap">
-        <div class="visor-phone" role="img" aria-label="Simulación del Visor del Inversor funcionando en un teléfono: fase actual, porcentaje de avance, obra, cámara en directo y cuenta dedicada">
+        <div class="visor-phone" role="img" aria-label="Simulación del Visor del Inversor funcionando en un teléfono: fase actual, porcentaje de avance, obra, tres cámaras de obra en directo y cuenta dedicada">
           <div class="visor-phone-power"></div>
           <div class="visor-screen">
             <div class="visor-island"></div>
@@ -1277,17 +1284,24 @@ body.final .todo{display:none}
                 <div class="visor-phaselbl"><span>Fase actual</span><b>MAP · Plan ejecutable</b></div>
                 <div class="visor-phasetrack"><i class="on"></i><i class="on"></i><i></i></div>
 
-                <div class="visor-statbig">
+                <div class="visor-card visor-statbig">
                   <div class="n">62%</div>
                   <div class="l">Avance de la operación</div>
                   <div class="visor-pbar"><i style="width:62%"></i></div>
                 </div>
 
-                <div class="visor-srow"><span class="dot"></span><p>Obra en semana 6 de 16<small>Planning actualizado hoy</small></p></div>
-                <div class="visor-srow"><span class="dot live"></span><p>Cámara en directo<small>Grabando ahora mismo</small></p></div>
-                <div class="visor-thumbs"><i></i><i></i><i></i></div>
-                <div class="visor-srow"><span class="dot"></span><p>Cuenta dedicada al día<small>3 movimientos nuevos</small></p></div>
-                <div class="visor-srow"><span class="dot"></span><p>2 documentos nuevos<small>Añadidos esta semana</small></p></div>
+                <div class="visor-card">
+                  <div class="visor-srow"><span class="dot"></span><p>Obra en semana 6 de 16<small>Planning actualizado hoy</small></p></div>
+                  <div class="visor-srow"><span class="dot"></span><p>Cuenta dedicada al día<small>3 movimientos nuevos</small></p></div>
+                  <div class="visor-srow"><span class="dot"></span><p>2 documentos nuevos<small>Añadidos esta semana</small></p></div>
+                </div>
+
+                <div class="visor-camlabel"><span class="live"></span>Cámaras de obra · en directo</div>
+                <div class="visor-camstack">
+                  <div class="visor-camframe"><span class="visor-campill"><i></i>Cámara 1</span><span class="visor-camrec"><i></i><span>REC</span></span><span class="visor-camts">hace 2 min</span></div>
+                  <div class="visor-camframe"><span class="visor-campill"><i></i>Cámara 2</span><span class="visor-camrec"><i></i><span>REC</span></span><span class="visor-camts">hace 2 min</span></div>
+                  <div class="visor-camframe"><span class="visor-campill"><i></i>Cámara 3</span><span class="visor-camrec"><i></i><span>REC</span></span><span class="visor-camts">hace 2 min</span></div>
+                </div>
               </div>
             </div>
             <div class="visor-home"></div>
