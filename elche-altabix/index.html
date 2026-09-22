@@ -275,6 +275,7 @@ body.final .todo{display:none}
   .hero .partners{font-size:12px!important}
   .lead{font-size:16.5px}
   h2{font-size:21px}
+  .visor-dash .visor-title{font-size:21px}
   .kicker{font-size:12px;letter-spacing:1.8px}
   /* tablas: ya scrollean (display:block en 840) — afinamos legibilidad */
   th,td{padding:8px 10px;font-size:12px}
@@ -372,6 +373,8 @@ body.final .todo{display:none}
 .visor-cta:hover .vc-arrow{transform:translateX(4px)}
 /* visor — teléfono simbólico (CSS puro) + listado de contenidos + acceso demo */
 .visor-eyebrow{font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--ochre)}
+.visor-dash .visor-title{font-size:28px;font-weight:800;letter-spacing:-.5px;line-height:1.18;color:#fff;margin:8px 0 4px;max-width:620px}
+.visor-name{font-size:13px;font-weight:700;letter-spacing:.3px;color:var(--ochre);margin-top:2px}
 .visor-lead{max-width:640px;margin:6px 0 22px;font-size:15px;color:rgba(253,251,247,.8)}
 
 .visor-showcase{max-width:1000px;margin-top:6px;display:grid;grid-template-columns:250px 1fr;gap:52px;align-items:start;position:relative;z-index:1}
@@ -393,29 +396,33 @@ body.final .todo{display:none}
 .visor-appt{line-height:1.25}
 .visor-appt b{display:block;font-size:11.5px;color:#fff;font-weight:800}
 .visor-appt span{display:block;font-size:8px;letter-spacing:.6px;text-transform:uppercase;color:var(--ochre);font-weight:700}
-.visor-scrollpane{position:absolute;top:78px;left:0;right:14px;bottom:18px;overflow:hidden}
+.visor-scrollpane{position:absolute;top:78px;left:0;right:14px;bottom:18px;overflow:hidden;background:linear-gradient(180deg,rgba(253,251,247,0),var(--cream) 26px,var(--cream) 100%)}
 .visor-scrollpane .inner{padding:16px 2px 30px;animation:visorscroll 16s ease-in-out infinite alternate}
 @keyframes visorscroll{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(-158px)}}
-@media(prefers-reduced-motion:reduce){.visor-scrollpane .inner{animation:none}}
+@media(prefers-reduced-motion:reduce){.visor-scrollpane .inner,.visor-thumbs i{animation:none}}
 .visor-home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:80px;height:4px;border-radius:3px;background:rgba(255,255,255,.35);z-index:5}
-.visor-phaselbl{display:flex;justify-content:space-between;gap:8px;font-size:7.5px;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700;margin-bottom:6px}
-.visor-phaselbl b{color:var(--ochre);font-weight:800}
+.visor-phaselbl{display:flex;justify-content:space-between;gap:8px;font-size:7.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--grey);font-weight:700;margin-bottom:6px}
+.visor-phaselbl b{color:var(--ochre-dark);font-weight:800}
 .visor-phasetrack{display:flex;align-items:center;gap:4px;margin-bottom:14px}
-.visor-phasetrack i{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,.14);display:block}
+.visor-phasetrack i{flex:1;height:4px;border-radius:3px;background:rgba(22,61,96,.12);display:block}
 .visor-phasetrack i.on{background:var(--ochre)}
 .visor-statbig{margin:16px 0 14px}
-.visor-statbig .n{font-size:30px;font-weight:800;color:#fff;line-height:1}
-.visor-statbig .l{font-size:9.5px;color:rgba(255,255,255,.55);margin-top:2px}
-.visor-pbar{height:6px;border-radius:4px;background:rgba(255,255,255,.12);margin-top:9px;overflow:hidden}
+.visor-statbig .n{font-size:30px;font-weight:800;color:var(--navy);line-height:1}
+.visor-statbig .l{font-size:9.5px;color:var(--grey);margin-top:2px}
+.visor-pbar{height:6px;border-radius:4px;background:rgba(22,61,96,.1);margin-top:9px;overflow:hidden}
 .visor-pbar i{display:block;height:100%;background:var(--ochre);border-radius:4px}
-.visor-srow{display:flex;align-items:center;gap:9px;padding:9px 0;border-top:1px solid rgba(255,255,255,.1)}
+.visor-srow{display:flex;align-items:center;gap:9px;padding:9px 0;border-top:1px solid var(--line)}
 .visor-srow .dot{width:6px;height:6px;border-radius:50%;background:var(--ochre);flex-shrink:0}
-.visor-srow .dot.live{background:var(--in-coral);animation:visorpulse 1.8s ease-in-out infinite}
+.visor-srow .dot.live{background:var(--warn);animation:visorpulse 1.8s ease-in-out infinite}
 @keyframes visorpulse{0%,100%{opacity:1}50%{opacity:.35}}
-.visor-srow p{font-size:10.5px;color:rgba(255,255,255,.82);font-weight:600}
-.visor-srow small{display:block;font-size:8.5px;color:rgba(255,255,255,.45);font-weight:500;margin-top:1px}
+.visor-srow p{font-size:10.5px;color:var(--ink);font-weight:600}
+.visor-srow small{display:block;font-size:8.5px;color:var(--grey);font-weight:500;margin-top:1px}
 .visor-thumbs{display:flex;gap:6px;margin:12px 0 4px}
-.visor-thumbs i{flex:1;aspect-ratio:1;border-radius:7px;background:linear-gradient(150deg,rgba(255,255,255,.16),rgba(255,255,255,.04));display:block}
+.visor-thumbs i{flex:1;aspect-ratio:1;border-radius:7px;display:block;background-size:220% 220%;animation:visorlapse 10s ease-in-out infinite}
+.visor-thumbs i:nth-child(1){background-image:linear-gradient(135deg,rgba(22,61,96,.20),rgba(226,159,52,.24) 55%,rgba(22,61,96,.10));animation-delay:0s}
+.visor-thumbs i:nth-child(2){background-image:linear-gradient(135deg,rgba(226,159,52,.22),rgba(29,122,79,.18) 55%,rgba(226,159,52,.08));animation-delay:-3.3s}
+.visor-thumbs i:nth-child(3){background-image:linear-gradient(135deg,rgba(233,85,79,.18),rgba(22,61,96,.20) 55%,rgba(233,85,79,.08));animation-delay:-6.6s}
+@keyframes visorlapse{0%{background-position:0% 15%}50%{background-position:100% 85%}100%{background-position:0% 15%}}
 
 .visor-list-title{font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.9);margin-bottom:12px}
 .visor-list-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
@@ -1250,7 +1257,8 @@ body.final .todo{display:none}
   <div class="quote">"Vamos todos en el mismo vehículo. El equipo CdU de 0 a ÉXITO es quien conduce la inversión — y tú, como invitado, solo disfrutas del viaje: viendo en tiempo real cómo trabaja tu dinero, en qué fase está la operación, qué hito viene, las fotos de la obra y qué ha pasado con cada euro."</div>
   <div class="dash visor-dash">
     <div class="visor-eyebrow">Herramienta oficial · exclusiva para inversores</div>
-    <h3>Visor del Inversor</h3>
+    <h3 class="visor-title">Abres el móvil y ahí está: tu operación, entera</h3>
+    <p class="visor-name">Visor del Inversor</p>
     <p class="visor-lead">Así se ve tu operación dentro del Visor: estado, cifras, fotos y documentación, actualizados cada semana.</p>
 
     <div class="visor-showcase">
