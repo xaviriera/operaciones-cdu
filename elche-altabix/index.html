@@ -96,7 +96,7 @@ tr:last-child td{border-bottom:none}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:15px;margin:20px 0;max-width:var(--col)}
 .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:0 1px 5px rgba(22,61,96,.06)}
 .sec:nth-child(even) .card{background:var(--cream)}
-.card .big{font-size:29px;font-weight:800;color:var(--navy);line-height:1.05}
+.card .big{font-size:29px;font-weight:800;color:var(--navy);line-height:1.05;overflow-wrap:break-word;word-break:break-word;hyphens:auto}
 .card .lbl{font-size:12px;color:var(--grey);margin-top:5px;font-weight:600;letter-spacing:.2px;line-height:1.4}
 .chip{display:inline-block;background:var(--ochre-soft);color:var(--navy);font-weight:600;font-size:12.5px;padding:4px 12px;border-radius:18px;margin:2px}
 .prov{position:relative}
@@ -268,7 +268,7 @@ body.final .todo{display:none}
 .serv ul{margin-left:17px;font-size:12.5px}
 .serv li{margin-bottom:5px}
 .serv .s-estado{margin-top:10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
-@media(max-width:840px){.nav{display:none}main{margin-left:0}.sec{padding:48px 5vw}.hero{min-height:auto;padding:80px 6vw}.hero h1{font-size:36px}h1{font-size:30px}h2{font-size:23px}.dafo{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}table{font-size:12px;display:block;overflow-x:auto}.fases{flex-direction:column}.fase{border-radius:10px!important;margin-bottom:6px}}
+@media(max-width:840px){.nav{display:none}main{margin-left:0}.sec{padding:48px 5vw}.hero{min-height:auto;padding:80px 6vw}.hero h1{font-size:36px}h1{font-size:30px}h2{font-size:23px}.dafo{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.card .big{font-size:22px}table{font-size:12px;display:block;overflow-x:auto}.fases{flex-direction:column}.fase{border-radius:10px!important;margin-bottom:6px}}
 @media(max-width:520px){.cards{grid-template-columns:1fr}}
 /* ── MÓVIL fino: portada y bloques densos (mucho tráfico será móvil) ── */
 @media(max-width:600px){
@@ -888,13 +888,12 @@ body.final .todo{display:none}
       </div>
     </div>
   </div>
-  <h3>El mapa antes de la obra</h3>
-  <p>Qué hacer, en qué orden y por qué — cada paso con su documento sobre la mesa. Cuando la obra empieza, no se improvisa: <b>se ejecuta</b>.</p>
+  <h3>El encaje técnico, en cifras</h3>
   <div class="cards">
     <div class="card"><div class="big">≈2,50 m → ≈2,55–2,56 m</div><div class="lbl">Altura recuperada retirando relleno y solera existente</div></div>
     <div class="card"><div class="big">2 accesos independientes</div><div class="lbl">Fachada propia por vivienda, confirmado en visita técnica (27/08/2026)</div></div>
     <div class="card"><div class="big">20 cm entre viviendas</div><div class="lbl">Ladrillo hueco doble + lana de roca + ladrillo hueco doble — cumplimiento DB-HR</div></div>
-    <div class="card"><div class="big">Forjado con lámina anti-impacto</div><div class="lbl">Aislamiento acústico a ruido de impacto entre plantas</div></div>
+    <div class="card"><div class="big">Forjado anti-impacto</div><div class="lbl">Lámina de aislamiento a ruido de impacto entre plantas</div></div>
   </div>
   <h3>El producto final (visualización · piso piloto)</h3>
   <div class="gal">
