@@ -63,6 +63,7 @@ h1{font-size:46px;font-weight:900;color:var(--navy);line-height:1.04;letter-spac
 h2{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.5px}
 h3{font-size:16.5px;font-weight:700;color:var(--navy);margin:20px 0 8px}
 p{margin-bottom:11px;max-width:var(--col);font-size:16px}
+li{margin-bottom:7px}
 .sub-eyebrow{display:block;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin:22px 0 6px}
 .sub-eyebrow:first-child{margin-top:0}
 .lead{font-size:19.5px;font-weight:500;color:#27496b;max-width:var(--col)}
@@ -313,15 +314,16 @@ body.final .todo{display:none}
 .act-divider p{color:rgba(253,251,247,.85);max-width:880px;margin:0;font-size:16px}
 @media(max-width:840px){.act-divider{padding:32px 5vw}.act-divider h2{font-size:23px}}
 /* patrón por fase: qué hace el servicio + qué hicimos en esta operación */
-.fase-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;max-width:var(--col);align-items:start}
-.fase-split .fs{background:#fff;border:1px solid var(--line);border-radius:0 0 12px 12px;padding:18px 20px}
-.fase-split .fs.servicio{border-top:3px solid var(--ochre)}
-.fase-split .fs.op{border-top:3px solid var(--ok)}
-.fase-split .fs .fs-tag{font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
-.fase-split .fs.servicio .fs-tag{color:#8a5a14}
-.fase-split .fs.op .fs-tag{color:var(--ok)}
+/* qué hace la fase (linea de contexto) + qué hicimos en esta operación (tarjeta):
+   dos pesos de contenido distintos, ya no dos tarjetas obligadas a la misma altura */
+.fase-split{margin:16px 0;max-width:var(--col)}
+.fs-tag{display:block;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
+.fase-brief{border-left:3px solid var(--ochre);padding:1px 0 1px 18px;margin-bottom:18px}
+.fase-brief .fs-tag{color:#8a5a14;margin-bottom:4px}
+.fase-brief p{margin-bottom:0;color:#41526a;font-size:14.5px}
+.fase-split .fs{background:#fff;border:1px solid var(--line);border-top:3px solid var(--ok);border-radius:0 0 12px 12px;padding:18px 20px}
+.fase-split .fs .fs-tag{color:var(--ok)}
 .fase-split .fs h3{margin-top:0}
-@media(max-width:760px){.fase-split{grid-template-columns:1fr}}
 /* patas de la Fase 1 (económica/administrativa/técnica/jurídica) */
 .patas{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0;max-width:var(--col)}
 .pata{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:0 10px 10px 0;padding:15px 18px}
@@ -815,12 +817,11 @@ body.final .todo{display:none}
   <div class="kicker">El veredicto</div>
   <h2>¿Es viable este cambio de uso?</h2>
   <div class="fase-split">
-    <div class="fs servicio">
+    <div class="fase-brief">
       <div class="fs-tag">Qué hace esta fase en el servicio</div>
-      <h3>El veredicto, sin ruleta</h3>
       <p>La Fase 1 valida cuatro ejes — y si uno falla, falla todo: <b>jurídico/registral, administrativo, técnico y económico</b>. Se obtiene un veredicto claro (GO / GO con ajustes / NO GO) antes de comprometer un euro.</p>
     </div>
-    <div class="fs op">
+    <div class="fs">
       <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
       <h3>Dictamen GO: los cuatro ejes, favorables</h3>
       <ul style="margin:8px 0 12px;padding-left:20px">
@@ -1062,12 +1063,11 @@ body.final .todo{display:none}
   <div class="kicker">Ejecución integral · Sistema propio</div>
   <h2>Orquestamos y ejecutamos hasta la venta</h2>
   <div class="fase-split">
-    <div class="fs servicio">
+    <div class="fase-brief">
       <div class="fs-tag">Qué hace esta fase en el servicio</div>
-      <h3>La realidad se juega en la obra</h3>
       <p>La Fase 3 ejecuta: dirección de obra por hitos, proveedores con ofertas comparadas, control económico y cierre documental auditable. Es donde el plan se convierte en beneficio.</p>
     </div>
-    <div class="fs op">
+    <div class="fs">
       <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
       <h3>Preparada para arrancar</h3>
       <ul style="margin:8px 0 0;padding-left:20px">
@@ -1358,10 +1358,13 @@ body.final .todo{display:none}
       <div class="s-t">Diagnóstico de viabilidad</div>
       <div class="docbtns">
         <a class="btn-doc gold" href="https://drive.google.com/file/d/1inI73HNIVS2oxarGgk8xugHpcSlNN2Ka/view" target="_blank" rel="noopener"><span class="ic">📄</span> Informe Diagnóstico GO</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1kWAxpN8BghftxuowdVBCh3X0Q3ymno0p/view" target="_blank" rel="noopener"><span class="ic">📜</span> Nota simple</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1jLLy7OIfEWk5a1FeA02RC0HLdvuzXQGb/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Datos catastrales</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1lk2eWLPUfwMi8iy1DwSp0hGdTsKWJSb7/view" target="_blank" rel="noopener"><span class="ic">💶</span> Valor de referencia catastral</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1jLLy7OIfEWk5a1FeA02RC0HLdvuzXQGb/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 1</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1lH4KOe08x7veMOsvT4esrii5dwpwjUqk/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 2</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1lk2eWLPUfwMi8iy1DwSp0hGdTsKWJSb7/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 1</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/16LY67oYVYfGBVUjK_jFjHonLEEVMYgeH/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 2</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1kWAxpN8BghftxuowdVBCh3X0Q3ymno0p/view" target="_blank" rel="noopener"><span class="ic">📄</span> Nota simple</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1u9U5b5Soa4qIKmz3kueJ_HIE7t1WpiRL/view" target="_blank" rel="noopener"><span class="ic">📜</span> Escritura de División Horizontal</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1uqHnkyTQkMkAcY69JFGuGWfuV6FdQK_H/view" target="_blank" rel="noopener"><span class="ic">🧾</span> Actas y derrama de la comunidad</a>
       </div>
     </div>
     <div class="s-card">
