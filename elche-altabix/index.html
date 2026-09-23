@@ -283,7 +283,7 @@ body.final .todo{display:none}
   .lead{font-size:16.5px}
   h2{font-size:21px}
   .visor-headline{font-size:26px}
-  .visor-eyebrow{padding-top:0}
+  .visor-eyebrow{padding-top:0;text-align:left;max-width:none}
   .kicker{font-size:12px;letter-spacing:1.8px}
   /* tablas: ya scrollean (display:block en 840) — afinamos legibilidad */
   th,td{padding:8px 10px;font-size:12px}
@@ -382,10 +382,10 @@ body.final .todo{display:none}
 .visor-cta:hover .vc-arrow{transform:translateX(4px)}
 /* visor — teléfono simbólico (CSS puro) + listado de contenidos + acceso demo */
 .visor-dash{max-width:var(--col)}
-.visor-eyebrow{font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--ochre);white-space:nowrap;padding-top:8px}
+.visor-eyebrow{font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--ochre);text-align:right;line-height:1.6;max-width:170px;padding-top:8px}
 .visor-title-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px 20px}
-.visor-headline{font-size:36px;font-weight:800;letter-spacing:-.6px;line-height:1.15;color:#fff;margin:0}
-.visor-lead{max-width:600px;margin:6px 0 22px;font-size:15px;color:rgba(253,251,247,.8)}
+.visor-headline{font-size:32px;font-weight:800;letter-spacing:-.6px;line-height:1.15;color:#fff;margin:0}
+.visor-lead{max-width:600px;margin:18px 0 22px;font-size:15px;color:rgba(253,251,247,.8)}
 
 .visor-showcase{max-width:1000px;margin-top:6px;display:grid;grid-template-columns:226px 1fr;gap:44px;align-items:start;position:relative;z-index:1}
 
@@ -1266,7 +1266,7 @@ body.final .todo{display:none}
   <div class="dash visor-dash">
     <div class="visor-title-row">
       <h3 class="visor-headline">Visor del Inversor</h3>
-      <div class="visor-eyebrow">Herramienta oficial · exclusiva para inversores</div>
+      <div class="visor-eyebrow">Herramienta oficial<br>exclusiva para inversores</div>
     </div>
     <p class="visor-lead">Así se ve tu operación dentro del Visor: estado, cifras, cámaras y documentación. Las cámaras, en directo; el resto, actualizado cada semana.</p>
 
