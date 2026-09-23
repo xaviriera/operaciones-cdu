@@ -11,11 +11,14 @@
   ─ Los DATOS de la operación viven en el bloque <script id="op-data"> al final.
   ─ Números provisionales: clase .prov (chip ámbar). class="final" en <body> oculta chips + notas .todo.
 
-  ── ESTRUCTURA (4 actos) ──
-  ACTO 0 · APERTURA: #hero (intacto) · #equipo (intacto) · #track · #servicio (EL MÉTODO una vez)
-  ACTO 1 · FASE 1 GO (diagnóstico viabilidad): #resumen(mercado+activo) · #fase1 (4 patas + doc estrella)
-  ACTO 2 · FASE 2 MAP (plan ejecutable): #proyecto(encaje) · #suministros · #numeros · #escenarios · #riesgos · #gantt
-  ACTO 3 · FASE 3 ÉXITO + INVERSIÓN: #ejecucion · #plan · #propuesta · #ccp · #crono · #venta · #compromisos · #visor · #docs
+  ── ESTRUCTURA (orden fijado 23-sep-2026, ver wiki ESTANDAR-copy-dossier-cdu.md) ──
+  ACTO 0 · APERTURA: #hero (intacto) · #equipo (intacto) · #track
+  ACTO 1 · FASE 1 GO (diagnóstico viabilidad): #resumen(mercado+activo, mini-IM·PULSO) · #fase1 (4 familias + doc estrella)
+  ACTO 2 · FASE 2 MAP (plan ejecutable): #proyecto(encaje+plan de trámites) · #suministros · #numeros(IM·PULSO V2) · #escenarios · #riesgos
+  ACTO 3 · FASE 3 ÉXITO: #gantt (planning, va ANTES) · #ejecucion (MTVV, tercera comprobación)
+  ACTO 4 · INVERSIÓN: #plan · #propuesta · #ccp · #compromisos
+  GUINDA: #visor (última sección de contenido) · CIERRE: #docs
+  #servicio queda oculto (display:none) desde 15-jun-2026, ya no se enlaza en el nav.
 
   ── TABÚS (FUERA del deck público; viven solo en estos comentarios) ──
   · "comercialización en paralelo" como táctica → se suelta en vivo, NO en el HTML.
@@ -638,13 +641,17 @@ body.final .todo{display:none}
 <nav class="nav">
   <div class="brand"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" style="height:54px;width:auto"></div>
   <div class="grp">Apertura</div>
-  <a href="#equipo">Quiénes somos</a><a href="#track">Track record</a><a href="#servicio">El método (GO·MAP·ÉXITO)</a>
+  <a href="#equipo">Quiénes somos</a><a href="#track">Track record</a>
   <div class="grp">Fase 1 · GO — Diagnóstico</div>
   <a href="#resumen">Mercado y activo</a><a href="#fase1">Viabilidad</a>
   <div class="grp">Fase 2 · MAP — Plan</div>
-  <a href="#proyecto">Encaje técnico</a><a href="#suministros">Suministros</a><a href="#numeros">Números</a><a href="#escenarios">Escenarios</a><a href="#riesgos">Riesgos</a><a href="#gantt">Planning · Gantt</a>
-  <div class="grp">Fase 3 · ÉXITO + Inversión</div>
-  <a href="#ejecucion">Ejecución y venta</a><a href="#plan">Quién compra y cómo</a><a href="#propuesta">La propuesta (JV servicer)</a><a href="#ccp">Cómo entras · CCP</a><a href="#compromisos">Compromisos · solvencia</a><a href="#visor">Tu cuadro de mandos</a>
+  <a href="#proyecto">Encaje técnico</a><a href="#suministros">Suministros</a><a href="#numeros">Números</a><a href="#escenarios">Escenarios</a><a href="#riesgos">Riesgos</a>
+  <div class="grp">Fase 3 · ÉXITO</div>
+  <a href="#gantt">Planning · Gantt</a><a href="#ejecucion">Ejecución y venta</a>
+  <div class="grp">Inversión</div>
+  <a href="#plan">Quién compra y cómo</a><a href="#propuesta">La propuesta (JV servicer)</a><a href="#ccp">Cómo entras · CCP</a><a href="#compromisos">Compromisos · solvencia</a>
+  <div class="grp">Tu cuadro de mandos</div>
+  <a href="#visor">Visor del Inversor</a>
   <div class="grp">Cierre</div>
   <a href="#docs">Índice documental</a>
 </nav>
@@ -667,7 +674,7 @@ body.final .todo{display:none}
   <h1>Entresuelo Altabix</h1>
   <div class="sub">Locales en planta baja/entresuelo → viviendas · Alicante · 2026</div>
   <p class="lead" style="color:rgba(253,251,247,.9);margin-top:22px;max-width:900px;font-size:21px">
-    Una operación de Cambio de Uso con la viabilidad <b>cerrada y certificada</b>, la demanda <b>medida dos veces sobre el terreno</b> y un equipo que la ejecuta de principio a fin.</p>
+    Una operación de Cambio de Uso con la viabilidad <b>cerrada y certificada</b>, la demanda <b>medida tres veces — una por fase —</b> y un equipo que la ejecuta de principio a fin.</p>
   <p style="margin-top:20px;font-size:18px;color:var(--ochre);font-weight:700;max-width:900px">Metodología propia repartida en 3 fases — <span style="display:inline-flex;align-items:center;gap:7px;vertical-align:middle;margin:0 2px">
     <span style="background:rgba(226,159,52,.16);border:1px solid var(--ochre);color:var(--ochre);padding:2px 9px;border-radius:7px;font-size:.86em;font-weight:800;letter-spacing:.5px">GO</span><span style="color:var(--ochre)">→</span>
     <span style="background:rgba(226,159,52,.16);border:1px solid var(--ochre);color:var(--ochre);padding:2px 9px;border-radius:7px;font-size:.86em;font-weight:800;letter-spacing:.5px">MAP</span><span style="color:var(--ochre)">→</span>
@@ -762,11 +769,11 @@ body.final .todo{display:none}
     <div class="card"><div class="big">60-90 viviendas/año</div><div class="lbl">Compraventas anuales en el barrio de Altabix (Idealista)</div></div>
     <div class="card"><div class="big">326</div><div class="lbl">Anuncios en alquiler tradicional en el barrio de Altabix</div></div>
   </div>
-  <p style="margin-top:4px">El precio de salida lo afinamos en la Fase 2; aquí basta una <b>estimación orientativa apoyada en datos reales de mercado</b>, que confirma que hay recorrido para el producto que vamos a crear.</p>
-  <div style="display:flex;align-items:center;gap:10px;margin-top:12px">
+  <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
     <img src="assets/logo-impulso-chapa.png" alt="IM·PULSO" style="height:34px;width:auto;flex:none">
-    <span style="font-size:12.5px;color:var(--grey)">Demanda y precios medidos con <b>IM·PULSO</b>. El análisis completo va incluido en el informe de viabilidad de Fase 1.</span>
+    <span style="font-size:12.5px;color:var(--grey)"><b>Mini-IM·PULSO · primer tanteo (Fase 1).</b> Demanda y precios medidos con IM·PULSO en su versión rápida: una foto de cómo se mueve la zona, suficiente para el veredicto GO/NO GO. El informe completo (IM·PULSO V2) llega en la Fase 2, con la operación más madura y los datos actualizados.</span>
   </div>
+  <div class="card" style="margin-top:14px;max-width:var(--col)"><div class="big">Compra ≈110.000 € · venta orientativa ≈149.000–159.000 €/unidad</div><div class="lbl">Foto económica de Fase 1 (orientativa). Venta por unidad: mediana a P75 del mini-IM·PULSO (9 testigos comparables en Altabix). La obra se presupuesta y el precio de salida se afinan en la Fase 2 — aquí basta para saber que hay recorrido.</div></div>
   <h3>El activo del que partimos</h3>
   <div class="cards">
     <div class="card"><div class="big">127,05 m² útiles · 131 m² construidos</div><div class="lbl">2 locales en planta baja/entresuelo · finca 65.406: 54,19 m² útiles · finca 74.310: 72,86 m² útiles · uso comercial actual</div></div>
@@ -781,14 +788,7 @@ body.final .todo{display:none}
     <li>No es un problema de demanda ni de localización: es la falta de producto adecuado en el punto exacto donde el mercado lo pide.</li>
   </ul>
   <span class="sub-eyebrow">La aportación de valor</span>
-  <p>La operación transforma dos locales comerciales en dos viviendas de 2 dormitorios mediante cambio de uso, agrupación/segregación registral y reforma integral.</p>
-  <ul style="margin:8px 0 16px;padding-left:20px">
-    <li>Dos accesos independientes y fachada propia de cada unidad, ya confirmados en visita técnica (27/08/2026).</li>
-    <li>Única limitación técnica real: altura libre actual de <b>≈2,50 m</b>, recuperable a <b>≈2,55-2,56 m</b> acabados, retirando relleno y solera existente, sin tocar la estructura.</li>
-    <li>Cada vivienda cuenta ya con contador individual de agua y electricidad — sin necesidad de nueva acometida.</li>
-    <li><b>Vivienda 1</b> (2 dormitorios, 1 baño) y <b>Vivienda 2</b> (2 dormitorios, 2 baños), planificadas con un Gantt de obra de <b>11 capítulos</b> y <b>16 semanas</b> (4 meses).</li>
-  </ul>
-  <p>El valor no se crea comprando barato, sino cerrando la distancia entre lo que hay hoy (local comercial) y lo que el comprador de la zona busca y no encuentra (vivienda habitual reformada).</p>
+  <p>Dos locales comerciales → dos viviendas de 2 dormitorios (<b>Vivienda 1</b>, 1 baño · <b>Vivienda 2</b>, 2 baños), reformadas y listas para entrar. Con dos accesos independientes y fachada propia de cada unidad, ya confirmados en visita técnica (27/08/2026); una única limitación técnica —la altura libre— que ya tiene solución constructiva (ver Fase 2 · Encaje técnico); y suministros individuales ya existentes en cada vivienda (ver Fase 2 · Suministros). El valor no se crea comprando barato, sino cerrando la distancia entre lo que hay hoy (local comercial) y lo que el comprador de la zona busca y no encuentra (vivienda habitual reformada).</p>
   <h3>Dónde está — y por qué importa</h3>
   <table>
     <tr><th>Punto de interés</th><th>Distancia</th></tr>
@@ -826,9 +826,9 @@ body.final .todo{display:none}
       <h3>Dictamen GO: los cuatro ejes, favorables</h3>
       <ul style="margin:8px 0 12px;padding-left:20px">
         <li><b>Jurídica:</b> favorable — revisada con la <b>Escritura de División Horizontal</b> (1989) y el <b>acta y la derrama de la comunidad</b>. Los dos locales ya son elementos privativos independientes, sin segregación pendiente, y la escritura faculta expresamente obras de adaptación y salida de humos por patio o fachada. Sin cargas ni acuerdos comunitarios pendientes que limiten el cambio de uso.</li>
-        <li><b>Administrativa:</b> favorable, con <b>criterio previo favorable ya obtenido</b>. Queda recibir el CCU, retenido por la baja de la funcionaria que instruye el expediente.</li>
-        <li><b>Técnica:</b> favorable — altura libre y salida de humos resueltas con solución constructiva; suministros ya resueltos, con contador individual de agua y electricidad en cada vivienda.</li>
-        <li><b>Económica:</b> favorable — el resultado lo deciden el producto y el coste de obra, con el control de coste de ejecución como condición clave.</li>
+        <li><b>Administrativa:</b> favorable, con <b>criterio previo favorable ya obtenido</b>. Queda recibir el CCU — estado y siguiente paso, ver Fase 2 · Encaje técnico.</li>
+        <li><b>Técnica:</b> favorable — altura libre y salida de humos con solución constructiva (ver Fase 2 · Encaje técnico); cada local tiene ya contador propio de agua y luz (ver Fase 2 · Suministros).</li>
+        <li><b>Económica:</b> favorable — compra ≈110.000 € frente a una venta orientativa de ≈149.000–159.000 € por unidad (mini-IM·PULSO, ver arriba). Hay recorrido; el precio exacto se afina en la Fase 2.</li>
       </ul>
       <p>Riesgo global <b>bajo-medio</b>: siete riesgos en seguimiento, ninguno alto ni inasumible. Veredicto del informe: <b>GO — viabilidad global favorable</b>.</p>
     </div>
@@ -856,7 +856,7 @@ body.final .todo{display:none}
 <div class="act-divider">
   <div class="act-n">Fase 2 · MAP</div>
   <h2>El plan ejecutable</h2>
-  <p>La viabilidad abre la puerta; la ejecución decide el resultado. Aquí convertimos el "sí" en un plan: el encaje técnico al detalle, los suministros, los números por partidas, los escenarios, los riesgos y el calendario de obra.</p>
+  <p>La viabilidad abre la puerta; la ejecución decide el resultado. Aquí convertimos el "sí" en un plan: el encaje técnico al detalle, los suministros, los números por partidas, los escenarios y los riesgos. El plan de obra, semana a semana, lo verás al arrancar la Fase 3.</p>
 </div>
 
 <!-- ═════════ S3 · ENCAJE TÉCNICO DETALLADO (Fase 2) ═════════ -->
@@ -870,17 +870,18 @@ body.final .todo{display:none}
     <div class="pata">
       <div class="p-tag">Proyecto técnico</div>
       <b>Las 2 viviendas encajan</b>
-      <p>Cambio de uso, agrupación y segregación registral contemplados y presupuestados (AJD específico para cada trámite). El informe de encaje técnico está confirmado.</p>
+      <p>El encaje técnico confirma la transformación de los dos locales en dos viviendas de 2 dormitorios sin tocar la estructura: cambio de uso de cada finca, agrupación de las dos fincas registrales y nueva segregación en dos viviendas — cada trámite con su AJD calculado (ver Fase 2 · Números). Altura libre, ventilación y salida de humos, resueltas en proyecto (tarjetas técnicas debajo).</p>
       <div class="docbtns">
         <a class="btn-doc" href="https://drive.google.com/file/d/16-Ob23SzguKTFvWp3F8KJv_7xYWexXZv/view" target="_blank" rel="noopener"><span class="ic">📐</span> Encaje técnico</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1V-w5Pd44S1mIi5ezFaKTBIT59SrxayEL/view" target="_blank" rel="noopener"><span class="ic">📐</span> Proyecto técnico visado</a>
       </div>
     </div>
     <div class="pata">
-      <div class="p-tag">El plan de trámites</div>
-      <b>Qué falta y en qué orden</b>
-      <p>1) Recepción del CCU — pendiente, ver Fase 1. 2) Presentación de la licencia de obras ante el Ayuntamiento de Elche. 3) Arranque de obra: 16 semanas (ver Gantt).</p>
+      <div class="p-tag">Plan de trámites</div>
+      <b>Qué falta, en qué orden y de quién depende</b>
+      <p>1) <b>CCU</b> — en trámite en el Ayuntamiento de Elche; criterio previo favorable ya obtenido, sin reparo técnico, solo retraso administrativo (la funcionaria que instruye el expediente está de baja). Riesgo de más peso de la operación, con garantía — ver Riesgos. 2) <b>Licencia de obras</b> — se presenta en cuanto llegue el CCU, con el proyecto ya visado. 3) <b>Arranque de obra</b>: 16 semanas desde la licencia (ver Planning · Gantt, Fase 3).</p>
       <div class="docbtns">
-        <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 10px">Certificado de compatibilidad urbanística · en trámite en el Ayuntamiento de Elche</span>
+        <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 10px">CCU · en trámite · última consulta 23-sep-2026</span>
       </div>
     </div>
     <div class="pata">
@@ -912,21 +913,21 @@ body.final .todo{display:none}
 <section class="sec" id="suministros">
   <span class="phase-badge map"><span class="dot"></span>Fase 2 · MAP</span>
   <div class="kicker">Plan ejecutable · Suministros</div>
-  <h2>Agua y luz: previstos y presupuestados</h2>
-  <p class="lead">Los suministros son una de las sorpresas clásicas de un cambio de uso. Por eso van en el plan, no en la obra.</p>
+  <h2>Agua y luz: ya individuales — sin nueva acometida</h2>
+  <p class="lead">Los suministros son una de las sorpresas clásicas de un cambio de uso. Aquí no lo son.</p>
   <div class="cards">
     <div class="card"><div class="big">Luz</div><div class="lbl">Contador individual de electricidad ya existente en cada vivienda; no se prevé nueva batería de contadores ni nuevos puntos de suministro</div></div>
     <div class="card"><div class="big">Agua</div><div class="lbl">Contador individual de agua ya existente en cada vivienda; no se prevé nueva acometida</div></div>
     <div class="card"><div class="big">2 contadores</div><div class="lbl">Una unidad de suministro por vivienda — independientes</div></div>
   </div>
-  <p>Cada vivienda dispone ya de contador individual de agua y electricidad; no se prevé nueva batería de contadores ni nuevos puntos de suministro, lo que reduce la incertidumbre técnica y económica de esta partida. Sigue sin existir un presupuesto formal de agua en PDF — solo hay tres fotografías de los contadores existentes, pendientes de solicitar los presupuestos formales a las compañías.</p>
+  <p>Cada local tiene ya su contador propio de agua y de electricidad, comprobado en visita (fotos), así que no hace falta nueva acometida ni batería de contadores. Lo que queda es trámite, no obra: el cambio de titularidad y la adecuación interior de las instalaciones, contempladas en el proyecto técnico y en el presupuesto de obra.</p>
   <div class="gal">
     <img src="assets/fotos/014_instalaciones_2.jpeg" alt="CGP en fachada" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:9px">
     <img src="assets/fotos/contador-luz.jpg" alt="Contadores de luz" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:9px">
     <img src="assets/fotos/contador-agua.jpg" alt="Contadores de agua" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:9px">
   </div>
   <div class="docbtns">
-    <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 0">Presupuesto de acometida de agua · se solicita a Hidrogea con el proyecto visado</span>
+    <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 0">Nota de estado: la confirmación formal del cambio de titularidad se solicita a Aigües d'Elx (agua) e i-DE (electricidad) con el proyecto visado · última consulta 23-sep-2026</span>
   </div>
 </section>
 
@@ -935,7 +936,7 @@ body.final .todo{display:none}
   <span class="phase-badge map"><span class="dot"></span>Fase 2 · MAP</span>
   <div class="kicker">Plan ejecutable · Análisis económico</div>
   <h2>La inversión, de un vistazo</h2>
-  <p class="lead">El cuadro de siempre, con las cifras de esta operación. Debajo, el desglose partida a partida.</p>
+  <p class="lead">El cuadro que usamos en todas nuestras operaciones, con las cifras de esta. Debajo, el desglose partida a partida.</p>
 
   <div class="in-wrap">
     <table class="in-tabla">
@@ -954,14 +955,14 @@ body.final .todo{display:none}
         <tr><th>Rentabilidad ANUALIZADA</th><td>20,39 %</td><td>20,39 %</td><td class="in-conj">20,39 %</td></tr>
       </tbody>
     </table>
-    <p class="in-nota"><b>El capital rinde lo mismo para todos.</b> El gestor cobra el mismo porcentaje que cualquier inversor — sin clases de capital ni comisión sobre tu beneficio. Solo el <b>bonus</b> es distinto: aparece si vendemos por encima de 325.000 €, y nunca resta.</p>
-    <p class="in-nota" style="color:var(--grey)">Escenario realista, sobre los <b>12 meses</b> del contrato de cuentas en participación · fecha objetivo: 15 de octubre de 2027.</p>
+    <p class="in-nota"><b>El capital rinde lo mismo para todos.</b> Lo que se venda por encima de 325.000 € es bonus y se reparte aparte — ver «La propuesta».</p>
+    <p class="in-nota" style="color:var(--grey)">Puente hasta el beneficio: venta realista <b>325.000 €</b> − inversión <b>259.489,09 €</b> = 65.510,91 € · se paga del beneficio: honorario servicer <b>12.000 €</b> + plusvalía municipal de la venta <b>600 €</b> → beneficio <b>52.911 €</b>. Escenario realista, sobre los <b>12 meses</b> del contrato de cuentas en participación.</p>
   </div>
 
   <h2>Los números, partida a partida</h2>
   <p class="lead">En la Fase 1 confirmamos que los números cuadraban. Aquí, el desglose partida a partida.</p>
   <table>
-    <tr><th>Partida</th><th>Importe <span style="font-weight:400">(cálculo cerrado · 3 presupuestos contrastados)</span></th></tr>
+    <tr><th>Partida</th><th>Importe <span style="font-weight:400">(cálculo cerrado con el presupuesto de obra SPM)</span></th></tr>
     <tr><td>Compra de los 2 locales</td><td>110.000 €</td></tr>
 <tr><td>ITP (9%) + notaría + registro + gestoría</td><td>11.700 €</td></tr>
 <tr><td>AJD (cambio de uso + agrupación + segregación)</td><td>4.258,58 €</td></tr>
@@ -979,15 +980,15 @@ body.final .todo{display:none}
     <a class="btn-doc" href="https://drive.google.com/file/d/1YBXRb1RO7sJvtg_eixibYKf4iy1lyg1G/view" target="_blank" rel="noopener"><span class="ic">📑</span> Contrato con la constructora (modelo)</a>
     <a class="btn-doc" href="https://drive.google.com/file/d/1K25cw1nfm9pVJAZQXYtLhH9PgQ0QNCIS/view" target="_blank" rel="noopener"><span class="ic">📊</span> Análisis económico (resumen)</a>
   </div>
-  <p style="font-size:13px;color:var(--grey)">Cálculo prudente sobre 3 presupuestos contrastados. En la estructura de inversión verás el reparto del capital.</p>
+  <p style="font-size:13px;color:var(--grey)">Cálculo prudente, con el presupuesto de obra cerrado con SPM como base (ver botón arriba).</p>
   <!-- TABÚ (FUERA): "Comercializamos EN PARALELO a la obra (método probado en Crevillente)" → se suelta en vivo, no en el HTML. -->
   <div class="impulso">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-      <div class="tag">IM·PULSO v2 · Informe completo de valoración</div>
+      <div class="tag">IM·PULSO V2 · Informe completo de valoración (Fase 2 — segunda comprobación)</div>
       <img src="assets/logo-impulso.png" alt="IM·PULSO" style="height:30px;width:auto;opacity:.95">
     </div>
     <h3>El precio, confirmado por dos motores</h3>
-    <p class="lead">El informe completo cruza dos motores de valoración. Mismo resultado en los dos.</p>
+    <p class="lead">El mini-IM·PULSO de la Fase 1 dio la foto; este es el informe completo, hecho meses después con la operación más madura, que cruza dos motores de valoración.</p>
     <ul style="margin:8px 0 12px;padding-left:20px">
       <li><b>Motor IM·PULSO</b> — 60 testigos de mercado (23 Viv. 1 / 37 Viv. 2).</li>
       <li><b>Portal del notariado</b> — precios reales de escritura.</li>
@@ -1002,15 +1003,14 @@ body.final .todo{display:none}
   <span class="phase-badge map"><span class="dot"></span>Fase 2 · MAP</span>
   <div class="kicker">Plan ejecutable · Escenarios</div>
   <h2>Dos escenarios</h2>
-  <p class="lead">El escenario que contamos es el <b>realista</b>, fijado sobre suelos validados varias veces — situado en la franja alta de ese rango ya validado. El optimista es el techo razonable.</p>
+  <p class="lead">Contamos con el escenario <b>realista</b>: 325.000 € por las dos viviendas, dentro del rango que confirmó el informe completo (155.000–170.000 € por unidad, ver Números). El <b>optimista</b> es el techo razonable — y lo que pase de 325.000 € es bonus, no promesa.</p>
   <table>
     <tr><th></th><th>Realista (con el que contamos)</th><th>Optimista</th></tr>
-    <tr><td><b>Quién compra</b></td><td>Parejas jóvenes, primeros compradores y personas solas, verificado en la comercialización real (6 contactos telefónicos en 6 días), atraídos por la reforma integral y la ubicación</td><td>Target más amplio del barrio: 86-89% comprador nacional, familias de tamaño medio, estudiantes y empleados públicos/docentes/investigadores; uso mayoritario como vivienda habitual (65-75%), con una franja de alquiler a jóvenes (15-20%) e inversión pequeña (5-10%)</td></tr>
     <tr><td><b>Venta 2 unidades</b></td><td><b>325.000 €</b> (155.000+170.000)</td><td><b>335.000 €</b> (160.000 + 175.000 €)</td></tr>
-    <tr><td><b>Beneficio</b> (tras servicer 12.000 €)</td><td><b>52.911 €</b></td><td><b>62.911 €</b></td></tr>
-    <tr><td><b>Rentabilidad del capital</b></td><td><b>20,39%</b></td><td><b>24,24% + bonus *</b></td></tr>
+    <tr><td><b>Beneficio del pool</b> (tras servicer 12.000 € + plusvalía venta 600 €)</td><td><b>52.911 €</b></td><td><b>52.911 €</b> — igual que el realista: el pool no crece con el exceso</td></tr>
+    <tr><td><b>Rentabilidad del capital</b></td><td><b>20,39%</b></td><td><b>20,39%</b> + bonus: 3.000 € al lado inversor (≈ +1,3 puntos → <b>≈21,7%</b> real para el inversor) *</td></tr>
   </table>
-  <p style="font-size:13px;color:var(--grey)">El capital rinde el mismo porcentaje para gestor e inversores por igual. <b>* Vender por encima de 325.000 € activa el bonus</b> — una capa aparte que se suma a tu rentabilidad (ver «La propuesta»).</p>
+  <p style="font-size:13px;color:var(--grey)">El capital rinde el mismo porcentaje para gestor e inversores por igual, sobre el beneficio del pool. <b>* Los 10.000 € que superan los 325.000 €</b> no entran en el pool: son el <b>bonus</b>, que se reparte aparte 70% gestor / 30% inversores — ver «La propuesta». El 24,24 % que resultaría de repartir todo el excedente a prorrata es la rentabilidad del <b>conjunto de la operación</b>, no la que recibe el inversor.</p>
   <!-- TABÚ (FUERA): Escenario INVERSO (compradores financian la obra → ROE ~35%) NO se enseña aquí; es la joya, se suelta en vivo. -->
 </section>
 
@@ -1028,18 +1028,18 @@ body.final .todo{display:none}
     <tr><td>Instalaciones</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>6 · Bajo</td><td>Revisar trazados, protecciones, potencias y adaptación interior conforme al proyecto y la normativa aplicable.</td></tr>
     <tr><td>Fachada, patios y comunidad</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>6 · Bajo</td><td>Ejecutar las obras respetando las condiciones de las normas comunitarias y la LPH.</td></tr>
     <tr><td>Tramitación de la licencia</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>6 · Bajo</td><td>Mantener el expediente técnico completo y responder con seguimiento documentado a cualquier requerimiento administrativo.</td></tr>
-    <tr><td>Desviación del coste de ejecución de la obra</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>9 · Medio</td><td>Presupuesto cerrado con la constructora (SPM, <b>620 €/m²</b>) antes de arrancar. Durante la obra se controlan certificaciones y compras, y el modelo económico mantiene una partida de contingencia.</td></tr>
-    <tr><td>Precio de venta por encima del rango del informe de mercado</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>9 · Medio</td><td>Ninguno de los 60 testigos del informe es vivienda a estrenar: en Altabix no hay obra nueva. Entre el suelo de vivienda usada (<b>1.647 €/m²</b>) y el techo de obra nueva (<b>2.632 €/m²</b>), estas viviendas salen a <b>2.481 €/m²</b> — dentro de banda. Se contrasta con las inmobiliarias de la zona antes de fijar el precio definitivo, y el plan de venta contempla ajustarlo si el mercado no responde en los primeros <b>60 días</b>.</td></tr>
+    <tr><td>Desviación del coste de ejecución de la obra</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>9 · Medio</td><td>Presupuesto cerrado con la constructora (SPM, <b>620 €/m²</b> sobre 144 m² de superficie construida base del presupuesto) antes de arrancar. Durante la obra se controlan certificaciones y compras, y el modelo económico mantiene una partida de contingencia.</td></tr>
+    <tr><td>Precio de venta por encima del rango del informe de mercado</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>9 · Medio</td><td>Salida a <b>2.481 €/m²</b>, dentro de la banda entre vivienda usada y obra nueva del barrio; el precio se contrasta por tercera vez con el MTVV antes de vender (Fase 3) y el plan de venta lo ajusta si el mercado no responde en 60 días.</td></tr>
   </table>
+  <p style="font-size:12.5px;color:var(--grey);margin-top:-4px">Nota sobre la base del presupuesto de obra: el inmueble tiene 131 m² construidos (ver «Mercado y activo»); el presupuesto de SPM detalla varias partidas (levantado de solado, pavimento SPC) sobre 144 m² — probablemente la superficie construida bruta de los dos locales frente a la neta de 131 m². Reconciliación razonada, no dato verificado al 100 %.</p>
 
   <div class="locked" style="max-width:none">
     <div style="font-size:22px;line-height:1">🔒</div>
     <div>
-      <h3 style="margin:0 0 8px">El CCU: el riesgo de más peso</h3>
+      <h3 style="margin:0 0 8px">El CCU: el riesgo de más peso — y el único que no asumes tú</h3>
       <ul style="margin:0;padding-left:20px">
-        <li><b>Qué pasa:</b> el Certificado de Compatibilidad Urbanística (CCU) lleva meses en trámite en el Ayuntamiento de Elche — la funcionaria que lo instruye está de baja. No hay ningún reparo técnico, solo retraso administrativo.</li>
-        <li><b>Por qué seguimos:</b> el encaje urbanístico ya está verificado por el proyecto técnico y por el Informe de Diagnóstico. Esperar sin fecha bloquearía toda la operación.</li>
-        <li><b>Si no se obtiene:</b> <b>se te devuelve íntegra tu aportación.</b> Ese riesgo no lo asumes tú.</li>
+        <li><b>Qué pasa:</b> el CCU lleva meses en trámite (estado y siguiente paso, ver Fase 2 · Encaje técnico · Plan de trámites). No hay reparo técnico: la compatibilidad administrativa está verificada en el proyecto técnico y en el Informe de Diagnóstico.</li>
+        <li><b>Si no se obtiene:</b> <b>se te devuelve íntegra tu aportación</b>, recogido en el modelo de CCP (ver botón abajo). Ese riesgo no lo asumes tú.</li>
       </ul>
     </div>
   </div>
@@ -1050,62 +1050,13 @@ body.final .todo{display:none}
 </section>
 
 <!-- ═════════════════════════════════════════════════════════════════ -->
-<!-- ════════  ACTO 3 · FASE 3 · ÉXITO + BLOQUE INVERSIÓN  ═══════════ -->
+<!-- ═══════════════  ACTO 3 · FASE 3 · ÉXITO  ════════════════════════ -->
 <!-- ═════════════════════════════════════════════════════════════════ -->
 <div class="act-divider">
-  <div class="act-n">Fase 3 · ÉXITO + Inversión</div>
-  <h2>Del plan al resultado — y cómo entras tú</h2>
-  <p>La Fase 3 lleva el plan al resultado real: obra y cierre de la operación. Y a continuación, la parte que te toca: la estructura de la inversión, cómo entras, cómo cobras y con qué garantías.</p>
+  <div class="act-n">Fase 3 · ÉXITO</div>
+  <h2>Del plan al resultado</h2>
+  <p>Aquí no acompañamos: ejecutamos. El calendario de obra, la contratación cerrada, la tercera comprobación del precio y la venta.</p>
 </div>
-
-<!-- ═════════ S7 · EJECUCIÓN Y VENTA (Fase 3) ═════════ -->
-<section class="sec" id="ejecucion">
-  <span class="phase-badge exito"><span class="dot"></span>Fase 3 · ÉXITO</span>
-  <div class="kicker">Ejecución integral · Sistema propio</div>
-  <h2>Orquestamos y ejecutamos hasta la venta</h2>
-  <div class="fase-split">
-    <div class="fase-brief">
-      <div class="fs-tag">Qué hace esta fase en el servicio</div>
-      <p>La Fase 3 ejecuta: dirección de obra por hitos, proveedores con ofertas comparadas, control económico y cierre documental auditable. Es donde el plan se convierte en beneficio.</p>
-    </div>
-    <div class="fs">
-      <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
-      <h3>Preparada para arrancar</h3>
-      <ul style="margin:8px 0 0;padding-left:20px">
-        <li>Doble estudio de mercado: <b>MTVV</b> (Fase 3, 6 testigos directos) e <b>IM·PULSO V2</b> (60 testigos).</li>
-        <li>Proyecto Técnico y Encaje Técnico confirmados — transformación de los dos locales en dos viviendas validada sin tocar la estructura.</li>
-        <li>Obra planificada: Gantt de <b>11 capítulos</b> y <b>16 semanas</b> (4 meses), sobre presupuesto ya cerrado con la constructora (SPM, <b>620 €/m²</b>).</li>
-        <li>Trámites de compra resueltos: ITP confirmado, AJD de cambio de uso, agrupación y segregación calculados; nota simple, datos catastrales y valor de referencia catastral verificados.</li>
-        <li>Pendiente: <b>Certificado de Compatibilidad Urbanística</b> en trámite ante el Ayuntamiento de Elche; licencia de obras aún no presentada.</li>
-      </ul>
-    </div>
-  </div>
-  <h3>Estrategia de salida</h3>
-  <div class="cards">
-    <div class="card"><div class="big">325.000 €</div><div class="lbl">Venta de las 2 viviendas — escenario realista</div></div>
-    <div class="card"><div class="big">155.000–170.000 € por unidad</div><div class="lbl">Precio por unidad según tipo — sobre suelo validado</div></div>
-    <div class="card"><div class="big">2-3 meses por unidad · 3-5 meses el conjunto</div><div class="lbl">Horizonte de venta por unidad</div></div>
-  </div>
-  <p><b>Posicionamiento:</b> vivienda de 2 dormitorios, reformada y lista para entrar, en Altabix —barrio de <b>21.532 habitantes</b>, el de mayor crecimiento de Elche (distancias a campus y servicios, ver «Mercado y activo»)—.</p>
-  <ul style="margin:8px 0 16px;padding-left:20px">
-    <li>Perfil de comprador verificado en campo: parejas jóvenes, primeros compradores y personas solas — coincide con el target del barrio: <b>86-89%</b> comprador nacional, <b>65-75%</b> vivienda habitual, <b>15-20%</b> alquiler a estudiantes y jóvenes profesionales.</li>
-    <li>Doble demanda (venta + alquiler), ya cuantificada en «Mercado y activo» — misma dinámica de mercado, atractiva también para el inversor patrimonialista.</li>
-    <li>Verificación real: <b>6 contactos telefónicos en 6 días</b>, todos dispuestos a pagar entre <b>150.000 y 160.000 €</b> — el comprador existe y está activo hoy, no es una hipótesis de gabinete.</li>
-  </ul>
-  <p><b>El precio de salida está contrastado con cuatro métodos independientes:</b></p>
-  <table>
-    <tr><th>Método</th><th>Muestra</th><th>Rango</th></tr>
-    <tr><td>Tasación inmobiliarias de la zona</td><td>5 inmobiliarias</td><td><b>130.000 – 169.000 €</b></td></tr>
-    <tr><td>MTVV (testigos directos)</td><td>6 testigos</td><td><b>139.000 – 199.000 €</b></td></tr>
-    <tr><td>IM·PULSO V2</td><td>60 testigos (23 Viv. 1 / 37 Viv. 2)</td><td><b>115.000 – 192.000 €</b></td></tr>
-    <tr><td>Comercialización real (MTVV)</td><td>6 contactos en 6 días</td><td><b>150.000 – 160.000 €</b></td></tr>
-  </table>
-  <p style="margin-top:12px">El precio asumido en el análisis económico (<b>155.000 € + 170.000 € = 325.000 €</b> por las dos viviendas reales) queda por encima de los tres escenarios del informe IM·PULSO V2 (conservador <b>251.071 €</b>, medio <b>278.573 €</b>, optimista <b>310.161 €</b>). La razón es el tipo de producto comparado: IM·PULSO V2 solo recoge testigos de <b>vivienda usada</b> del barrio, sin ningún testigo de obra nueva en Altabix. El propio informe sitúa la vivienda usada como suelo del mercado (<b>1.647 €/m²</b>) y la obra nueva de Elche como techo (<b>2.632 €/m²</b>), con el producto a estrenar por cambio de uso entre ambos. Las dos viviendas salen a <b>2.481 €/m²</b>, dentro de esa banda.</p>
-  <div class="docbtns">
-    <a class="btn-doc" href="https://drive.google.com/file/d/1hw9txLZE8JTgxsfRWTyuw5_uXFlvMbi7/view" target="_blank" rel="noopener"><span class="ic">📈</span> MTVV actualizado · paso 4 (CdU)</a>
-  </div>
-  <!-- TABÚ (FUERA): "comercialización EN PARALELO a la obra (método probado en Crevillente)" → se suelta en vivo, no en el HTML. -->
-  </section>
 
 <!-- ═════════ S6 · GANTT (planificación · Fase 3) ═════════ -->
 <section class="sec" id="gantt">
@@ -1134,17 +1085,72 @@ body.final .todo{display:none}
     <div class="g-row cont"><span class="g-lbl">Seguridad y salud</span><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
     <div class="g-row"><span class="g-lbl"><b>ENTREGA</b></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on" style="background:var(--ok)"></i></div>
   </div>
-  <p>Calendario: obra de 16 semanas tras la concesión del CCU · venta estimada en 2-3 meses por unidad, 3-5 meses el conjunto · fecha límite contractual: escriturar antes del 13-oct-2026 (plazo de arras).</p>
+  <p><b>Calendario.</b> CCU (en trámite) → licencia de obras (plazo del Ayuntamiento) → obra: 16 semanas desde la licencia → venta: 2-3 meses por unidad, 3-5 el conjunto. El contrato de cuentas en participación se firma a 12 meses, con fecha objetivo el 15 de octubre de 2027. <i>Dossier actualizado el 23-sep-2026; la compra del local está comprometida en arras con escritura prevista antes del 13-oct-2026.</i></p>
   <div class="docbtns">
     <a class="btn-doc" href="https://drive.google.com/file/d/1vdUXL3T5rBU8X1_QNU5WWmPpfgJ-lZqg/view" target="_blank" rel="noopener"><span class="ic">📅</span> Gantt de obra</a>
     <a class="btn-doc" href="https://drive.google.com/file/d/1V-w5Pd44S1mIi5ezFaKTBIT59SrxayEL/view" target="_blank" rel="noopener"><span class="ic">📐</span> Proyecto técnico visado</a>
     <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 0">Acuse de licencia · se presenta tras obtener el CCU</span>
   </div>
+</section>
+
+<!-- ═════════ S7 · EJECUCIÓN Y VENTA (Fase 3) ═════════ -->
+<section class="sec" id="ejecucion">
+  <span class="phase-badge exito"><span class="dot"></span>Fase 3 · ÉXITO</span>
+  <div class="kicker">Ejecución integral · Sistema propio</div>
+  <h2>Orquestamos y ejecutamos hasta la venta</h2>
+  <div class="fase-split">
+    <div class="fase-brief">
+      <div class="fs-tag">Qué hace esta fase en el servicio</div>
+      <p>La Fase 3 ejecuta: dirección de obra por hitos, proveedores con ofertas comparadas, control económico y cierre documental auditable. Es donde el plan se convierte en beneficio.</p>
+    </div>
+    <div class="fs">
+      <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
+      <h3>Preparada para arrancar</h3>
+      <ul style="margin:8px 0 0;padding-left:20px">
+        <li><b>Tercera comprobación del precio (MTVV):</b> contrastamos sobre el terreno los rangos del mini-IM·PULSO (Fase 1) y del IM·PULSO V2 (Fase 2) — 6 testigos directos, 5 inmobiliarias de la zona y una prueba de comercialización real (tabla debajo).</li>
+        <li><b>Obra contratada, no estimada:</b> presupuesto cerrado con SPM y contrato de obra sobre modelo propio, con planning de 16 semanas (ver Planning · Gantt).</li>
+        <li><b>Estructura lista:</b> sociedad gestora al corriente, cuenta exclusiva de la operación abierta, modelo de CCP preparado (ver bloque Inversión).</li>
+        <li><b>Pendiente y de quién depende:</b> el CCU y, tras él, la licencia — ambos del Ayuntamiento de Elche (ver Plan de trámites, Fase 2).</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Estrategia de salida</h3>
+  <div class="cards">
+    <div class="card"><div class="big">325.000 €</div><div class="lbl">Venta de las 2 viviendas — escenario realista</div></div>
+    <div class="card"><div class="big">155.000–170.000 € por unidad</div><div class="lbl">Precio por unidad según tipo — sobre suelo validado</div></div>
+    <div class="card"><div class="big">2-3 meses por unidad · 3-5 meses el conjunto</div><div class="lbl">Horizonte de venta por unidad</div></div>
+  </div>
+  <p><b>Posicionamiento:</b> vivienda de 2 dormitorios, reformada y lista para entrar, en Altabix —barrio de <b>21.532 habitantes</b>, el de mayor crecimiento de Elche (distancias a campus y servicios, ver «Mercado y activo»)—.</p>
+  <ul style="margin:8px 0 16px;padding-left:20px">
+    <li>Comprador verificado en la prueba de comercialización (<b>6 contactos telefónicos en 6 días</b>, dispuestos a pagar entre <b>150.000 y 160.000 €</b>): parejas jóvenes, primeros compradores y personas solas — coincide con el target del barrio: <b>86-89%</b> comprador nacional, <b>65-75%</b> vivienda habitual, <b>15-20%</b> alquiler a estudiantes y jóvenes profesionales.</li>
+  </ul>
+  <p><b>El precio, comprobado tres veces — una por fase:</b></p>
+  <table>
+    <tr><th>Comprobación</th><th>Cuándo</th><th>Muestra</th><th>Rango por unidad</th></tr>
+    <tr><td>1 · Mini-IM·PULSO</td><td>Fase 1 · GO</td><td>tanteo de zona (9 testigos)</td><td><b>149.000 – 159.000 €</b></td></tr>
+    <tr><td>2 · IM·PULSO V2 (2 motores)</td><td>Fase 2 · MAP</td><td>60 testigos + notariado</td><td><b>155.000 – 170.000 €</b></td></tr>
+    <tr><td>3 · MTVV — testigos directos</td><td>Fase 3 · ÉXITO</td><td>6 testigos</td><td><b>139.000 – 199.000 €</b></td></tr>
+    <tr><td>3 · MTVV — inmobiliarias de la zona</td><td>Fase 3 · ÉXITO</td><td>5 agencias</td><td><b>130.000 – 169.000 €</b></td></tr>
+    <tr><td>3 · MTVV — comercialización real</td><td>Fase 3 · ÉXITO</td><td>6 contactos en 6 días</td><td><b>150.000 – 160.000 €</b></td></tr>
+    <tr><td><b>Precio asumido</b></td><td>—</td><td>—</td><td><b>155.000 + 170.000 = 325.000 €</b></td></tr>
+  </table>
+  <p style="margin-top:12px"><b>Por qué el precio asumido (325.000 €) queda por encima de los tres escenarios del IM·PULSO V2</b> (conservador <b>251.071 €</b>, medio <b>278.573 €</b>, optimista <b>310.161 €</b>): el informe completo solo recoge testigos de <b>vivienda usada</b> del barrio, sin ningún testigo de obra nueva en Altabix. El propio informe sitúa la vivienda usada como suelo del mercado (<b>1.647 €/m²</b>) y la obra nueva de Elche como techo (<b>2.632 €/m²</b>), con el producto a estrenar por cambio de uso entre ambos. Las dos viviendas salen a <b>2.481 €/m²</b>, dentro de esa banda — y la tercera comprobación (MTVV) lo confirma sobre el terreno.</p>
   <div class="docbtns">
+    <a class="btn-doc" href="https://drive.google.com/file/d/1hw9txLZE8JTgxsfRWTyuw5_uXFlvMbi7/view" target="_blank" rel="noopener"><span class="ic">📈</span> MTVV actualizado · paso 4 (CdU)</a>
     <a class="btn-doc" href="https://drive.google.com/file/d/1Bbd1_Zl7LQ6YSlrEIySuBWu9-oFhq5lF/view" target="_blank" rel="noopener"><span class="ic">🏠</span> Plano de venta · vivienda 1</a>
     <a class="btn-doc" href="https://drive.google.com/file/d/1v5L4lGlJsU-PZucLZJvlOP9zIHxqWyui/view" target="_blank" rel="noopener"><span class="ic">🏠</span> Plano de venta · vivienda 2</a>
-    </div>
+  </div>
+  <!-- TABÚ (FUERA): "comercialización EN PARALELO a la obra (método probado en Crevillente)" → se suelta en vivo, no en el HTML. -->
 </section>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════  ACTO 4 · INVERSIÓN  ═════════════════════════ -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div class="act-divider">
+  <div class="act-n">Inversión</div>
+  <h2>Y cómo entras tú</h2>
+  <p>Quién compra el activo, qué pedimos y qué ponemos, el contrato que te blinda y los compromisos que firmamos contigo.</p>
+</div>
 
 <!-- ═════════ EL PLAN — quién compra y cómo (bloque inversión) ═════════ -->
 <section class="sec" id="plan">
@@ -1152,11 +1158,11 @@ body.final .todo{display:none}
   <div class="kicker">Estructura de inversión · El plan</div>
   <h2>Quién compra el activo — y cómo entras tú</h2>
   <div class="cards">
-    <div class="card"><div class="big">La empresa CdU</div><div class="lbl">Quién compra el activo: <b>CdU de 0 a ÉXITO SL</b> adquiere el local y ejecuta la operación como gestor único frente a terceros</div></div>
-    <div class="card"><div class="big">Vía CCP</div><div class="lbl">Cómo entras tú: a través de un <b>Contrato de Cuentas en Participación</b> (arts. 239-243 CCom) — inviertes, no gestionas</div></div>
-    <div class="card"><div class="big">Venta por unidades</div><div class="lbl">Cada vivienda se vende individualmente · liquidación conforme se vende</div></div>
+    <div class="card"><div class="big">La empresa CdU</div><div class="lbl">CdU de 0 a ÉXITO SL compra los locales y es titular y gestor único frente a terceros</div></div>
+    <div class="card"><div class="big">Vía CCP</div><div class="lbl">Entras con un Contrato de Cuentas en Participación: aportas capital, no gestionas, no apareces frente a terceros</div></div>
+    <div class="card"><div class="big">Venta por unidades</div><div class="lbl">Cada vivienda se vende y se liquida por separado</div></div>
   </div>
-  <p><b>Quién compra el activo:</b> <b>CdU de 0 a ÉXITO SL</b> compra el local y figura como titular y gestor único frente a terceros. <b>Cómo entras tú:</b> mediante un Contrato de Cuentas en Participación — aportas capital a la operación, sin gestionar y sin aparecer frente a terceros, con tu riesgo limitado estrictamente a tu aportación.</p>
+  <p>Es la estructura que usamos en todas nuestras operaciones del Programa IN: una sola sociedad al frente, un solo contrato por inversor y el capital de todos —el nuestro incluido— en la misma cuenta y con las mismas reglas. Qué pedimos y qué ponemos, en la sección siguiente; el contrato y sus garantías, en «Cómo entras · CCP».</p>
 </section>
 
 <!-- ═════════ LA PROPUESTA — JV SERVICER del Programa (ask del gestor) ═════════ -->
@@ -1164,14 +1170,14 @@ body.final .todo{display:none}
   <span class="phase-badge invers"><span class="dot"></span>Bloque inversión</span>
   <div class="kicker">Estructura de inversión · La propuesta</div>
   <h2>La propuesta: una Joint Venture servicer</h2>
-  <p class="lead">En el formato del <b>Programa IN</b> hay dos tipos de Joint Venture: <b>waterfall</b> y <b>servicer</b>. Esta operación es <b>servicer</b>: honorario fijo de gestión + nuestro propio capital al mismo riesgo y misma rentabilidad que el tuyo.</p>
+  <p class="lead">En el <b>Programa IN</b> hay dos formatos de Joint Venture: <b>waterfall</b> (el gestor cobra un porcentaje del resultado por tramos) y <b>servicer</b> (honorario fijo de gestión + capital propio en las mismas condiciones que el inversor). Esta operación es <b>servicer</b>.</p>
   <div class="ask">
     <div class="col give"><h3>Lo que pedimos</h3>
-      <p><b>Honorario servicer fijo de 12.000 €</b> por la gestión integral de la operación: propuesta, dirección de la aportación de valor y conducción del proyecto hasta su cierre. Una cifra <b>cerrada y conocida de antemano</b>, descontada del resultado y reflejada en el Excel.</p>
+      <p><b>Honorario servicer fijo de 12.000 €</b> por la gestión integral de la operación: propuesta, dirección de la aportación de valor y conducción del proyecto hasta su cierre. Una cifra <b>cerrada y conocida de antemano</b>, descontada del resultado y reflejada en el Análisis económico (ver Fase 2 · Números).</p>
       <p style="font-size:13px;color:var(--grey)">Más un <b>bonus</b> ligado a superar el objetivo — lo detallamos justo aquí debajo.</p></div>
     <div class="col get"><h3>Lo que ponemos</h3>
-      <p><b>34.489 € de capital propio</b> dentro de la operación — el 13,29% del total —, al <b>mismo riesgo y misma rentabilidad</b> que tú: 20,39% en el realista. Capital simétrico: sin clases de capital, sin rentabilidad asimétrica para el gestor.</p>
-      <p style="font-size:13px;color:var(--grey)">Gestión llave en mano + el <b>Cuadro de Mandos oficial de CdU de 0 a ÉXITO</b>: sigues tu inversión en vivo desde el día uno (te lo enseñamos más abajo).</p></div>
+      <p><b>34.489 € de capital propio</b> —el 13,29% del total— con el mismo riesgo y la misma rentabilidad que el tuyo.</p>
+      <p style="font-size:13px;color:var(--grey)">Gestión llave en mano + el <b>Cuadro de Mandos oficial de CdU de 0 a ÉXITO</b>: sigues tu inversión en vivo desde el día uno.</p></div>
   </div>
   <div class="bonus-box">
     <div class="bx-tag">🎁 El bonus — alineados al 100%</div>
@@ -1196,24 +1202,15 @@ body.final .todo{display:none}
     <div class="card"><div class="big">34.489 €</div><div class="lbl">Lo pone el GESTOR (13,29%) — nuestro dinero, junto al tuyo</div></div>
     <div class="card"><div class="big">225.000 €</div><div class="lbl">Capital de inversores (86,71%)</div></div>
   </div>
-  <table>
-    <tr><th>Aportación</th><th>Capital</th><th>% del capital</th><th>Rentabilidad (realista)</th></tr>
-    <tr><td><b>Inversores</b> (partícipes)</td><td>225.000 €</td><td>86,71%</td><td>20,39%</td></tr>
-    <tr><td><b>Gestor</b> (CdU de 0 a ÉXITO)</td><td>34.489 €</td><td>13,29%</td><td>20,39%</td></tr>
-    <tr><td><b>Operación</b></td><td><b>259.489,09 €</b></td><td>100%</td><td><b>20,39%</b></td></tr>
-  </table>
-  <p>Es un modelo <b>servicer sobre Cuentas en Participación</b> (arts. 239-243 CCom): inviertes, no gestionas, y tu capital rinde <b>exactamente igual</b> que el nuestro. Lo que vendamos por encima de 325.000 € se reparte aparte, como <b>bonus</b> (ver «La propuesta») — nunca resta.</p>
-  <p><b>Cuándo cobras:</b> conforme se vende cada vivienda, en 5-7 días. La liquidación final del beneficio, a los 15 días del cierre.</p>
-  <p><b>El partícipe:</b> invierte, no gestiona, no aparece frente a terceros. Su riesgo queda limitado a su aportación — ni un euro más, pase lo que pase.</p>
-  <p><b>El gestor:</b> responde frente a terceros, con fondos en cuenta exclusiva, contabilidad separada, información periódica, auditoría externa y seguro RC.</p>
-  <p style="font-size:13px;color:var(--grey)">Fiscalidad del partícipe: rendimiento del capital mobiliario (19-23%), retención 19% practicada por el gestor.</p>
+  <p style="font-size:13.5px;color:var(--grey)">Reparto y rentabilidad, partida a partida y escenario a escenario: ver Fase 2 · Números.</p>
+  <p><b>Cómo funciona.</b> Cuentas en Participación (arts. 239-243 del Código de Comercio): tú aportas capital y no gestionas ni apareces frente a terceros; CdU de 0 a ÉXITO SL responde frente a terceros y gestiona. <b>Cobras</b> conforme se vende cada vivienda, en 5-7 días, y la liquidación final del beneficio a los 15 días del cierre. Lo que vendamos por encima de 325.000 € se reparte aparte, como <b>bonus</b> (ver «La propuesta») — nunca resta. Fiscalidad del partícipe: rendimiento del capital mobiliario (19-23 % según tramo), con retención del 19 % que practica el gestor.</p>
   <h3>Cómo te blinda el contrato</h3>
   <p class="lead">El CCP no es un papel de confianza: <strong>es un blindaje recíproco que sigue el código de buenas prácticas del Programa IN — protege al partícipe y a la gestora por igual.</strong></p>
   <div class="cards">
     <div class="card"><div class="big">Riesgo acotado</div><div class="lbl">Tu riesgo se limita <b>estrictamente a tu aportación</b> (arts. 239-243 CCom). Ni un euro más, pase lo que pase.</div></div>
     <div class="card"><div class="big">Tu dinero, separado</div><div class="lbl">Fondos en <b>cuenta exclusiva</b> del proyecto y <b>contabilidad separada</b>. Nada se mezcla con la gestora.</div></div>
     <div class="card"><div class="big">Luz y control</div><div class="lbl"><b>Información periódica</b>, <b>derecho de auditoría externa</b> y <b>seguro de RC</b> del gestor. Todo trazable.</div></div>
-    <div class="card"><div class="big">Intereses alineados</div><div class="lbl">El capital del gestor rinde <b>al mismo % que el tuyo</b>. Sin clases de capital ni letra pequeña.</div></div>
+    <div class="card"><div class="big">Intereses alineados</div><div class="lbl">El capital del gestor rinde <b>al mismo % que el tuyo</b> — ver «La propuesta».</div></div>
   </div>
   <div class="docbtns">
     <a class="btn-doc gold" href="https://drive.google.com/file/d/1Us0_PzIbh5b2t1c5yFJQiTbOl-m74Y8n/view" target="_blank" rel="noopener"><span class="ic">📑</span> Modelo de contrato CCP</a>
@@ -1241,7 +1238,7 @@ body.final .todo{display:none}
     <div class="c"><b><span style="color:var(--ok)">✓</span> Un único contrato</b>El CCP: un solo documento, visible y transparente.</div>
     <div class="c"><b><span style="color:var(--ok)">✓</span> Comunicaciones periódicas</b>Reporting regulado en cada hito de la operación.</div>
     <div class="c"><b><span style="color:var(--ok)">✓</span> Auditoría externa</b>A disposición del partícipe en todo momento.</div>
-    <div class="c"><b><span style="color:var(--ok)">✓</span> Plazos definidos</b>Calendario del proyecto cerrado y comprometido.</div>
+    <div class="c"><b><span style="color:var(--ok)">✓</span> Plazos comprometidos</b>En todo lo que depende de nosotros —obra 16 semanas, liquidaciones 5-7 días—; el Ayuntamiento marca el suyo (ver Planning · Gantt).</div>
   </div>
 
   <h3>Garantías</h3>
@@ -1266,19 +1263,19 @@ body.final .todo{display:none}
     <a class="btn-doc" href="https://drive.google.com/file/d/1JLJzbTeHfkszJ-CYql0sCxteHNbEa1E6/view" target="_blank" rel="noopener"><span class="ic">🏦</span> Certificado de titularidad · cuenta de la operación</a>
   </div>
   <p style="font-size:13.5px;color:var(--grey);margin-top:12px">La operación tiene <b>cuenta exclusiva a nombre de la sociedad gestora</b>, separada de cualquier otra actividad: ya está abierta en el banco.</p>
-  <p class="lead" style="margin-top:14px">Y por encima de todo, un compromiso que nadie más en la plataforma te da: <b>verlo tú mismo, casi en tiempo real</b>. 👇</p>
+  <p class="lead" style="margin-top:14px">Y por encima de todo, un compromiso que nadie más en la plataforma te da: <b>verlo tú mismo, cada semana, desde tu cuadro de mandos</b>. 👇</p>
 </section>
 
 <!-- ═════════ S9 · CUADRO DE MANDOS (cierre boom) ═════════ -->
 <section class="sec" id="visor">
-  <span class="phase-badge invers"><span class="dot"></span>Bloque inversión</span>
-  <div class="kicker">Solvencia y transparencia · Tu cuadro de mandos</div>
+  <span class="phase-badge invers"><span class="dot"></span>La guinda</span>
+  <div class="kicker">La guinda · Tu cuadro de mandos</div>
   <h2>Tu operación, en vivo — no en un PDF que envejece</h2>
-  <div class="quote">"Vamos todos en el mismo vehículo. El equipo CdU de 0 a ÉXITO es quien conduce la inversión — y tú, como invitado, solo disfrutas del viaje: viendo en tiempo real cómo trabaja tu dinero, en qué fase está la operación, qué hito viene, las fotos de la obra y qué ha pasado con cada euro."</div>
+  <div class="quote">"Vamos todos en el mismo vehículo. El equipo CdU de 0 a ÉXITO es quien conduce la inversión — y tú, como invitado, solo disfrutas del viaje: viendo cómo trabaja tu dinero, en qué fase está la operación, qué hito viene, las fotos y cámaras de la obra y qué ha pasado con cada euro."</div>
   <div class="dash visor-dash">
     <div class="visor-eyebrow">Herramienta oficial · exclusiva para inversores</div>
     <h3 class="visor-headline">Visor del Inversor</h3>
-    <p class="visor-lead">Así se ve tu operación dentro del Visor: estado, cifras, cámaras de obra y documentación, actualizados cada semana.</p>
+    <p class="visor-lead">Así se ve tu operación dentro del Visor: estado, cifras, cámaras y documentación. Las cámaras, en directo; el resto, actualizado cada semana.</p>
 
     <div class="visor-showcase">
       <div class="visor-phone-wrap">
@@ -1293,8 +1290,8 @@ body.final .todo{display:none}
             </div>
             <div class="visor-scrollpane">
               <div class="inner">
-                <div class="visor-phaselbl"><span>Fase actual</span><b>MAP · Plan ejecutable</b></div>
-                <div class="visor-phasetrack"><i class="on"></i><i class="on"></i><i></i></div>
+                <div class="visor-phaselbl"><span>Fase actual</span><b>ÉXITO · Ejecución</b></div>
+                <div class="visor-phasetrack"><i class="on"></i><i class="on"></i><i class="on"></i></div>
 
                 <div class="visor-card visor-statbig">
                   <div class="n">62%</div>
@@ -1339,7 +1336,7 @@ body.final .todo{display:none}
     </div>
 
     <div class="visor-foot">
-      <p class="visor-note">Es la demo de otra operación nuestra en obra. El tuyo se activa al arrancar la obra del entresuelo, con las cifras y las cámaras de Altabix.</p>
+      <p class="visor-note">Lo que ves es el Visor real de nuestra operación de Torres de Cotillas, hoy en obra (la del track record). El tuyo se activa al arrancar la obra del entresuelo, con las cifras y las cámaras de Altabix.</p>
       <div class="visor-foot-row">
         <a class="visor-cta" href="https://visor.tucambiodeuso.com/demo/" target="_blank" rel="noopener"><img src="assets/logo-cdu-blanco.png" alt="CdU de 0 a ÉXITO" class="vc-logo"> Ver el Visor en funcionamiento <span class="vc-arrow">→</span></a>
         <div class="visor-pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Acceso de demostración · contraseña <b>demo</b></div>
@@ -1352,7 +1349,7 @@ body.final .todo{display:none}
 <section class="sec" id="docs">
   <div class="kicker">Cierre · Índice documental</div>
   <h2>Toda la documentación, a un clic</h2>
-  <p>Cada documento ya se ha mostrado en la fase a la que pertenece. Este es el índice maestro por si quieres revisarlos todos juntos — se abren aquí mismo, sin salir de la presentación.</p>
+  <p>Cada documento ya se ha mostrado en la fase a la que pertenece. Este es el índice maestro, por si quieres revisarlos todos juntos — cada botón abre el documento en Drive, en una pestaña nueva.</p>
   <div class="serv">
     <div class="s-card">
       <div class="s-tag">FASE 1 · GO</div>
@@ -1372,9 +1369,8 @@ body.final .todo{display:none}
       <div class="s-tag">FASE 2 · MAP</div>
       <div class="s-t">Plan ejecutable</div>
       <div class="docbtns">
-        <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 0">Certificado de compatibilidad urbanística · en trámite en el Ayuntamiento de Elche</span>
+        <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 0">CCU · en trámite en el Ayuntamiento de Elche</span>
         <a class="btn-doc" href="https://drive.google.com/file/d/16-Ob23SzguKTFvWp3F8KJv_7xYWexXZv/view" target="_blank" rel="noopener"><span class="ic">📐</span> Encaje técnico</a>
-        <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 0">Presupuesto de acometida de agua · se solicita a Hidrogea con el proyecto visado</span>
         <a class="btn-doc" href="https://drive.google.com/file/d/1p6IULNMJorxEv17ihNdN63lFej3vmTq4/view" target="_blank" rel="noopener"><span class="ic">📄</span> Presupuesto de obra</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1YBXRb1RO7sJvtg_eixibYKf4iy1lyg1G/view" target="_blank" rel="noopener"><span class="ic">📑</span> Contrato con la constructora (modelo)</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1K25cw1nfm9pVJAZQXYtLhH9PgQ0QNCIS/view" target="_blank" rel="noopener"><span class="ic">📊</span> Análisis económico</a>
@@ -1393,10 +1389,15 @@ body.final .todo{display:none}
         <a class="btn-doc" href="https://drive.google.com/file/d/1Bbd1_Zl7LQ6YSlrEIySuBWu9-oFhq5lF/view" target="_blank" rel="noopener"><span class="ic">🏠</span> Plano de venta 1</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1v5L4lGlJsU-PZucLZJvlOP9zIHxqWyui/view" target="_blank" rel="noopener"><span class="ic">🏠</span> Plano de venta 2</a>
         <a class="btn-doc gold" href="https://drive.google.com/file/d/1Us0_PzIbh5b2t1c5yFJQiTbOl-m74Y8n/view" target="_blank" rel="noopener"><span class="ic">📑</span> Modelo de contrato CCP</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1zbeRwtLxeVxwQ4-ZzkQq-k9MeQsd9WYr/view" target="_blank" rel="noopener"><span class="ic">📜</span> Escritura de constitución</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1cYSWRiSGi8mdxlfmcwySDCnayUgg6MVV/view" target="_blank" rel="noopener"><span class="ic">🏢</span> CIF de la sociedad</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1bXR_-mlImSqwhxiVmrQdsgIQ28YsAR1o/view" target="_blank" rel="noopener"><span class="ic">🟢</span> Al corriente · Hacienda</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1F5aIrcsnYLkUq-31PaytvW7hKKBqUHri/view" target="_blank" rel="noopener"><span class="ic">🟢</span> Al corriente · Seg. Social</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1Sl6zHrSdUuyZLt7fgSbauypcePrrzcag/view" target="_blank" rel="noopener"><span class="ic">📋</span> CIRBE (1)</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1UqfeUIl4IZJL0duk3Hhf87MFKc3og4hD/view" target="_blank" rel="noopener"><span class="ic">📋</span> CIRBE (2)</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1NJ9TdmNtWnUdlq9KAH94WutBY9V9JDLk/view" target="_blank" rel="noopener"><span class="ic">🛡️</span> Póliza de Responsabilidad Civil</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1o55EDuZBBGuNwIaR8jFqooZokk2iCuhO/view" target="_blank" rel="noopener"><span class="ic">🧾</span> Recibo del seguro de RC</a>
+        <a class="btn-doc" href="https://drive.google.com/file/d/1XwUXa9Np-xMdvFyvxYszm2MgZgVjYeA0/view" target="_blank" rel="noopener"><span class="ic">⛑️</span> Certificado del Servicio de Prevención</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1JLJzbTeHfkszJ-CYql0sCxteHNbEa1E6/view" target="_blank" rel="noopener"><span class="ic">🏦</span> Certificado de titularidad · cuenta</a>
       </div>
     </div>
@@ -1416,7 +1417,7 @@ body.final .todo{display:none}
     <a href="https://im-pulso.app" target="_blank" rel="noopener" class="fl"><img src="assets/logo-impulso-chapa.png" alt="IM·PULSO"><span class="acc">Acceder ↗</span></a>
     <a href="https://programa.in/" target="_blank" rel="noopener" class="fl"><span class="prog-in light" style="font-size:22px"><span class="pg">PROGRAMA</span><span class="in">IN</span></span><span class="acc">Acceder ↗</span></a>
   </div>
-  <div class="foot-tag">Oportunidad del Programa IN · Entresuelo Altabix · Alicante · 2026<br><span class="foot-claim">Primero claridad. Luego control. Y al final, resultado.</span></div>
+  <div class="foot-tag">Oportunidad del Programa IN · Entresuelo Altabix · Alicante · 2026 · Dossier actualizado el 23-sep-2026<br><span class="foot-claim">Primero claridad. Luego control. Y al final, resultado.</span></div>
 </div>
 
 </main>
