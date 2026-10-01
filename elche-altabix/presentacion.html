@@ -11,13 +11,17 @@
   ─ Los DATOS de la operación viven en el bloque <script id="op-data"> al final.
   ─ Números provisionales: clase .prov (chip ámbar). class="final" en <body> oculta chips + notas .todo.
 
-  ── ESTRUCTURA (orden fijado 23-sep-2026, ver wiki ESTANDAR-copy-dossier-cdu.md) ──
-  ACTO 0 · APERTURA: #hero (intacto) · #equipo (intacto) · #track
-  ACTO 1 · FASE 1 GO (diagnóstico viabilidad): #resumen(mercado+activo, mini-IM·PULSO) · #fase1 (4 familias + doc estrella)
-  ACTO 2 · FASE 2 MAP (plan ejecutable): #proyecto(encaje+plan de trámites) · #suministros · #numeros(IM·PULSO V2) · #escenarios · #riesgos
-  ACTO 3 · FASE 3 ÉXITO: #gantt (planning, va ANTES) · #ejecucion (MTVV, tercera comprobación)
-  ACTO 4 · INVERSIÓN: #plan · #propuesta · #ccp · #compromisos
-  GUINDA: #visor (última sección de contenido) · CIERRE: #docs
+  ── ESTRUCTURA (orden de 10 pasos fijado 01-oct-2026 por Xavi+Dani, estilo Programa IN —
+     sustituye el recorrido por fases GO/MAP/ÉXITO, "no orgánico" para presentación en vivo) ──
+  01 Quiénes somos #equipo · 02 Lo que ya hemos hecho #track (+ #servicio oculto) ·
+  03 La oportunidad #resumen · 04 Cómo la vamos a resolver #proyecto + #suministros ·
+  05 Qué hemos comprobado #fase1 · 06 Números y método #numeros (incl. #escenarios) ·
+  07 Ejecución y riesgos #riesgos + #gantt + #ejecucion · 08 Reparto de beneficios #propuesta
+  (fusiona el antiguo #plan como bloque introductorio) · 09 Cómo entras #ccp + #compromisos ·
+  10 Cierre y seguimiento #visor.
+  Separadores de fase (.act-divider, .phase-badge) retirados del recorrido; sustituidos por
+  .step-divider (número + título de paso). El índice documental final (antiguo #docs) se
+  retiró de esta versión — solo existe en index.html.
   #servicio queda oculto (display:none) desde 15-jun-2026, ya no se enlaza en el nav.
 
   ── TABÚS (FUERA del deck público; viven solo en estos comentarios) ──
@@ -333,6 +337,11 @@ body.final .todo{display:none}
 .act-divider h2{color:#fff;margin:8px 0 6px;font-size:30px}
 .act-divider p{color:rgba(253,251,247,.85);max-width:880px;margin:0;font-size:16px}
 @media(max-width:840px){.act-divider{padding:32px 5vw}.act-divider h2{font-size:23px}}
+/* separador ligero de paso (reorden 10 pasos presentación en vivo, 01-oct-2026) */
+.step-divider{display:flex;align-items:baseline;gap:18px;background:linear-gradient(140deg,var(--navy),var(--navy2));color:var(--cream);padding:40px 7vw;border-bottom:1px solid var(--line)}
+.step-divider .step-n{font-size:34px;font-weight:900;color:var(--ochre);letter-spacing:1px;flex-shrink:0;line-height:1}
+.step-divider h2{color:#fff;margin:0;font-size:26px;letter-spacing:-.4px}
+@media(max-width:840px){.step-divider{padding:26px 5vw;gap:12px}.step-divider .step-n{font-size:26px}.step-divider h2{font-size:21px}}
 /* patrón por fase: qué hace el servicio + qué hicimos en esta operación */
 /* qué hace la fase (linea de contexto) + qué hicimos en esta operación (tarjeta):
    dos pesos de contenido distintos, ya no dos tarjetas obligadas a la misma altura */
@@ -666,29 +675,30 @@ body.final .todo{display:none}
 </script>
 
 <nav class="nav">
-  <div class="grp">Apertura</div>
-  <a href="#equipo">Quiénes somos</a><a href="#track">Track record</a>
-  <div class="grp">Diagnóstico</div>
-  <a href="#resumen">Mercado y activo</a><a href="#fase1">Viabilidad</a>
-  <div class="grp">Plan</div>
-  <a href="#proyecto">Encaje técnico</a><a href="#suministros">Suministros</a><a href="#numeros">Números</a><a href="#escenarios">Escenarios</a><a href="#riesgos">Riesgos</a>
-  <div class="grp">Ejecución</div>
-  <a href="#gantt">Planning · Gantt</a><a href="#ejecucion">Ejecución y venta</a>
-  <div class="grp">Inversión</div>
-  <a href="#plan">Quién compra y cómo</a><a href="#propuesta">La propuesta (JV servicer)</a><a href="#ccp">Cómo entras · CCP</a><a href="#compromisos">Compromisos · solvencia</a>
-  <div class="grp">Tu cuadro de mandos</div>
+  <div class="grp">01 · Quiénes somos</div>
+  <a href="#equipo">Equipo gestor</a>
+  <div class="grp">02 · Lo que ya hemos hecho</div>
+  <a href="#track">Track record</a>
+  <div class="grp">03 · La oportunidad</div>
+  <a href="#resumen">Mercado y activo</a>
+  <div class="grp">04 · Cómo la vamos a resolver</div>
+  <a href="#proyecto">Encaje técnico</a><a href="#suministros">Suministros</a>
+  <div class="grp">05 · Qué hemos comprobado</div>
+  <a href="#fase1">Viabilidad</a>
+  <div class="grp">06 · Números y método</div>
+  <a href="#numeros">Análisis económico</a><a href="#escenarios">Escenarios</a>
+  <div class="grp">07 · Ejecución y riesgos</div>
+  <a href="#riesgos">Riesgos</a><a href="#gantt">Planning · Gantt</a><a href="#ejecucion">Ejecución y venta</a>
+  <div class="grp">08 · Reparto de beneficios</div>
+  <a href="#propuesta">La propuesta (JV servicer)</a>
+  <div class="grp">09 · Cómo entras</div>
+  <a href="#ccp">Cómo entras · CCP</a><a href="#compromisos">Compromisos · solvencia</a>
+  <div class="grp">10 · Cierre y seguimiento</div>
   <a href="#visor">Seguimiento de la inversión</a>
-  <div class="grp">Cierre</div>
-  <a href="#docs">Índice documental</a>
 </nav>
 
 <main>
 
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<!-- ════════════════════  ACTO 0 · APERTURA  ════════════════════════ -->
-<!-- ═════════════════════════════════════════════════════════════════ -->
-
-<!-- ═════════ S0 · PORTADA ═════════ -->
 <section class="sec hero">
   <div class="hero-head">
     <div class="toplogos" style="justify-content:flex-end">
@@ -707,7 +717,7 @@ body.final .todo{display:none}
 
 </section>
 
-<!-- ═════════ S0 · EQUIPO (INTOCABLE — copiada tal cual) ═════════ -->
+<div class="step-divider"><div class="step-n">01</div><h2>Quiénes somos</h2></div>
 <section class="sec" id="equipo">
   <div class="kicker">Equipo gestor</div>
   <h2>Tres perfiles diferentes. Mismos estándares.<br>Un objetivo: <span style="color:var(--ochre-dark)">el Resultado.</span></h2>
@@ -729,7 +739,7 @@ body.final .todo{display:none}
   </div>
 </section>
 
-<!-- ═════════ S0 · TRACK RECORD (Crevillente como PRUEBA, no táctica) ═════════ -->
+<div class="step-divider"><div class="step-n">02</div><h2>Lo que ya hemos hecho</h2></div>
 <section class="sec" id="track">
   <div class="kicker">Equipo gestor · Operaciones</div>
   <h2>Lo que ya hemos hecho — la prueba antes de la promesa</h2>
@@ -770,18 +780,8 @@ body.final .todo{display:none}
   </div>
 </section>
 
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<!-- ═══════  ACTO 1 · FASE 1 · GO — DIAGNÓSTICO DE VIABILIDAD  ═══════ -->
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<div class="act-divider">
-  <div class="act-n">Fase 1 · GO</div>
-  <h2>El diagnóstico de viabilidad</h2>
-  <p>Antes de mover capital, comprobamos que la operación se puede hacer. Aquí está lo que medimos en el mercado, el activo del que partimos y los cuatro ejes que la sostienen — con el Informe de Diagnóstico como prueba.</p>
-</div>
-
-<!-- ═════════ S1 · MERCADO + ACTIVO (qué hace F1 en el servicio + qué medimos en esta operación) ═════════ -->
+<div class="step-divider"><div class="step-n">03</div><h2>La oportunidad</h2></div>
 <section class="sec" id="resumen">
-  <span class="phase-badge go"><span class="dot"></span>Fase 1 · GO</span>
   <div class="kicker">Mercado y activo</div>
   <h2>El mercado, medido — no opinado</h2>
   <p class="lead">Todo empieza por una pregunta: ¿hay demanda real para el producto que vamos a crear? La medimos con datos, no con intuición.</p>
@@ -831,57 +831,8 @@ body.final .todo{display:none}
   </div>
 </section>
 
-<!-- ═════════ S2 · FASE 1 — VIABILIDAD POR PATAS + doc estrella ═════════ -->
-<section class="sec" id="fase1">
-  <span class="phase-badge go"><span class="dot"></span>Fase 1 · GO</span>
-  <div class="kicker">El veredicto</div>
-  <h2>¿Es viable este cambio de uso?</h2>
-  <div class="fase-split">
-    <div class="fase-brief">
-      <div class="fs-tag">Qué hace esta fase en el servicio</div>
-      <p>La Fase 1 valida cuatro ejes — y si uno falla, falla todo: <b>jurídico/registral, administrativo, técnico y económico</b>. Se obtiene un veredicto claro (GO / GO con ajustes / NO GO) antes de comprometer un euro.</p>
-    </div>
-    <div class="fs">
-      <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
-      <h3>Dictamen GO: los cuatro ejes, favorables</h3>
-      <ul style="margin:8px 0 12px;padding-left:20px">
-        <li><b>Jurídica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — revisada con la <b>Escritura de División Horizontal</b> (1989) y el <b>acta y la derrama de la comunidad</b>. Los dos locales ya son elementos privativos independientes, sin segregación pendiente, y la escritura faculta expresamente obras de adaptación y salida de humos por patio o fachada. Sin cargas ni acuerdos comunitarios pendientes que limiten el cambio de uso.</li>
-        <li><b>Administrativa:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — consultado previamente con el área de Planeamiento Urbanístico del Ayuntamiento de Elche, con criterio favorable de compatibilidad para uso residencial. Se solicitará el CCU para su confirmación (<a href="#proyecto">ver Fase 2 · Encaje técnico</a>).</li>
-        <li><b>Técnica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — altura libre y salida de humos con solución constructiva (<a href="#proyecto">ver Fase 2 · Encaje técnico</a>); cada local tiene ya contador propio de agua y luz (<a href="#suministros">ver Fase 2 · Suministros</a>).</li>
-        <li><b>Económica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — compra ≈110.000 € frente a una venta orientativa de ≈149.000–159.000 € por unidad (<a href="#resumen">ver «Mercado y activo»</a>); detalle en el Informe de Diagnóstico.</li>
-      </ul>
-      <p>Riesgo global <b>bajo-medio</b>: siete riesgos en seguimiento, ninguno alto ni inasumible. Veredicto del informe: <b>GO — viabilidad global favorable</b>.</p>
-    </div>
-  </div>
-
-  <h3>El informe de viabilidad</h3>
-  <p class="lead">Todo el diagnóstico, en un solo documento.</p>
-  <a class="btn-doc doc-hero" href="https://drive.google.com/file/d/1inI73HNIVS2oxarGgk8xugHpcSlNN2Ka/view" target="_blank" rel="noopener">Ver Informe de Diagnóstico · Fase 1</a>
-  <p style="font-size:15px;color:var(--grey);margin-top:14px">Y la documentación con la que verificamos cada eje, como prueba de que está respaldado:</p>
-  <div class="docbtns">
-    <a class="btn-doc" href="https://drive.google.com/file/d/1jLLy7OIfEWk5a1FeA02RC0HLdvuzXQGb/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 1</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1lH4KOe08x7veMOsvT4esrii5dwpwjUqk/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 2</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1lk2eWLPUfwMi8iy1DwSp0hGdTsKWJSb7/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 1</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/16LY67oYVYfGBVUjK_jFjHonLEEVMYgeH/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 2</a>
-    <span style="flex-basis:100%;height:0" aria-hidden="true"></span>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1kWAxpN8BghftxuowdVBCh3X0Q3ymno0p/view" target="_blank" rel="noopener"><span class="ic">📄</span> Nota simple</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1u9U5b5Soa4qIKmz3kueJ_HIE7t1WpiRL/view" target="_blank" rel="noopener"><span class="ic">📜</span> Escritura de División Horizontal</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1uqHnkyTQkMkAcY69JFGuGWfuV6FdQK_H/view" target="_blank" rel="noopener"><span class="ic">🧾</span> Actas y derrama de la comunidad</a>
-  </div>
-</section>
-
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<!-- ═════════  ACTO 2 · FASE 2 · MAP — PLAN EJECUTABLE  ═════════════ -->
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<div class="act-divider">
-  <div class="act-n">Fase 2 · MAP</div>
-  <h2>El plan ejecutable</h2>
-  <p>La viabilidad abre la puerta; la ejecución decide el resultado. Aquí convertimos el "sí" en un plan: el encaje técnico al detalle, los suministros, los números por partidas, los escenarios y los riesgos. El plan de obra, semana a semana, lo verás al arrancar la Fase 3.</p>
-</div>
-
-<!-- ═════════ S3 · ENCAJE TÉCNICO DETALLADO (Fase 2) ═════════ -->
+<div class="step-divider"><div class="step-n">04</div><h2>Cómo la vamos a resolver</h2></div>
 <section class="sec" id="proyecto">
-  <span class="phase-badge map"><span class="dot"></span>Fase 2 · MAP</span>
   <div class="kicker">Plan estratégico y operativo</div>
   <h2>El mapa del cambio de uso: del «sí, es viable» al plan que ejecuta la obra</h2>
   <div class="fase-split">
@@ -922,10 +873,7 @@ body.final .todo{display:none}
     <img src="assets/fotos/render-6.jpg" alt="Render 6" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:9px">
   </div>
 </section>
-
-<!-- ═════════ SUMINISTROS (bloque NUEVO · Fase 2) ═════════ -->
 <section class="sec" id="suministros">
-  <span class="phase-badge map"><span class="dot"></span>Fase 2 · MAP</span>
   <div class="kicker">Plan ejecutable · Suministros</div>
   <h2>Agua y luz: ya individuales — sin nueva acometida</h2>
   <p class="lead">Los suministros son una de las sorpresas clásicas de un cambio de uso. Aquí no lo son.</p>
@@ -941,9 +889,46 @@ body.final .todo{display:none}
   </div>
   </section>
 
-<!-- ═════════ S4 · NÚMEROS DETALLE (cifras núcleo UNA vez · Fase 2) ═════════ -->
+<div class="step-divider"><div class="step-n">05</div><h2>Qué hemos comprobado</h2></div>
+<section class="sec" id="fase1">
+  <div class="kicker">El veredicto</div>
+  <h2>¿Es viable este cambio de uso?</h2>
+  <div class="fase-split">
+    <div class="fase-brief">
+      <div class="fs-tag">Qué hace esta fase en el servicio</div>
+      <p>La Fase 1 valida cuatro ejes — y si uno falla, falla todo: <b>jurídico/registral, administrativo, técnico y económico</b>. Se obtiene un veredicto claro (GO / GO con ajustes / NO GO) antes de comprometer un euro.</p>
+    </div>
+    <div class="fs">
+      <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
+      <h3>Dictamen GO: los cuatro ejes, favorables</h3>
+      <ul style="margin:8px 0 12px;padding-left:20px">
+        <li><b>Jurídica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — revisada con la <b>Escritura de División Horizontal</b> (1989) y el <b>acta y la derrama de la comunidad</b>. Los dos locales ya son elementos privativos independientes, sin segregación pendiente, y la escritura faculta expresamente obras de adaptación y salida de humos por patio o fachada. Sin cargas ni acuerdos comunitarios pendientes que limiten el cambio de uso.</li>
+        <li><b>Administrativa:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — consultado previamente con el área de Planeamiento Urbanístico del Ayuntamiento de Elche, con criterio favorable de compatibilidad para uso residencial. Se solicitará el CCU para su confirmación (<a href="#proyecto">ver Fase 2 · Encaje técnico</a>).</li>
+        <li><b>Técnica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — altura libre y salida de humos con solución constructiva (<a href="#proyecto">ver Fase 2 · Encaje técnico</a>); cada local tiene ya contador propio de agua y luz (<a href="#suministros">ver Fase 2 · Suministros</a>).</li>
+        <li><b>Económica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — compra ≈110.000 € frente a una venta orientativa de ≈149.000–159.000 € por unidad (<a href="#resumen">ver «Mercado y activo»</a>); detalle en el Informe de Diagnóstico.</li>
+      </ul>
+      <p>Riesgo global <b>bajo-medio</b>: siete riesgos en seguimiento, ninguno alto ni inasumible. Veredicto del informe: <b>GO — viabilidad global favorable</b>.</p>
+    </div>
+  </div>
+
+  <h3>El informe de viabilidad</h3>
+  <p class="lead">Todo el diagnóstico, en un solo documento.</p>
+  <a class="btn-doc doc-hero" href="https://drive.google.com/file/d/1inI73HNIVS2oxarGgk8xugHpcSlNN2Ka/view" target="_blank" rel="noopener">Ver Informe de Diagnóstico · Fase 1</a>
+  <p style="font-size:15px;color:var(--grey);margin-top:14px">Y la documentación con la que verificamos cada eje, como prueba de que está respaldado:</p>
+  <div class="docbtns">
+    <a class="btn-doc" href="https://drive.google.com/file/d/1jLLy7OIfEWk5a1FeA02RC0HLdvuzXQGb/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 1</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1lH4KOe08x7veMOsvT4esrii5dwpwjUqk/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 2</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1lk2eWLPUfwMi8iy1DwSp0hGdTsKWJSb7/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 1</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/16LY67oYVYfGBVUjK_jFjHonLEEVMYgeH/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 2</a>
+    <span style="flex-basis:100%;height:0" aria-hidden="true"></span>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1kWAxpN8BghftxuowdVBCh3X0Q3ymno0p/view" target="_blank" rel="noopener"><span class="ic">📄</span> Nota simple</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1u9U5b5Soa4qIKmz3kueJ_HIE7t1WpiRL/view" target="_blank" rel="noopener"><span class="ic">📜</span> Escritura de División Horizontal</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1uqHnkyTQkMkAcY69JFGuGWfuV6FdQK_H/view" target="_blank" rel="noopener"><span class="ic">🧾</span> Actas y derrama de la comunidad</a>
+  </div>
+</section>
+
+<div class="step-divider"><div class="step-n">06</div><h2>Números y método</h2></div>
 <section class="sec" id="numeros">
-  <span class="phase-badge map"><span class="dot"></span>Fase 2 · MAP</span>
   <div class="kicker">Plan ejecutable · Análisis económico</div>
   <h2>La inversión, de un vistazo</h2>
   <p class="lead">El cuadro oficial del Programa IN, con las cifras de esta operación. Debajo, el desglose partida a partida.</p>
@@ -1017,9 +1002,8 @@ body.final .todo{display:none}
   </div>
 </section>
 
-<!-- ═════════ S5 · RIESGOS + MATRIZ (etiquetas CERRADO/VALIDADO) ═════════ -->
+<div class="step-divider"><div class="step-n">07</div><h2>Ejecución y riesgos</h2></div>
 <section class="sec" id="riesgos">
-  <span class="phase-badge map"><span class="dot"></span>Fase 2 · MAP</span>
   <div class="kicker">Plan ejecutable · Riesgos y mitigaciones</div>
   <h2>Los riesgos: los que cerramos y los que vigilamos</h2>
   <div class="quote">"Toda operación tiene riesgos. La diferencia es si te los encuentras… o si los cierras antes de que te encuentren ellos."</div>
@@ -1039,19 +1023,7 @@ body.final .todo{display:none}
     <a class="btn-doc" href="https://drive.google.com/file/d/1DQuylMCeJIIq23qKjgVS5ERoll-0VZKp/view" target="_blank" rel="noopener"><span class="ic">📋</span> Ver matriz de riesgos</a>
   </div>
 </section>
-
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<!-- ═══════════════  ACTO 3 · FASE 3 · ÉXITO  ════════════════════════ -->
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<div class="act-divider">
-  <div class="act-n">Fase 3 · ÉXITO</div>
-  <h2>Del plan al resultado</h2>
-  <p>Aquí no acompañamos: ejecutamos. El calendario de obra, la contratación cerrada, la tercera comprobación del precio y la venta.</p>
-</div>
-
-<!-- ═════════ S6 · GANTT (planificación · Fase 3) ═════════ -->
 <section class="sec" id="gantt">
-  <span class="phase-badge exito"><span class="dot"></span>Fase 3 · ÉXITO</span>
   <div class="kicker">Ejecución · Dirección por hitos</div>
   <h2>Obra: 16 semanas, planificadas capítulo a capítulo</h2>
   <div class="cards">
@@ -1087,10 +1059,7 @@ body.final .todo{display:none}
     <a class="btn-doc" href="https://drive.google.com/file/d/1vdUXL3T5rBU8X1_QNU5WWmPpfgJ-lZqg/view" target="_blank" rel="noopener"><span class="ic">📅</span> Gantt de obra</a>
   </div>
 </section>
-
-<!-- ═════════ S7 · EJECUCIÓN Y VENTA (Fase 3) ═════════ -->
 <section class="sec" id="ejecucion">
-  <span class="phase-badge exito"><span class="dot"></span>Fase 3 · ÉXITO</span>
   <div class="kicker">Ejecución integral · Sistema propio</div>
   <h2>Orquestamos y ejecutamos hasta la venta</h2>
   <div class="fase-split">
@@ -1104,7 +1073,7 @@ body.final .todo{display:none}
       <ul style="margin:8px 0 0;padding-left:20px">
         <li><b>Tercera comprobación del precio (MTVV):</b> contrastamos sobre el terreno los rangos del mini-IM·PULSO (Fase 1) y del IM·PULSO V2 (Fase 2) — 6 testigos directos, 5 inmobiliarias de la zona y una prueba de comercialización real (tabla debajo).</li>
         <li><b>Obra contratada, no estimada:</b> presupuesto cerrado con SPM y contrato de obra sobre modelo propio, con planning de 16 semanas (<a href="#gantt">ver Planning · Gantt</a>).</li>
-        <li><b>Estructura lista:</b> sociedad gestora al corriente, cuenta exclusiva de la operación abierta, modelo de CCP preparado (<a href="#plan">ver bloque Inversión</a>).</li>
+        <li><b>Estructura lista:</b> sociedad gestora al corriente, cuenta exclusiva de la operación abierta, modelo de CCP preparado (<a href="#propuesta">ver bloque Inversión</a>).</li>
         <li><b>Pendiente y de quién depende:</b> el CCU, del Ayuntamiento de Elche, y tras él la licencia, tramitada por la vía rápida de la ECUV (<a href="#proyecto">ver Plan de trámites, Fase 2</a>).</li>
       </ul>
     </div>
@@ -1138,31 +1107,17 @@ body.final .todo{display:none}
   <!-- TABÚ (FUERA): "comercialización EN PARALELO a la obra (método probado en Crevillente)" → se suelta en vivo, no en el HTML. -->
 </section>
 
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<!-- ═══════════════════  ACTO 4 · INVERSIÓN  ═════════════════════════ -->
-<!-- ═════════════════════════════════════════════════════════════════ -->
-<div class="act-divider">
-  <div class="act-n">Inversión</div>
-  <h2>Y cómo entras tú</h2>
-  <p>Quién compra el activo, qué pedimos y qué ponemos, el contrato que te blinda y los compromisos que firmamos contigo.</p>
-</div>
-
-<!-- ═════════ EL PLAN — quién compra y cómo (bloque inversión) ═════════ -->
-<section class="sec" id="plan">
-  <span class="phase-badge invers"><span class="dot"></span>Bloque inversión</span>
+<div class="step-divider"><div class="step-n">08</div><h2>Reparto de beneficios</h2></div>
+<section class="sec" id="propuesta">
   <div class="kicker">Estructura de inversión · El plan</div>
-  <h2>Quién compra el activo — y cómo entras tú</h2>
+  <h3 style="margin-top:0">Quién compra el activo — y cómo entras tú</h3>
   <div class="cards">
     <div class="card"><div class="big">La empresa CdU</div><div class="lbl">CdU de 0 a ÉXITO SL compra los locales y es titular y gestor único frente a terceros</div></div>
     <div class="card"><div class="big">Vía CCP</div><div class="lbl">Entras con un Contrato de Cuentas en Participación: aportas capital sin gestionar ni aparecer frente a terceros</div></div>
     <div class="card"><div class="big">Venta por unidades</div><div class="lbl">Cada vivienda se vende y se liquida por separado</div></div>
   </div>
   <p>Es la estructura que usamos en todas nuestras operaciones del Programa IN: una sola sociedad al frente, un solo contrato por inversor y el capital de todos —el nuestro incluido— en la misma cuenta y con las mismas reglas. Qué pedimos y qué ponemos, en la sección siguiente; el contrato y sus garantías, en «Cómo entras · CCP».</p>
-</section>
 
-<!-- ═════════ LA PROPUESTA — JV SERVICER del Programa (ask del gestor) ═════════ -->
-<section class="sec" id="propuesta">
-  <span class="phase-badge invers"><span class="dot"></span>Bloque inversión</span>
   <div class="kicker">Estructura de inversión · La propuesta</div>
   <h2>La propuesta: una Joint Venture servicer</h2>
   <p class="lead">En el <b>Programa IN</b> hay dos formatos de Joint Venture: <b>waterfall</b> (el gestor cobra un porcentaje del resultado por tramos) y <b>servicer</b> (honorario fijo de gestión + capital propio en las mismas condiciones que el inversor). Esta operación es <b>servicer</b>.</p>
@@ -1197,9 +1152,8 @@ body.final .todo{display:none}
   <div class="quote">No es un porcentaje abierto del resultado: es un <b>servicer fijo + capital al mismo riesgo que el tuyo</b>. Ponemos nuestro dinero junto al tuyo y rendimos exactamente igual.</div>
 </section>
 
-<!-- ═════════ S8 · CCP — cómo entras, cómo cobras, cómo te blinda ═════════ -->
+<div class="step-divider"><div class="step-n">09</div><h2>Cómo entras — CCP y código</h2></div>
 <section class="sec" id="ccp">
-  <span class="phase-badge invers"><span class="dot"></span>Bloque inversión</span>
   <div class="kicker">Estructura de inversión · El contrato (CCP)</div>
   <h2>Cómo entras, cómo cobras — y cómo te blinda</h2>
   <div class="cards">
@@ -1221,11 +1175,7 @@ body.final .todo{display:none}
     <a class="btn-doc gold" href="https://drive.google.com/file/d/1Us0_PzIbh5b2t1c5yFJQiTbOl-m74Y8n/view" target="_blank" rel="noopener"><span class="ic">📑</span> Modelo de contrato CCP</a>
   </div>
 </section>
-
-
-<!-- ═════════ COMPROMISOS + SOLVENCIA (operativos · distintos del blindaje CCP) ═════════ -->
 <section class="sec" id="compromisos">
-  <span class="phase-badge invers"><span class="dot"></span>Bloque inversión</span>
   <div class="kicker">Solvencia y transparencia · Código de Buenas Prácticas</div>
   <h2>Nuestros compromisos contigo</h2>
   <p class="lead">No te pedimos confianza ciega. Esta operación se rige por el <b>Código de Buenas Prácticas</b> del <span class="prog-in"><span class="pg">PROGRAMA</span><span class="in">IN</span></span> — y lo cumplimos punto por punto. Esto es lo que firmamos contigo:</p>
@@ -1267,9 +1217,8 @@ body.final .todo{display:none}
   <p class="lead" style="margin-top:14px">Y por encima de todo, un compromiso que nadie más en la plataforma te da: <b>verlo tú mismo, cada semana, desde tu cuadro de mandos</b>. 👇</p>
 </section>
 
-<!-- ═════════ S9 · CUADRO DE MANDOS (cierre boom) ═════════ -->
+<div class="step-divider"><div class="step-n">10</div><h2>Cierre y seguimiento</h2></div>
 <section class="sec" id="visor">
-  <span class="phase-badge invers"><span class="dot"></span>La guinda</span>
   <div class="kicker">La guinda · Tu cuadro de mandos</div>
   <h2>Tu operación, en vivo — no en un PDF que envejece</h2>
   <div class="quote">"Vamos todos en el mismo vehículo. El equipo CdU de 0 a ÉXITO es quien conduce la inversión — y tú, como invitado, solo disfrutas del viaje: viendo cómo trabaja tu dinero, en qué fase está la operación, qué hito viene, las fotos y cámaras de la obra y qué ha pasado con cada euro."</div>
@@ -1347,62 +1296,6 @@ body.final .todo{display:none}
   </div>
 </section>
 
-<!-- ═════════ S10 · ÍNDICE DOCUMENTAL LIGERO (cierre) ═════════ -->
-<section class="sec" id="docs">
-  <div class="kicker">Cierre · Índice documental</div>
-  <h2>Toda la documentación, a un clic</h2>
-  <p>Cada documento ya se ha mostrado en la fase a la que pertenece. Este es el índice maestro, por si quieres revisarlos todos juntos — cada botón abre el documento en Drive, en una pestaña nueva.</p>
-  <div class="serv">
-    <div class="s-card">
-      <div class="s-tag">FASE 1 · GO</div>
-      <div class="s-t">Diagnóstico de viabilidad</div>
-      <div class="docbtns">
-        <a class="btn-doc gold" href="https://drive.google.com/file/d/1inI73HNIVS2oxarGgk8xugHpcSlNN2Ka/view" target="_blank" rel="noopener"><span class="ic">📄</span> Informe Diagnóstico GO</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1jLLy7OIfEWk5a1FeA02RC0HLdvuzXQGb/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 1</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1lH4KOe08x7veMOsvT4esrii5dwpwjUqk/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 2</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1lk2eWLPUfwMi8iy1DwSp0hGdTsKWJSb7/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 1</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/16LY67oYVYfGBVUjK_jFjHonLEEVMYgeH/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 2</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1kWAxpN8BghftxuowdVBCh3X0Q3ymno0p/view" target="_blank" rel="noopener"><span class="ic">📄</span> Nota simple</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1u9U5b5Soa4qIKmz3kueJ_HIE7t1WpiRL/view" target="_blank" rel="noopener"><span class="ic">📜</span> Escritura de División Horizontal</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1uqHnkyTQkMkAcY69JFGuGWfuV6FdQK_H/view" target="_blank" rel="noopener"><span class="ic">🧾</span> Actas y derrama de la comunidad</a>
-      </div>
-    </div>
-    <div class="s-card">
-      <div class="s-tag">FASE 2 · MAP</div>
-      <div class="s-t">Plan ejecutable</div>
-      <div class="docbtns">
-        <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 0">CCU · pendiente la versión corregida (errata administrativa)</span>
-        <a class="btn-doc" href="https://drive.google.com/file/d/16-Ob23SzguKTFvWp3F8KJv_7xYWexXZv/view" target="_blank" rel="noopener"><span class="ic">📐</span> Encaje técnico</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1p6IULNMJorxEv17ihNdN63lFej3vmTq4/view" target="_blank" rel="noopener"><span class="ic">📄</span> Presupuesto de obra</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1p06Z9GNmIo85YoESW-frHptuGBDq1J-O/view" target="_blank" rel="noopener"><span class="ic">📑</span> Contrato con la constructora (modelo)</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1K25cw1nfm9pVJAZQXYtLhH9PgQ0QNCIS/view" target="_blank" rel="noopener"><span class="ic">📊</span> Análisis económico</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1DQuylMCeJIIq23qKjgVS5ERoll-0VZKp/view" target="_blank" rel="noopener"><span class="ic">📋</span> Matriz de riesgos</a>
-        <a class="btn-doc" href="https://informes.im-pulso.app/v2-altabix-elche-antonio-mora-14.html" target="_blank" rel="noopener"><span class="ic">📈</span> Informe de mercado v2</a>
-      </div>
-    </div>
-    <div class="s-card">
-      <div class="s-tag">FASE 3 · ÉXITO + Inversión</div>
-      <div class="s-t">Ejecución, contrato y solvencia</div>
-      <div class="docbtns">
-        <a class="btn-doc" href="https://drive.google.com/file/d/1V-w5Pd44S1mIi5ezFaKTBIT59SrxayEL/view" target="_blank" rel="noopener"><span class="ic">📐</span> Proyecto técnico visado</a>
-        <span class="doc-nota" style="display:inline-block;font-size:12.5px;color:var(--grey);padding:6px 0">Acuse de licencia · se presenta tras obtener el CCU</span>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1vdUXL3T5rBU8X1_QNU5WWmPpfgJ-lZqg/view" target="_blank" rel="noopener"><span class="ic">📅</span> Gantt de obra</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1hw9txLZE8JTgxsfRWTyuw5_uXFlvMbi7/view" target="_blank" rel="noopener"><span class="ic">📈</span> Informe oficial MTVV</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1Bbd1_Zl7LQ6YSlrEIySuBWu9-oFhq5lF/view" target="_blank" rel="noopener"><span class="ic">🏠</span> Plano de venta 1</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1v5L4lGlJsU-PZucLZJvlOP9zIHxqWyui/view" target="_blank" rel="noopener"><span class="ic">🏠</span> Plano de venta 2</a>
-        <a class="btn-doc gold" href="https://drive.google.com/file/d/1Us0_PzIbh5b2t1c5yFJQiTbOl-m74Y8n/view" target="_blank" rel="noopener"><span class="ic">📑</span> Modelo de contrato CCP</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1zbeRwtLxeVxwQ4-ZzkQq-k9MeQsd9WYr/view" target="_blank" rel="noopener"><span class="ic">📜</span> Escritura de constitución</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1cYSWRiSGi8mdxlfmcwySDCnayUgg6MVV/view" target="_blank" rel="noopener"><span class="ic">🏢</span> CIF de la sociedad</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1bXR_-mlImSqwhxiVmrQdsgIQ28YsAR1o/view" target="_blank" rel="noopener"><span class="ic">🟢</span> Al corriente · Hacienda</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1F5aIrcsnYLkUq-31PaytvW7hKKBqUHri/view" target="_blank" rel="noopener"><span class="ic">🟢</span> Al corriente · Seg. Social</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1Sl6zHrSdUuyZLt7fgSbauypcePrrzcag/view" target="_blank" rel="noopener"><span class="ic">📋</span> CIRBE (1)</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1UqfeUIl4IZJL0duk3Hhf87MFKc3og4hD/view" target="_blank" rel="noopener"><span class="ic">📋</span> CIRBE (2)</a>
-        <a class="btn-doc" href="https://drive.google.com/file/d/1JLJzbTeHfkszJ-CYql0sCxteHNbEa1E6/view" target="_blank" rel="noopener"><span class="ic">🏦</span> Certificado de titularidad · cuenta</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="sec" style="text-align:center;background:linear-gradient(140deg,var(--navy),var(--navy2));color:var(--cream)">
   <div style="max-width:var(--col)">
     <div class="kicker" style="color:var(--ochre)">El siguiente paso es tuyo</div>
@@ -1420,6 +1313,7 @@ body.final .todo{display:none}
 </div>
 
 </main>
+
 
 
 <script id="op-data" type="application/json">
