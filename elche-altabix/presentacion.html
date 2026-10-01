@@ -612,8 +612,7 @@ body.final .todo{display:none}
 </head>
 <body>
 
-<!-- RELOJ DE PRESENTACIÓN · solo visible con ?p en la URL. 30 min + 5 de margen y campana.
-     No forma parte del dossier: el inversor que lo abra por su cuenta no lo ve. -->
+<!-- RELOJ DE PRESENTACIÓN · integrado, siempre activo en este dossier. 30 min + 5 de margen y campana. -->
 <style>
 #pres{position:fixed;right:18px;bottom:18px;z-index:9999;display:none;align-items:center;gap:14px;
   background:var(--navy);color:#fff;border-radius:14px;padding:14px 20px;cursor:pointer;
@@ -634,8 +633,6 @@ body.final .todo{display:none}
 </div>
 <script>
 (function(){
-  var P=new URLSearchParams(location.search);
-  if(!P.has('p'))return;
   var BLOQUE=30*60, MARGEN=5*60;
   var box=document.getElementById('pres'),T=document.getElementById('presT'),
       L=document.getElementById('presL'),H=document.getElementById('presH');
