@@ -353,7 +353,7 @@ body.final .todo{display:none}
 .fase-split .fs{background:#fff;border:1px solid var(--line);border-top:3px solid var(--ok);border-radius:0 0 12px 12px;padding:18px 20px}
 .fase-split .fs .fs-tag{color:var(--ok)}
 .fase-split .fs h3{margin-top:0}
-/* patas de la Fase 1 (económica/administrativa/técnica/jurídica) */
+/* patas del veredicto de viabilidad (económica/administrativa/técnica/jurídica) */
 .patas{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0;max-width:var(--col)}
 .pata{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:0 10px 10px 0;padding:15px 18px}
 .pata .p-tag{font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--ok);margin-bottom:6px}
@@ -681,10 +681,10 @@ body.final .todo{display:none}
   <a href="#track">Track record</a>
   <div class="grp">03 · La oportunidad</div>
   <a href="#resumen">Mercado y activo</a>
-  <div class="grp">04 · Cómo la vamos a resolver</div>
-  <a href="#proyecto">Encaje técnico</a><a href="#suministros">Suministros</a>
-  <div class="grp">05 · Qué hemos comprobado</div>
+  <div class="grp">04 · Qué hemos comprobado</div>
   <a href="#fase1">Viabilidad</a>
+  <div class="grp">05 · Cómo la vamos a resolver</div>
+  <a href="#proyecto">Encaje técnico</a><a href="#suministros">Suministros</a>
   <div class="grp">06 · Números y método</div>
   <a href="#numeros">Análisis económico</a><a href="#escenarios">Escenarios</a>
   <div class="grp">07 · Ejecución y riesgos</div>
@@ -831,19 +831,57 @@ body.final .todo{display:none}
   </div>
 </section>
 
-<div class="step-divider"><div class="step-n">04</div><h2>Cómo la vamos a resolver</h2></div>
+<div class="step-divider"><div class="step-n">04</div><h2>Qué hemos comprobado</h2></div>
+<section class="sec" id="fase1">
+  <div class="kicker">El veredicto</div>
+  <h2>¿Es viable este cambio de uso?</h2>
+  <div class="fase-split">
+    <div class="fase-brief">
+      <div class="fs-tag">Qué hace esta fase en el servicio</div>
+      <p>Esta comprobación valida cuatro ejes — y si uno falla, falla todo: <b>jurídico/registral, administrativo, técnico y económico</b>. Se obtiene un veredicto claro (GO / GO con ajustes / NO GO) antes de comprometer un euro.</p>
+    </div>
+    <div class="fs">
+      <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
+      <h3>Dictamen GO: los cuatro ejes, favorables</h3>
+      <ul style="margin:8px 0 12px;padding-left:20px">
+        <li><b>Jurídica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — revisada con la <b>Escritura de División Horizontal</b> (1989) y el <b>acta y la derrama de la comunidad</b>. Los dos locales ya son elementos privativos independientes, sin segregación pendiente, y la escritura faculta expresamente obras de adaptación y salida de humos por patio o fachada. Sin cargas ni acuerdos comunitarios pendientes que limiten el cambio de uso.</li>
+        <li><b>Administrativa:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — consultado previamente con el área de Planeamiento Urbanístico del Ayuntamiento de Elche, con criterio favorable de compatibilidad para uso residencial. Se solicitará el CCU para su confirmación (<a href="#proyecto">ver Encaje técnico</a>).</li>
+        <li><b>Técnica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — altura libre y salida de humos con solución constructiva (<a href="#proyecto">ver Encaje técnico</a>); cada local tiene ya contador propio de agua y luz (<a href="#suministros">ver Suministros</a>).</li>
+        <li><b>Económica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — compra ≈110.000 € frente a una venta orientativa de ≈149.000–159.000 € por unidad (<a href="#resumen">ver «Mercado y activo»</a>); detalle en el Informe de Diagnóstico.</li>
+      </ul>
+      <p>Riesgo global <b>bajo-medio</b>: siete riesgos en seguimiento, ninguno alto ni inasumible. Veredicto del informe: <b>GO — viabilidad global favorable</b>.</p>
+    </div>
+  </div>
+
+  <h3>El informe de viabilidad</h3>
+  <p class="lead">Todo el diagnóstico, en un solo documento.</p>
+  <a class="btn-doc doc-hero" href="https://drive.google.com/file/d/1inI73HNIVS2oxarGgk8xugHpcSlNN2Ka/view" target="_blank" rel="noopener">Ver Informe de Diagnóstico de Viabilidad</a>
+  <p style="font-size:15px;color:var(--grey);margin-top:14px">Y la documentación con la que verificamos cada eje, como prueba de que está respaldado:</p>
+  <div class="docbtns">
+    <a class="btn-doc" href="https://drive.google.com/file/d/1jLLy7OIfEWk5a1FeA02RC0HLdvuzXQGb/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 1</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1lH4KOe08x7veMOsvT4esrii5dwpwjUqk/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 2</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1lk2eWLPUfwMi8iy1DwSp0hGdTsKWJSb7/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 1</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/16LY67oYVYfGBVUjK_jFjHonLEEVMYgeH/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 2</a>
+    <span style="flex-basis:100%;height:0" aria-hidden="true"></span>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1kWAxpN8BghftxuowdVBCh3X0Q3ymno0p/view" target="_blank" rel="noopener"><span class="ic">📄</span> Nota simple</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1u9U5b5Soa4qIKmz3kueJ_HIE7t1WpiRL/view" target="_blank" rel="noopener"><span class="ic">📜</span> Escritura de División Horizontal</a>
+    <a class="btn-doc" href="https://drive.google.com/file/d/1uqHnkyTQkMkAcY69JFGuGWfuV6FdQK_H/view" target="_blank" rel="noopener"><span class="ic">🧾</span> Actas y derrama de la comunidad</a>
+  </div>
+</section>
+
+<div class="step-divider"><div class="step-n">05</div><h2>Cómo la vamos a resolver</h2></div>
 <section class="sec" id="proyecto">
   <div class="kicker">Plan estratégico y operativo</div>
   <h2>El mapa del cambio de uso: del «sí, es viable» al plan que ejecuta la obra</h2>
   <div class="fase-split">
     <div class="fase-brief">
       <div class="fs-tag">Qué hace esta fase en el servicio</div>
-      <p>La Fase 1 respondió a una pregunta: «¿es viable este cambio de uso?». La Fase 2 no responde otra — <b>dibuja el mapa</b>. Traza el camino completo: qué hacer, en qué orden y qué pedir a quién en cada trámite, para que la obra arranque sin bloqueos ni sorpresas.</p>
+      <p>El paso anterior respondió a una pregunta: «¿es viable este cambio de uso?». Este no responde otra — <b>dibuja el mapa</b>. Traza el camino completo: qué hacer, en qué orden y qué pedir a quién en cada trámite, para que la obra arranque sin bloqueos ni sorpresas.</p>
     </div>
     <div class="fs">
       <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
       <h3>Las 2 viviendas encajan</h3>
-      <p>El encaje técnico confirma la transformación de los dos locales en dos viviendas de 2 dormitorios sin tocar la estructura: cambio de uso de cada finca, agrupación de las dos fincas registrales y nueva segregación en dos viviendas — cada trámite con su impuesto (AJD) calculado (<a href="#numeros">ver Fase 2 · Números</a>). Altura libre, ventilación y salida de humos, resueltas en proyecto (tarjetas técnicas debajo).</p>
+      <p>El encaje técnico confirma la transformación de los dos locales en dos viviendas de 2 dormitorios sin tocar la estructura: cambio de uso de cada finca, agrupación de las dos fincas registrales y nueva segregación en dos viviendas — cada trámite con su impuesto (AJD) calculado (<a href="#numeros">ver Números</a>). Altura libre, ventilación y salida de humos, resueltas en proyecto (tarjetas técnicas debajo).</p>
       <div class="docbtns">
         <a class="btn-doc" href="https://drive.google.com/file/d/16-Ob23SzguKTFvWp3F8KJv_7xYWexXZv/view" target="_blank" rel="noopener"><span class="ic">📐</span> Encaje técnico</a>
         <a class="btn-doc" href="https://drive.google.com/file/d/1V-w5Pd44S1mIi5ezFaKTBIT59SrxayEL/view" target="_blank" rel="noopener"><span class="ic">📐</span> Proyecto técnico visado</a>
@@ -852,7 +890,7 @@ body.final .todo{display:none}
       <ul style="margin:8px 0 12px;padding-left:20px">
         <li><b>CCU</b> — recibido, favorable. Pendiente solo la versión corregida (una errata administrativa) para incorporarlo al expediente.</li>
         <li><b>Licencia de obras</b> — se presenta en cuanto llegue el CCU, con el proyecto ya visado.</li>
-        <li><b>Arranque de obra</b> — declaración responsable desde la compra; la obra (16 semanas) arranca ahí, en paralelo a la tramitación de la licencia por ECUV (Entidad Colaboradora en la Verificación Urbanística; <a href="#gantt">ver Planning · Gantt, Fase 3</a>).</li>
+        <li><b>Arranque de obra</b> — declaración responsable desde la compra; la obra (16 semanas) arranca ahí, en paralelo a la tramitación de la licencia por ECUV (Entidad Colaboradora en la Verificación Urbanística; <a href="#gantt">ver Planning · Gantt</a>).</li>
       </ul>
     </div>
   </div>
@@ -888,44 +926,6 @@ body.final .todo{display:none}
     <img src="assets/fotos/contador-agua.jpg" alt="Contadores de agua" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:9px">
   </div>
   </section>
-
-<div class="step-divider"><div class="step-n">05</div><h2>Qué hemos comprobado</h2></div>
-<section class="sec" id="fase1">
-  <div class="kicker">El veredicto</div>
-  <h2>¿Es viable este cambio de uso?</h2>
-  <div class="fase-split">
-    <div class="fase-brief">
-      <div class="fs-tag">Qué hace esta fase en el servicio</div>
-      <p>La Fase 1 valida cuatro ejes — y si uno falla, falla todo: <b>jurídico/registral, administrativo, técnico y económico</b>. Se obtiene un veredicto claro (GO / GO con ajustes / NO GO) antes de comprometer un euro.</p>
-    </div>
-    <div class="fs">
-      <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
-      <h3>Dictamen GO: los cuatro ejes, favorables</h3>
-      <ul style="margin:8px 0 12px;padding-left:20px">
-        <li><b>Jurídica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — revisada con la <b>Escritura de División Horizontal</b> (1989) y el <b>acta y la derrama de la comunidad</b>. Los dos locales ya son elementos privativos independientes, sin segregación pendiente, y la escritura faculta expresamente obras de adaptación y salida de humos por patio o fachada. Sin cargas ni acuerdos comunitarios pendientes que limiten el cambio de uso.</li>
-        <li><b>Administrativa:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — consultado previamente con el área de Planeamiento Urbanístico del Ayuntamiento de Elche, con criterio favorable de compatibilidad para uso residencial. Se solicitará el CCU para su confirmación (<a href="#proyecto">ver Fase 2 · Encaje técnico</a>).</li>
-        <li><b>Técnica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — altura libre y salida de humos con solución constructiva (<a href="#proyecto">ver Fase 2 · Encaje técnico</a>); cada local tiene ya contador propio de agua y luz (<a href="#suministros">ver Fase 2 · Suministros</a>).</li>
-        <li><b>Económica:</b> <span style="color:var(--ok);font-weight:800;text-transform:uppercase">favorable</span> — compra ≈110.000 € frente a una venta orientativa de ≈149.000–159.000 € por unidad (<a href="#resumen">ver «Mercado y activo»</a>); detalle en el Informe de Diagnóstico.</li>
-      </ul>
-      <p>Riesgo global <b>bajo-medio</b>: siete riesgos en seguimiento, ninguno alto ni inasumible. Veredicto del informe: <b>GO — viabilidad global favorable</b>.</p>
-    </div>
-  </div>
-
-  <h3>El informe de viabilidad</h3>
-  <p class="lead">Todo el diagnóstico, en un solo documento.</p>
-  <a class="btn-doc doc-hero" href="https://drive.google.com/file/d/1inI73HNIVS2oxarGgk8xugHpcSlNN2Ka/view" target="_blank" rel="noopener">Ver Informe de Diagnóstico · Fase 1</a>
-  <p style="font-size:15px;color:var(--grey);margin-top:14px">Y la documentación con la que verificamos cada eje, como prueba de que está respaldado:</p>
-  <div class="docbtns">
-    <a class="btn-doc" href="https://drive.google.com/file/d/1jLLy7OIfEWk5a1FeA02RC0HLdvuzXQGb/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 1</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1lH4KOe08x7veMOsvT4esrii5dwpwjUqk/view" target="_blank" rel="noopener"><span class="ic">🗂️</span> Datos catastrales · finca 2</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1lk2eWLPUfwMi8iy1DwSp0hGdTsKWJSb7/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 1</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/16LY67oYVYfGBVUjK_jFjHonLEEVMYgeH/view" target="_blank" rel="noopener"><span class="ic">🏷️</span> Valor de referencia catastral · finca 2</a>
-    <span style="flex-basis:100%;height:0" aria-hidden="true"></span>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1kWAxpN8BghftxuowdVBCh3X0Q3ymno0p/view" target="_blank" rel="noopener"><span class="ic">📄</span> Nota simple</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1u9U5b5Soa4qIKmz3kueJ_HIE7t1WpiRL/view" target="_blank" rel="noopener"><span class="ic">📜</span> Escritura de División Horizontal</a>
-    <a class="btn-doc" href="https://drive.google.com/file/d/1uqHnkyTQkMkAcY69JFGuGWfuV6FdQK_H/view" target="_blank" rel="noopener"><span class="ic">🧾</span> Actas y derrama de la comunidad</a>
-  </div>
-</section>
 
 <div class="step-divider"><div class="step-n">06</div><h2>Números y método</h2></div>
 <section class="sec" id="numeros">
