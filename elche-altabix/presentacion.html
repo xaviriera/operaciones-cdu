@@ -103,6 +103,12 @@ tr:last-child td{border-bottom:none}
 .sec:nth-child(even) .card{background:var(--cream)}
 .card .big{font-size:25px;font-weight:800;color:var(--navy);line-height:1.12;overflow-wrap:normal;word-break:keep-all;hyphens:none}
 .card .lbl{font-size:12px;color:var(--grey);margin-top:5px;font-weight:600;letter-spacing:.2px;line-height:1.4}
+/* rejilla propia de "La operación, de un vistazo" (#propuesta) — 6 tarjetas repartidas en 3×2,
+   nunca 5+1 descompensado; no toca .cards, que se usa en el resto del documento */
+.op-vistazo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:22px 0;max-width:var(--col)}
+.op-vistazo-grid .card{padding:24px 26px}
+@media(max-width:840px){.op-vistazo-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.op-vistazo-grid{grid-template-columns:1fr}}
 .chip{display:inline-block;background:var(--ochre-soft);color:var(--navy);font-weight:600;font-size:12.5px;padding:4px 12px;border-radius:18px;margin:2px}
 .prov{position:relative}
 .prov::after{content:"PROVISIONAL";font-size:8px;font-weight:800;letter-spacing:1px;background:#fff3da;color:#9a6712;border:1px solid #e8c989;border-radius:8px;padding:1px 6px;margin-left:7px;vertical-align:middle}
@@ -791,9 +797,9 @@ body.final .todo{display:none}
     <div class="card"><div class="big">326</div><div class="lbl">Anuncios en alquiler tradicional en el barrio de Altabix</div></div>
   </div>
   <div style="display:flex;align-items:center;gap:10px;margin-top:4px;max-width:var(--col)">
-    <span style="font-size:12.5px;color:var(--grey)"><b>Mini-IM·PULSO · primer tanteo (Fase 1).</b> Demanda y precios medidos con IM·PULSO en su versión rápida: una foto de cómo se mueve la zona, suficiente para el veredicto GO/NO GO. El informe completo (IM·PULSO V2) llega en la Fase 2, con la operación más madura y los datos actualizados.</span>
+    <span style="font-size:12.5px;color:var(--grey)"><b>Mini-IM·PULSO · primer tanteo.</b> Demanda y precios medidos con IM·PULSO en su versión rápida: una foto de cómo se mueve la zona, suficiente para el veredicto GO/NO GO. El informe completo (IM·PULSO V2) llega más adelante, con la operación más madura y los datos actualizados.</span>
   </div>
-  <div class="card" style="margin-top:14px;max-width:var(--col)"><div class="big">Compra ≈110.000 € · venta orientativa ≈149.000–159.000 €/unidad</div><div class="lbl">Foto económica de Fase 1 (orientativa). Venta por unidad: entre la mediana y el percentil 75 del mini-IM·PULSO (9 testigos comparables en Altabix). La obra se presupuesta y el precio de salida se afinan en la Fase 2 — aquí basta para saber que hay recorrido.</div></div>
+  <div class="card" style="margin-top:14px;max-width:var(--col)"><div class="big">Compra ≈110.000 € · venta orientativa ≈149.000–159.000 €/unidad</div><div class="lbl">Foto económica inicial (orientativa). Venta por unidad: entre la mediana y el percentil 75 del mini-IM·PULSO (9 testigos comparables en Altabix). La obra se presupuesta y el precio de salida se afinan más adelante — aquí basta para saber que hay recorrido.</div></div>
   <h3>El activo del que partimos</h3>
   <div class="cards">
     <div class="card"><div class="big">127,05&nbsp;m² útiles · <span style="white-space:nowrap">131&nbsp;m² construidos</span></div><div class="lbl">2 locales-altillo en entresuelo · finca 65.406: 54,19 m² útiles · finca 74.310: 72,86 m² útiles · uso comercial actual</div></div>
@@ -808,7 +814,7 @@ body.final .todo{display:none}
     <li>No es un problema de demanda ni de localización: es la falta de producto adecuado en el punto exacto donde el mercado lo pide.</li>
   </ul>
   <span class="sub-eyebrow">La aportación de valor</span>
-  <p>Dos locales comerciales → dos viviendas de 2 dormitorios, reformadas y listas para entrar. Con dos accesos independientes y fachada propia de cada unidad, ya confirmados en visita técnica (27/08/2026); una única limitación técnica —la altura libre— que ya tiene solución constructiva (<a href="#proyecto">ver Fase 2 · Encaje técnico</a>); y suministros individuales ya existentes en cada vivienda (<a href="#suministros">ver Fase 2 · Suministros</a>). El valor no se crea comprando barato, sino cerrando la distancia entre lo que hay hoy (local comercial) y lo que el comprador de la zona busca y no encuentra (vivienda habitual reformada).</p>
+  <p>Dos locales comerciales → dos viviendas de 2 dormitorios, reformadas y listas para entrar. Con dos accesos independientes y fachada propia de cada unidad, ya confirmados en visita técnica (27/08/2026); una única limitación técnica —la altura libre— que ya tiene solución constructiva (<a href="#proyecto">ver Encaje técnico</a>); y suministros individuales ya existentes en cada vivienda (<a href="#suministros">ver Suministros</a>). El valor no se crea comprando barato, sino cerrando la distancia entre lo que hay hoy (local comercial) y lo que el comprador de la zona busca y no encuentra (vivienda habitual reformada).</p>
   <h3>Dónde está — y por qué importa</h3>
   <table>
     <tr><th>Punto de interés</th><th>Distancia</th></tr>
@@ -966,7 +972,7 @@ body.final .todo{display:none}
   </div>
 
   <h2>Los números, partida a partida</h2>
-  <p class="lead">De la foto orientativa de la Fase 1 al cálculo cerrado.</p>
+  <p class="lead">De la foto orientativa inicial al cálculo cerrado.</p>
   <table>
     <tr><th>Partida</th><th>Importe <span style="font-weight:400">(cálculo cerrado con el presupuesto de obra SPM)</span></th></tr>
     <tr><td>Compra de los 2 locales</td><td>110.000 €</td></tr>
@@ -984,10 +990,10 @@ body.final .todo{display:none}
   <!-- TABÚ (FUERA): "Comercializamos EN PARALELO a la obra (método probado en Crevillente)" → se suelta en vivo, no en el HTML. -->
   <div class="impulso">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-      <div class="tag">IM·PULSO V2 · Informe completo de valoración (Fase 2 — segunda comprobación)</div>
+      <div class="tag">IM·PULSO V2 · Informe completo de valoración (segunda comprobación)</div>
     </div>
     <h3>El precio, confirmado por dos motores</h3>
-    <p class="lead">El mini-IM·PULSO de la Fase 1 dio la foto; este es el informe completo, hecho meses después con la operación más madura, que cruza dos motores de valoración.</p>
+    <p class="lead">El mini-IM·PULSO inicial dio la foto; este es el informe completo, hecho meses después con la operación más madura, que cruza dos motores de valoración.</p>
     <ul style="margin:8px 0 12px;padding-left:20px">
       <li><b>Motor IM·PULSO</b> — 60 testigos de mercado (23 Viv. 1 / 37 Viv. 2).</li>
       <li><b>Portal del notariado</b> — precios reales de escritura.</li>
@@ -1016,7 +1022,7 @@ body.final .todo{display:none}
     <tr><td>Fachada, patios y comunidad</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>6 · Bajo</td><td>Ejecutar las obras respetando las condiciones de las normas comunitarias y la LPH.</td></tr>
     <tr><td>Tramitación de la licencia</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>6 · Bajo</td><td>Mantener el expediente técnico completo y responder con seguimiento documentado a cualquier requerimiento administrativo.</td></tr>
     <tr><td>Desviación del coste de ejecución de la obra</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>9 · Medio</td><td>Presupuesto cerrado con la constructora (SPM, <b>620 €/m²</b> sobre 144 m² de superficie construida base del presupuesto) antes de arrancar. Durante la obra se controlan certificaciones y compras, y el modelo económico mantiene una partida de contingencia. SPM está dirigida por uno de los socios del equipo gestor — alineación de intereses y control directo de la ejecución.</td></tr>
-    <tr><td>Precio de venta por encima del rango del informe de mercado</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>9 · Medio</td><td>Salida a <b>2.481 €/m²</b>, dentro de la banda entre vivienda usada y obra nueva del barrio; el precio se contrasta por tercera vez con el MTVV antes de vender (Fase 3) y el plan de venta lo ajusta si el mercado no responde en 60 días.</td></tr>
+    <tr><td>Precio de venta por encima del rango del informe de mercado</td><td><b style="color:#9a6712">🟡 VIGILADO</b></td><td>9 · Medio</td><td>Salida a <b>2.481 €/m²</b>, dentro de la banda entre vivienda usada y obra nueva del barrio; el precio se contrasta por tercera vez con el MTVV antes de vender y el plan de venta lo ajusta si el mercado no responde en 60 días.</td></tr>
   </table>
 
   <div class="docbtns">
@@ -1065,16 +1071,16 @@ body.final .todo{display:none}
   <div class="fase-split">
     <div class="fase-brief">
       <div class="fs-tag">Qué hace esta fase en el servicio</div>
-      <p>La Fase 3 ejecuta: dirección de obra por hitos, proveedores con ofertas comparadas, control económico y cierre documental auditable. Es donde el plan se convierte en beneficio.</p>
+      <p>Esta etapa ejecuta: dirección de obra por hitos, proveedores con ofertas comparadas, control económico y cierre documental auditable. Es donde el plan se convierte en beneficio.</p>
     </div>
     <div class="fs">
       <div class="fs-tag">Qué hicimos en Entresuelo Altabix</div>
       <h3>Preparada para arrancar</h3>
       <ul style="margin:8px 0 0;padding-left:20px">
-        <li><b>Tercera comprobación del precio (MTVV):</b> contrastamos sobre el terreno los rangos del mini-IM·PULSO (Fase 1) y del IM·PULSO V2 (Fase 2) — 6 testigos directos, 5 inmobiliarias de la zona y una prueba de comercialización real (tabla debajo).</li>
+        <li><b>Tercera comprobación del precio (MTVV):</b> contrastamos sobre el terreno los rangos del mini-IM·PULSO inicial y del IM·PULSO V2 — 6 testigos directos, 5 inmobiliarias de la zona y una prueba de comercialización real (tabla debajo).</li>
         <li><b>Obra contratada, no estimada:</b> presupuesto cerrado con SPM y contrato de obra sobre modelo propio, con planning de 16 semanas (<a href="#gantt">ver Planning · Gantt</a>).</li>
         <li><b>Estructura lista:</b> sociedad gestora al corriente, cuenta exclusiva de la operación abierta, modelo de CCP preparado (<a href="#propuesta">ver bloque Inversión</a>).</li>
-        <li><b>Pendiente y de quién depende:</b> el CCU, del Ayuntamiento de Elche, y tras él la licencia, tramitada por la vía rápida de la ECUV (<a href="#proyecto">ver Plan de trámites, Fase 2</a>).</li>
+        <li><b>Pendiente y de quién depende:</b> el CCU, del Ayuntamiento de Elche, y tras él la licencia, tramitada por la vía rápida de la ECUV (<a href="#proyecto">ver Plan de trámites</a>).</li>
       </ul>
     </div>
   </div>
@@ -1091,14 +1097,14 @@ body.final .todo{display:none}
   <p><b>El precio, comprobado tres veces — una por fase:</b></p>
   <table>
     <tr><th>Comprobación</th><th>Cuándo</th><th>Muestra</th><th>Rango por unidad</th></tr>
-    <tr><td>1 · Mini-IM·PULSO</td><td>Fase 1 · GO</td><td>tanteo de zona (9 testigos)</td><td><b>149.000 – 159.000 €</b></td></tr>
-    <tr><td>2 · IM·PULSO V2 (2 motores)</td><td>Fase 2 · MAP</td><td>60 testigos + notariado</td><td><b>155.000 – 170.000 €</b></td></tr>
-    <tr><td>3 · MTVV — testigos directos</td><td>Fase 3 · ÉXITO</td><td>6 testigos</td><td><b>139.000 – 199.000 €</b></td></tr>
-    <tr><td>3 · MTVV — inmobiliarias de la zona</td><td>Fase 3 · ÉXITO</td><td>5 agencias</td><td><b>130.000 – 169.000 €</b></td></tr>
-    <tr><td>3 · MTVV — comercialización real</td><td>Fase 3 · ÉXITO</td><td>6 contactos en 6 días</td><td><b>150.000 – 160.000 €</b></td></tr>
+    <tr><td>1 · Mini-IM·PULSO</td><td>GO</td><td>tanteo de zona (9 testigos)</td><td><b>149.000 – 159.000 €</b></td></tr>
+    <tr><td>2 · IM·PULSO V2 (2 motores)</td><td>MAP</td><td>60 testigos + notariado</td><td><b>155.000 – 170.000 €</b></td></tr>
+    <tr><td>3 · MTVV — testigos directos</td><td>ÉXITO</td><td>6 testigos</td><td><b>139.000 – 199.000 €</b></td></tr>
+    <tr><td>3 · MTVV — inmobiliarias de la zona</td><td>ÉXITO</td><td>5 agencias</td><td><b>130.000 – 169.000 €</b></td></tr>
+    <tr><td>3 · MTVV — comercialización real</td><td>ÉXITO</td><td>6 contactos en 6 días</td><td><b>150.000 – 160.000 €</b></td></tr>
     <tr><td><b>Precio asumido</b></td><td>—</td><td>—</td><td><b>155.000 + 170.000 = 325.000 €</b></td></tr>
   </table>
-  <p style="margin-top:12px">El IM·PULSO V2 (Fase 2) marca el <b>suelo</b> del mercado: solo recoge testigos de <b>vivienda usada</b> del barrio, sin ningún testigo de obra nueva en Altabix, y se hace antes de cerrar el encaje. El <b>precio real de venta lo fija el MTVV</b> (Fase 3, la comprobación final, hecha sobre el terreno) — por eso el precio asumido (<b>325.000 €</b>) queda por encima de los tres escenarios agregados del IM·PULSO V2 (conservador <b>251.071 €</b>, medio <b>278.573 €</b>, optimista <b>310.161 €</b>). El propio informe sitúa la vivienda usada como suelo del mercado (<b>1.647 €/m²</b>) y la obra nueva de Elche como techo (<b>2.632 €/m²</b>), con el producto a estrenar por cambio de uso entre ambos: las dos viviendas salen a <b>2.481 €/m²</b>, dentro de esa banda, confirmado sobre el terreno por el MTVV.</p>
+  <p style="margin-top:12px">El IM·PULSO V2 marca el <b>suelo</b> del mercado: solo recoge testigos de <b>vivienda usada</b> del barrio, sin ningún testigo de obra nueva en Altabix, y se hace antes de cerrar el encaje. El <b>precio real de venta lo fija el MTVV</b> (la comprobación final, hecha sobre el terreno) — por eso el precio asumido (<b>325.000 €</b>) queda por encima de los tres escenarios agregados del IM·PULSO V2 (conservador <b>251.071 €</b>, medio <b>278.573 €</b>, optimista <b>310.161 €</b>). El propio informe sitúa la vivienda usada como suelo del mercado (<b>1.647 €/m²</b>) y la obra nueva de Elche como techo (<b>2.632 €/m²</b>), con el producto a estrenar por cambio de uso entre ambos: las dos viviendas salen a <b>2.481 €/m²</b>, dentro de esa banda, confirmado sobre el terreno por el MTVV.</p>
   <div class="docbtns">
     <a class="btn-doc" href="https://drive.google.com/file/d/1hw9txLZE8JTgxsfRWTyuw5_uXFlvMbi7/view" target="_blank" rel="noopener"><span class="ic">📈</span> Informe oficial MTVV</a>
     <a class="btn-doc" href="https://drive.google.com/file/d/1Bbd1_Zl7LQ6YSlrEIySuBWu9-oFhq5lF/view" target="_blank" rel="noopener"><span class="ic">🏠</span> Plano de venta · vivienda 1</a>
@@ -1123,14 +1129,14 @@ body.final .todo{display:none}
   <p class="lead">En el <b>Programa IN</b> hay dos formatos de Joint Venture: <b>waterfall</b> (el gestor cobra un porcentaje del resultado por tramos) y <b>servicer</b> (honorario fijo de gestión + capital propio en las mismas condiciones que el inversor). Esta operación es <b>servicer</b>.</p>
   <div class="ask">
     <div class="col give"><h3>Lo que pedimos</h3>
-      <p><b>Honorario servicer fijo de 12.000 €</b> por la gestión integral de la operación: propuesta, dirección de la aportación de valor y conducción del proyecto hasta su cierre. Una cifra <b>cerrada y conocida de antemano</b>, descontada del resultado y reflejada en el Análisis económico (<a href="#numeros">ver Fase 2 · Números</a>).</p>
+      <p><b>Honorario servicer fijo de 12.000 €</b> por la gestión integral de la operación: propuesta, dirección de la aportación de valor y conducción del proyecto hasta su cierre. Una cifra <b>cerrada y conocida de antemano</b>, descontada del resultado y reflejada en el Análisis económico (<a href="#numeros">ver Números</a>).</p>
       <p style="font-size:13px;color:var(--grey)">Más un <b>bonus</b> ligado a superar el objetivo — lo detallamos justo aquí debajo.</p></div>
     <div class="col get"><h3>Lo que ponemos</h3>
       <p><b>34.489 € de capital propio</b> —el 13,29% del total—, puesto junto al tuyo (<a href="#ccp">ver «Cómo entras · CCP»</a>).</p>
       <p style="font-size:13px;color:var(--grey)">Gestión llave en mano + el <b>Cuadro de Mandos oficial de CdU de 0 a ÉXITO</b>: sigues tu inversión en vivo (<a href="#visor">ver «Visor del Inversor»</a>).</p></div>
   </div>
   <h3 style="margin-top:18px">La operación, de un vistazo</h3>
-  <div class="cards">
+  <div class="op-vistazo-grid">
     <div class="card"><div class="big">259.489,09 €</div><div class="lbl">Capital total de la operación</div></div>
     <div class="card"><div class="big">110.000 €</div><div class="lbl">Compra de los 2 locales</div></div>
     <div class="card"><div class="big">108.028,80 €</div><div class="lbl">Reforma</div></div>
@@ -1161,7 +1167,7 @@ body.final .todo{display:none}
     <div class="card"><div class="big">34.489 €</div><div class="lbl">Lo pone el GESTOR (13,29%) — nuestro dinero, junto al tuyo</div></div>
     <div class="card"><div class="big">225.000 €</div><div class="lbl">Capital de inversores (86,71%)</div></div>
   </div>
-  <p style="font-size:13.5px;color:var(--grey)">Reparto y rentabilidad, partida a partida y escenario a escenario: <a href="#numeros">ver Fase 2 · Números</a>.</p>
+  <p style="font-size:13.5px;color:var(--grey)">Reparto y rentabilidad, partida a partida y escenario a escenario: <a href="#numeros">ver Números</a>.</p>
   <p><b>Cómo funciona.</b> Cuentas en Participación (arts. 239-243 del Código de Comercio): tú aportas capital y no gestionas ni apareces frente a terceros; CdU de 0 a ÉXITO SL responde frente a terceros y gestiona. <b>Cobras</b> conforme se vende cada vivienda, en 5-7 días, y la liquidación final del beneficio a los 15 días del cierre. Si el beneficio de la operación supera el objetivo de rentabilidad del 20,39%, el excedente se reparte aparte, como <b>bonus</b> (<a href="#propuesta">ver «La propuesta»</a>) — nunca resta. Fiscalidad del partícipe: rendimiento del capital mobiliario (19-30 % según tramo), con retención del 19 % que practica el gestor.</p>
   <h3>Cómo te blinda el contrato</h3>
   <p class="lead">El CCP no es un papel de confianza: <strong>es un blindaje recíproco — protege al partícipe y a la gestora por igual.</strong></p>
@@ -1219,7 +1225,7 @@ body.final .todo{display:none}
 
 <div class="step-divider"><div class="step-n">10</div><h2>Cierre y seguimiento</h2></div>
 <section class="sec" id="visor">
-  <div class="kicker">La guinda · Tu cuadro de mandos</div>
+  <div class="kicker">Seguimiento en vivo · Tu cuadro de mandos</div>
   <h2>Tu operación, en vivo — no en un PDF que envejece</h2>
   <div class="quote">"Vamos todos en el mismo vehículo. El equipo CdU de 0 a ÉXITO es quien conduce la inversión — y tú, como invitado, solo disfrutas del viaje: viendo cómo trabaja tu dinero, en qué fase está la operación, qué hito viene, las fotos y cámaras de la obra y qué ha pasado con cada euro."</div>
   <div class="dash visor-dash">
